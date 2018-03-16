@@ -1,0 +1,286 @@
+[
+    {
+        "id": "code",
+        "label": "Programming Language",
+        "items": [
+            {
+                "label": "JavaScript",
+                "icon": "star",
+                "description": "Vanilla, ES5, ES6, ES7, Browser, Node"
+            },
+            {
+                "label": "TypeScript",
+                "icon": "star"
+            },
+            {
+                "label": "PHP",
+                "description": "Not very exited about it"
+            },
+            {
+                "label": "Java",
+                "description": "Early Android, Eclipse extensions"
+            },
+            {
+                "label": "Python",
+                "description": "Only for tooling, small exposure"
+            },
+            {
+                "label": "Ruby",
+                "description": "Only for tooling, small exposure"
+            },
+            {
+                "label": "C#",
+                "icon": "thumbs outline down"
+            },
+            {
+                "label": "VB.Net",
+                "icon": "thumbs outline down"
+            },
+            {
+                "label": "VisualBasic",
+                "icon": "thumbs outline down"
+            },
+            {
+                "label": "PLSQL"
+            },
+            {
+                "label": "ActionScript/Flex"
+            }
+        ]
+    },
+    {
+        "id": "frameworks",
+        "label": "Frameworks / Tools",
+        "items": [
+            {
+                "label": "VanillaJS",
+                "icon": "star"
+            },
+            {
+                "label": "ReactJS",
+                "icon": "star"
+            },
+            {
+                "label": "Redux",
+                "icon": "star",
+                "description": "Prefer redux-observable over redux-saga"
+            },
+            {
+                "label": "RxJS",
+                "icon": "star"
+            },
+            {
+                "label": "NodeJS",
+                "icon": "star"
+            },
+            {
+                "label": "Electron",
+                "icon": "star"
+            },
+            {
+                "label": "Express",
+                "icon": "star"
+            },
+            {
+                "label": "Angular",
+                "description": "1 and 2/4"
+            },
+            {
+                "label": "jQuery"
+            },
+            {
+                "label": "MooTools"
+            },
+            {
+                "label": "OVI"
+            },
+            {
+                "label": "Dojo"
+            },
+            {
+                "label": "PrototypeJS"
+            },
+            {
+                "label": "Symfony"
+            },
+            {
+                "label": "Laravel"
+            },
+            {
+                "label": "Codegniter"
+            }
+        ]
+    },
+    {
+        "id": "db",
+        "label": "Database/Cache/Queue",
+        "items": [
+            {
+                "label": "Mongo"
+            },
+            {
+                "label": "DynamoDB"
+            },
+            {
+                "label": "S3"
+            },
+            {
+                "label": "MySQL"
+            },
+            {
+                "label": "Postgres"
+            },
+            {
+                "label": "OrientDB"
+            },
+            {
+                "label": "Memcache"
+            },
+            {
+                "label": "ElasticSearch"
+            },
+            {
+                "label": "AWS SQS"
+            }
+        ]
+    },
+    {
+        "id": "ci",
+        "label": "CI/Hosting/Layers",
+        "items": [
+            {
+                "label": "Docker",
+                "icon": "star"
+            },
+            {
+                "label": "AWS Lambda",
+                "icon": "star"
+            },
+            {
+                "label": "AWS CloudFormation",
+                "icon": "star"
+            },
+            {
+                "label": "Jenkins"
+            },
+            {
+                "label": "Travis"
+            },
+            {
+                "label": "Behat"
+            },
+            {
+                "label": "Cucumber"
+            },
+            {
+                "label": "Ansible"
+            },
+            {
+                "label": "Jasmine"
+            },
+            {
+                "label": "Mocha"
+            },
+            {
+                "label": "Protractor"
+            },
+            {
+                "label": "NewRelic Synthetics"
+            },
+            {
+                "label": "Istanbul"
+            },
+            {
+                "label": "AWS Cloud"
+            },
+            {
+                "label": "Rackspace"
+            },
+            {
+                "label": "DigialOcean"
+            },
+            {
+                "label": "baremetal"
+            }
+        ]
+    },
+    {
+        "id": "os",
+        "label": "OS",
+        "items": [
+            {
+                "label": "Ubutnu",
+                "icon": "star"
+            },
+            {
+                "label": "*nix"
+            },
+            {
+                "label": "osx"
+            },
+            {
+                "label": "windows"
+            },
+            {
+                "label": "android"
+            },
+            {
+                "label": "ios"
+            }
+        ]
+    },
+    {
+        "id": "process",
+        "label": "Process/Management/Soft",
+        "items": [
+            {
+                "label": "Team building",
+                "description": "From 0 to 10+"
+            },
+            {
+                "label": "Remote team management"
+            },
+            {
+                "label": "Specification"
+            },
+            {
+                "label": "Agile",
+                "description": "LEAN, Scrum, Kanban"
+            },
+            {
+                "label": "PM tooling",
+                "description": "JIRA, Trello, BaseCamp, GitHub issues, GitLab isses, Asana"
+            }
+        ]
+    },
+    {
+        "id": "speach",
+        "label": "Language",
+        "items": [
+            {
+                "label": "Polish",
+                "description": "native"
+            },
+            {
+                "label": "English",
+                "description": "fluent"
+            },
+            {
+                "label": "Russian",
+                "description": "conversional"
+            },
+            {
+                "label": "German",
+                "description": "communicative"
+            },
+            {
+                "label": "Ukrainian",
+                "description": "hearing/reading"
+            },
+            {
+                "label": "Belarusian",
+                "description": "hearing/reading"
+            }
+        ]
+    }
+]

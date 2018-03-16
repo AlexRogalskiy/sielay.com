@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: `My website`,
+    title: `SIELAY Łukasz Marek Sielski`,
     googleVerification: `abcdefz`,
-    disqus: `gatsby-typescript`
+    disqus: `sielay-com`
   },
   mapping: {
-    'MarkdownRemark.frontmatter.author': `AuthorJson`
+    'MarkdownRemark.frontmatter.author': `AuthorJson`,
+    'ExperienceJson.items.tech': `TechJson`
   },
   plugins: [
     // Expose `/data` to graphQL layer
@@ -20,7 +21,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'YOUR_GOOGLE_ANALYTICS_TRACKING_ID',
+        trackingId: 'UA-11342805-1',
         // Puts tracking script in the head instead of the body
         head: false,
         // Setting this parameter is optional
@@ -66,20 +67,20 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby website`,
-        short_name: `Gatsby website`,
+        name: `SIELAY Łukasz Marek Sielski`,
+        short_name: `SIELAY`,
         start_url: `/`,
         background_color: `#f7f7f7`,
         theme_color: `#191919`,
         display: `minimal-ui`
       }
-    },
+    }
     /* eslint-enable camelcase */
 
     // This plugin generates a service worker and AppShell
     // html file so the site works offline and is otherwise
     // resistant to bad networks. Works with almost any
     // site!
-    `gatsby-plugin-offline`
+    // `gatsby-plugin-offline`
   ]
 };

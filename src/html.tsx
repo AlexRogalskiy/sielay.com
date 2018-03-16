@@ -41,7 +41,7 @@ module.exports = (props: HtmlProps) => {
     <html lang="en">
       <head>
         {props.headComponents}
-        <title>My website</title>
+        <title>SIELAY Łukasz Marek Sielski</title>
         <meta charSet="utf-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta
@@ -51,6 +51,11 @@ module.exports = (props: HtmlProps) => {
         {head.title.toComponent()}
         {head.meta.toComponent()}
         {head.link.toComponent()}
+        <link
+          href="//fonts.googleapis.com/css?family=Merriweather:900,900italic,300,300italic"
+          rel="stylesheet"
+          type="text/css"
+        />
         {css}
         {verification}
       </head>

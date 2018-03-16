@@ -1,0 +1,92 @@
+[
+    {
+        "where": "github",
+        "link": "https://github.com/Pushfor/typeddocker",
+        "title": "Pushfor/TypedDocker",
+        "description": "Docker + Yarn + Electron + Gulp + TypeScript + Squirrel + Golden-Layout + Angular 4 + React"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/doc2dot",
+        "title": "doc2dot",
+        "description": "Generates dot (graphviz) document from code documentation comments like JSDoc, JavaDoc, PHPDoc"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/fake-autobahnjs",
+        "title": "fake-autobahnjs",
+        "description": "Fake/Mock autobahn that doesn't require setting up servers, etc, works like xhr-mock"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/TimeIncOSS/dfpdebugger",
+        "title": "TimeIncOSS/dfpdebugger",
+        "description": "Additional debugging for Google DFP ads"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/getlackey/lackey-cms",
+        "title": "Lackey CMS",
+        "description": "WYSIWYG/WYSIWYM MEAN CMS"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/logipscan",
+        "title": "logipscan",
+        "description": "Small snippet to find out ips occurring in logs"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/octopusidentity",
+        "title": "octopusidentity",
+        "description": "Passport + mongoose middle ware to manage multiple identity users and non-user contacts without redundancy and conflicts."
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/roadmarks",
+        "title": "roadmarks",
+        "description": "Extensive tool to create and maintain Markdown documentation tables of contents and navigation"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/bestmatch",
+        "title": "bestmatch",
+        "description": "Wildcards, but reverse"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/bookmaker",
+        "title": "bookmaker",
+        "description": "Library to manage and calculate odds"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/medium-editor-vanilla-insert",
+        "title": "medium-editor-vanilla-insert",
+        "description": "VanillaJS, simple, extendable version of https://github.com/orthes/medium-editor-insert-plugin"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/xhr-mock-rxjs",
+        "title": "xhr-mock-rxjs",
+        "description": "Example how to use xhr-mock to test rxjs ajax (with TypeScript support)"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/medium-editor-remove-formats",
+        "title": "medium-editor-remove-formats",
+        "description": "Remove formats extension for MediumEditor that removes blocks too"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/git-sha1",
+        "title": "git-sha1",
+        "description": "Native implementation of git commit SHA1 generator"
+    },
+    {
+        "where": "github",
+        "link": "https://github.com/sielay/git-flow-db",
+        "title": "git-flow-db",
+        "description": "Storage of documents in database using git-a-like flow and versioning. Now on top of mongoDB"
+    }
+]

@@ -23,7 +23,7 @@ export default (props: BlogPostProps) => {
   const recents = props.data.recents.edges
     .map(({ node }) => {
       const recentAvatar = node.frontmatter.author.avatar.children[0] as ImageSharp;
-      const recentCover = node.frontmatter.image.children[0] as ImageSharp;
+      const recentCover = node.frontmatter.image ? node.frontmatter.image.children[0] as ImageSharp : null;
       const extra = (
         <Comment.Group>
           <Comment>
@@ -47,7 +47,7 @@ export default (props: BlogPostProps) => {
         <div key={node.fields.slug} style={{ paddingBottom: "1em" }}>
           <Card as={Link}
             to={node.fields.slug}
-            image={{
+            image={recentCover && {
               src: recentCover.responsiveResolution.src,
               srcSet: recentCover.responsiveResolution.srcSet,
             }}
@@ -58,11 +58,11 @@ export default (props: BlogPostProps) => {
       );
     });
 
-  const recentCover = frontmatter.image.children[0] as ImageSharp;
+  const recentCover = frontmatter.image ? frontmatter.image.children[0] as ImageSharp : null;
   return (
     <Container>
       <BlogTitle />
-      <Segment vertical style={{ border: "none" }}>
+      <Segment vertical style={{ border: "none" }} className="blog-post">
         <Item.Group>
           <Item>
             <Item.Image size="tiny" shape="circular"
@@ -78,13 +78,16 @@ export default (props: BlogPostProps) => {
         </Item.Group>
         <Header as="h1">{frontmatter.title}</Header>
       </Segment>
-      <Image
-        src={recentCover.responsiveResolution.src}
-        srcSet={recentCover.responsiveResolution.srcSet}
-        fluid
-      />
+      {recentCover &&
+        <Image
+          src={recentCover.responsiveResolution.src}
+          srcSet={recentCover.responsiveResolution.srcSet}
+          fluid
+        />
+      }
       <Segment vertical
         style={{ border: "none" }}
+        className="blog-post-body"
         dangerouslySetInnerHTML={{
           __html: html,
         }}
@@ -150,7 +153,7 @@ export const pageQuery = graphql`
             }
           }
         }
-      }
+       }
     }
   }
   recents: allMarkdownRemark(
@@ -170,7 +173,7 @@ export const pageQuery = graphql`
         timeToRead
         frontmatter {
           title
-          image {
+           image {
             children {
               ... on ImageSharp {
                 responsiveResolution(width: 300, height: 100) {
@@ -179,7 +182,7 @@ export const pageQuery = graphql`
                 }
               }
             }
-          }
+           }
           author {
             id
             avatar {

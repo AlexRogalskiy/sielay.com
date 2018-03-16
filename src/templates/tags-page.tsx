@@ -35,16 +35,16 @@ query TemplateTagPage($tag: String) {
         frontmatter {
           title
           updatedDate(formatString: "DD MMMM, YYYY")
-          image {
-          	children {
-              ... on ImageSharp {
-                responsiveResolution(width: 700, height: 100) {
-                  src
-                  srcSet
-                }
-              }
-            }
-          }
+          # image {
+          #	children {
+          #    ... on ImageSharp {
+          #      responsiveResolution(width: 700, height: 100) {
+          #        src
+          #        srcSet
+          #      }
+          #    }
+          #  }
+          # }
           author {
             id
             avatar {

@@ -1,29 +1,134 @@
 import * as React from "react";
-import { Header, Container, Segment, Icon } from "semantic-ui-react";
+import { Header, Container, Segment, Icon, List, Grid } from "semantic-ui-react";
+import {
+  ProjectsJsonConnection,
+  ContributionsJsonConnection,
+  ReposJsonConnection,
+} from "../graphql-types";
 
-export default () => {
-  return (
-    <Container>
-      <Segment vertical>
-        <Header as="h2">
-          <Icon name="info circle" />
-          <Header.Content>
-            About
+interface AboutProps {
+  data: {
+    projects: ProjectsJsonConnection;
+    repos: ReposJsonConnection;
+    contributions: ContributionsJsonConnection;
+  };
+}
+
+export default (props: AboutProps) =>
+  <Container>
+    <Segment vertical>
+      <Header as="h2">
+        <Icon name="info circle" />
+        <Header.Content>
+          About me
           </Header.Content>
-        </Header>
-      </Segment>
-      <Segment vertical>
-        <p>
-          This starter was created by @fabien0102.
+      </Header>
+    </Segment>
+    <Segment vertical piled size="massive">
+      <p>
+        My name is Łukasz (pronounced [ˈwukaʂ]). Originally from Szczecin, Poland. Now living
+        in Wimbledon, London, United Kingdom.
         </p>
-        <p>
-          For any question, I'm on <a href="https://discord.gg/2bz8EzW" target="blank">discord #reactiflux/gatsby</a>
+      <p>
+        I’m a father, husband, software developer, team lead, aspiring enreprenour and amatour
+        cyclist.
         </p>
-        <p>
-          For any issues, any PR are welcoming
-          <a href="https://github.com/fabien0102/gatsby-starter/issues" target="blank"> on this repository</a>
+      <p>
+        I started with web early. I kept failing and reinventing myself. Now I start over, simpler,
+        without too much stress.
         </p>
-      </Segment>
-    </Container>
-  );
-};
+    </Segment>
+    <Grid stackable columns={2}>
+
+      <Grid.Column>
+        <Segment vertical>
+
+          <Header as="h3">Worthwhile repos</Header>
+          <List divided relaxed>
+            {
+              props.data.repos.edges.map(({ node }, index) => <List.Item key={index}>
+                <List.Icon name={node.where} size="large" verticalAlign="middle" />
+                <List.Content>
+                  <List.Header as="a" href={node.link}>{node.title}</List.Header>
+                  <List.Description as="a" href={node.link}>{node.description}</List.Description>
+                </List.Content>
+              </List.Item>,
+              )
+            }
+          </List>
+        </Segment>
+      </Grid.Column>
+      
+      <Grid.Column>
+        <Segment vertical>
+          <Header as="h3">Other contributions (incl. rejected but worth keeping)</Header>
+          <List divided relaxed>
+            {
+              props.data.contributions.edges.map(({ node }, index) => <List.Item key={index}>
+                <List.Icon name={node.where} size="large" verticalAlign="middle" />
+                <List.Content>
+                  <List.Header as="a" href={node.link}>{node.title}</List.Header>
+                  <List.Description as="a" href={node.link}>{node.description}</List.Description>
+                </List.Content>
+              </List.Item>,
+              )
+            }
+          </List>
+
+        </Segment>
+      </Grid.Column>
+      <Grid.Column>
+        <Segment vertical>
+          <Header as="h3">Projects</Header>
+          <List divided relaxed>
+            {
+              props.data.projects.edges.map(({ node }, index) => <List.Item key={index}>
+                <List.Icon name={node.where} size="large" verticalAlign="middle" />
+                <List.Content>
+                  <List.Header as="a" href={node.link}>{node.title}</List.Header>
+                  <List.Description as="a" href={node.link}>{node.description}</List.Description>
+                </List.Content>
+              </List.Item>,
+              )
+            }
+          </List>
+        </Segment>
+      </Grid.Column>
+    </Grid>
+  </Container>;
+
+export const pageQuery = graphql`
+query About 
+    {
+        repos: allReposJson {
+          edges {
+            node {
+              link
+              title
+              description
+              where
+            }
+          }
+        }
+        contributions: allContributionsJson {
+          edges {
+            node {
+              link
+              description
+              where
+              title
+            }
+          }
+        }       
+        projects: allProjectsJson {
+           edges {
+            node {
+              link
+              title
+              description
+              where
+            }
+          } 
+        }
+      }    
+`;

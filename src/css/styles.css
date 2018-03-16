@@ -97,3 +97,51 @@ pre {
   border-radius: 0.3em;
   background: #272822;
 }
+
+.ui.massive.segment p,
+.ui.massive.segments .segment p {
+  line-height: 1.5;
+  font-family:
+    "Merriweather",
+    "PT Serif",
+    Georgia,
+    "Times New Roman",
+    serif;
+  color: #333;
+  font-size: 1.4rem;
+  font-weight: 300;
+}
+
+.ui.vertical.piled.segment {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.ui.vertical.raised.segment {
+  padding: 1rem;
+}
+
+.ui.list > .item > .content {
+  line-height: 1.8em !important;
+}
+
+.ui.segment.vertical.blog-post {
+  max-width: 62rem;
+  margin: auto;
+}
+
+.ui.segment.vertical.blog-post h1.ui.header {
+  font-size: 3.5rem;
+}
+
+.ui.segment.vertical.blog-post-body {
+  font-family: "Merriweather", "PT Serif", Georgia, "Times New Roman", serif;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  max-width: 62rem;
+  margin: auto;
+}
+
+.ui.segment.vertical.blog-post-body pre {
+  font-size: 1rem;
+}

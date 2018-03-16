@@ -13,7 +13,9 @@ import { store } from "../store";
 export const menuItems = [
   { name: "Home", path: "/", exact: true, icon: "home", inverted: true },
   { name: "About", path: "/about/", exact: true, icon: "info circle" },
+  { name: "CV", path: "/cv/", exact: true, icon: "info circle" },
   { name: "Blog", path: "/blog/", exact: false, icon: "newspaper" },
+  { name: "Publications", path: "/publications/", exact: false, icon: "newspaper" },
 ];
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {
@@ -50,7 +52,12 @@ export default class DefaultLayout extends React.PureComponent<DefaultLayoutProp
             {/* Footer */}
             <Segment inverted vertical style={{ position: "absolute", bottom: 0, width: "100%" }}>
               <Container textAlign="center">
-                <p>Powered with <Icon name="heart" /> by Gatsby 1.0</p>
+                <p>
+                  Powered with <Icon name="heart" /> by <a href="gatsbyjs.org" target="_blank"
+                    title="Gatsby 1.0 starter with typescript and many cools dev tools">Gatsby 1.0</a> &amp;
+                TypeScript Starter by <a href="https://github.com/fabien0102/gatsby-starter"
+                    target="_blank" title="Gatsby 1.0 starter with typescript and many cools dev tools">fabien0102</a>
+                </p>
               </Container>
             </Segment>
           </Sidebar.Pusher>

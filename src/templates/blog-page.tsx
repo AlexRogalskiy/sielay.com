@@ -36,7 +36,7 @@ query TemplateBlogPage($skip: Int) {
         frontmatter {
           title
           updatedDate(formatString: "DD MMMM, YYYY")
-          image {
+           image {
           	children {
               ... on ImageSharp {
                 responsiveResolution(width: 700, height: 100) {
@@ -45,7 +45,7 @@ query TemplateBlogPage($skip: Int) {
                 }
               }
             }
-          }
+           }
           author {
             id
             avatar {

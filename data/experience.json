@@ -1,0 +1,311 @@
+[
+    {
+        "id": "pushfor",
+        "company": "Pushfor",
+        "position": "Web & Desktop Lead Developer",
+        "from": "Dec 2016",
+        "to": "June 2018",
+        "items": [
+            {
+                "link": "http://finovate.com/videos/finovateeurope-2018-pushfor/",
+                "label": "Heatmaps and Analytics",
+                "description": "Full control over the content"
+            },
+            {
+                "link": "https://web.pushfor.com/l/GxNvhj8R4MCNNEC5Ns8LGEvg9luFa0P2ZGxSRsxNTSVTx5-nFa9cr_QF",
+                "label": "Push2Link",
+                "description": "\"Push2Link enables content to be protected and securely shared across any distribution channel – any content, any format, any device\". Implementation of content consumer client layer, share capabilities and integration with core features of the platform."
+            },
+            {
+                "link": "https://web.pushfor.com",
+                "label": "Pushfor.com",
+                "description": "Customisable, whitelabellable, brandable stateless web & desktop client application"
+            },
+            {
+                "link": "github.com/Pushfor/typeddocker",
+                "label": "TypedDocker",
+                "description": "Docker + Yarn + Electron + Gulp + TypeScript + Squirrel + Golden-Layout + Angular 4 + React"
+            },
+            {
+                "label": "Responsibility",
+                "description": "Leading team behind web and desktop stateless client"
+            },
+            {
+                "label": "Management",
+                "description": "Remote team, then team of four. Hiring, menthoring, architecture, R&D"
+            },
+            {
+                "label": "Exit",
+                "description": "Project stabilised and delivered for sales and continous improvement"
+            },
+            {
+                "label": "Hands on",
+                "tech": [
+                    "JAVASCRIPT",
+                    "TYPESCRIPT",
+                    "ELECTRON",
+                    "REACT",
+                    "ANGULAR",
+                    "DOCKER",
+                    "NODE",
+                    "AWS"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "enigma",
+        "company": "Enigma Marketing Services",
+        "position": "Senior Full-stack Developer",
+        "from": "Jan 2016",
+        "to": "Dec 2016",
+        "items": [
+            {
+                "link": "https://enigma-marketing.co.uk",
+                "label": "Enigma Markting"
+            },
+            {
+                "link": "https://enigma-marketing.co.uk/work/verne-global/brand-evolution",
+                "label": "Verne Global website"
+            },
+            {
+                "link": "https://enigma-marketing.co.uk/work/xerox/winners-club-channel-incentive",
+                "label": "Xerox website"
+            },
+            {
+                "link": "https://enigma-marketing.co.uk/work/symantec-cws-branding",
+                "label": "Symantec CWS website"
+            },
+            {
+                "link": "https://github.com/getlackey/lackey-cms",
+                "label": "Lackey CMS",
+                "description": "WYSIWYG/WYSIWYM MEAN CMS"
+            },
+            {
+                "label": "Responsibility",
+                "description": "Leading team behind main CMS solution and custom features"
+            },
+            {
+                "label": "Management",
+                "description": "Team of four. Menthoring, architecture, R&D"
+            },
+            {
+                "label": "Exit",
+                "description": "CMS project delivered for continous use"
+            },
+            {
+                "label": "Hands on",
+                "tech": [
+                    "JAVASCRIPT",
+                    "TYPESCRIPT",
+                    "ANGULAR",
+                    "ANSIBLE",
+                    "NODE",
+                    "MONGO"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "timeinc",
+        "company": "Time Inc. UK",
+        "position": "Ad technologist, Lead Developer",
+        "from": "Oct 2014",
+        "to": "Jan 2016",
+        "items": [
+            {
+                "link": "http://www.trustedreviews.com/",
+                "label": "Trusted Reviews"
+            },
+            {
+                "link": "http://www.decanter.com/",
+                "label": "Decanter"
+            },
+            {
+                "label": "Responsibility as a lead",
+                "description": "Leading team behind biggest traffic UK title"
+            },
+            {
+                "label": "Responsibility as a ad-tech",
+                "description": "Building custom solutions to manage and analyse advertisement across all UK titles"
+            },
+            {
+                "label": "Management",
+                "description": "Team of four. Menthoring, architecture, R&D"
+            },
+            {
+                "label": "Hands on",
+                "tech": [
+                    "JAVASCRIPT",
+                    "ANGULAR",
+                    "PHP",
+                    "SYMFONY"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "apprecie",
+        "company": "Apprecie",
+        "position": "Systems Architect (Lead Developer)",
+        "from": "Oct 2014",
+        "to": "Jan 2016",
+        "items": [
+            {
+                "label": "Startup",
+                "description": "Trying to connect wealth managers with luxury brands"
+            },
+            {
+                "label": "Responsibility",
+                "description": "Non-executive CTO/VPE. Hands on"
+            },
+            {
+                "label": "Management",
+                "description": "Team of four. Menthoring, architecture, R&D"
+            },
+            {
+                "label": "Hands on",
+                "tech": [
+                    "JAVASCRIPT",
+                    "PHP",
+                    "MONGO"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "pureholidayhomes",
+        "color": "yellow",
+        "company": "PureHolidayHomes",
+        "position": "Branch Manager / Lead Developer",
+        "from": "May 2011",
+        "to": "Mar 2014",
+        "items": [
+            {
+                "label": "Startup",
+                "description": "Holiday home rental site"
+            },
+            {
+                "label": "Responsibility",
+                "description": "Non-executive CTO/VPE. Whole non-sale operations. Hands on"
+            },
+            {
+                "label": "Management",
+                "description": "Team of nine developers, two testers and four customer support. Hiring, menthoring, architecture, R&D, operations, offshore branch management."
+            },
+            {
+                "label": "Exit",
+                "description": "Company acquired by competitor"
+            },
+            {
+                "label": "Hands on",
+                "tech": [
+                    "JAVASCRIPT",
+                    "PHP",
+                    "MONGO"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "gamefactory",
+        "company": "GameFactory / FabrykaGier",
+        "position": "Senior Developer",
+        "from": "Apr 2010",
+        "to": "May 2011",
+        "items": [
+            {
+                "label": "Diamond Dash",
+                "link": "https://www.wooga.com/games/diamond-dash/"
+            },
+            {
+                "label": "Responsibility",
+                "description": "Consulting. Game Development"
+            },
+            {
+                "label": "Hands on",
+                "tech": [
+                    "JAVASCRIPT",
+                    "PHP",
+                    "MONGO",
+                    "MYSQL",
+                    "ACTIONSCRIPT",
+                    "MYSQL"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "nokia",
+        "company": "Nokia Gate 5",
+        "position": "Senior Developer",
+        "from": "Apr 2009",
+        "to": "Mar 2010",
+        "items": [
+            {
+                "label": "Responsibility",
+                "description": "Member of team creating OVI SDK"
+            },
+            {
+                "label": "Hands on",
+                "tech": [
+                    "JAVASCRIPT"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "WAYN",
+        "company": "WAYN",
+        "position": "Software Developer / Architect",
+        "from": "Nov 2006",
+        "to": "Mar 2009",
+        "items": [
+            {
+                "label": "Responsibility",
+                "description": "Member of team behind multimillion user social network"
+            },
+            {
+                "label": "Hands on",
+                "tech": [
+                    "JAVASCRIPT",
+                    "VB"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "pks",
+        "company": "PKS Szczecin",
+        "position": "Webmaster",
+        "from": "May 2001",
+        "to": "Dec 2006",
+        "items": [
+            {
+                "label": "Hands on",
+                "tech": [
+                    "PHP",
+                    "JAVASCRIPT",
+                    "MYSQL"
+                ]
+            }
+        ]
+    },
+    {
+        "id": "gloport",
+        "company": "Gloport/GigaNet",
+        "position": "PHP Developer",
+        "from": "May 2004",
+        "to": "Nov 2005",
+        "items": [
+            {
+                "label": "Hands on",
+                "tech": [
+                    "PHP",
+                    "JAVASCRIPT",
+                    "MYSQL"
+                ]
+            }
+        ]
+    }
+]

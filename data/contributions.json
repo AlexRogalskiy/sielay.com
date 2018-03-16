@@ -1,0 +1,51 @@
+[{
+    "where": "github",
+    "link": "https://github.com/fabien0102/gatsby-starter",
+    "title": "gatsby-starter",
+    "description": "Gatsby 1.0 starter with typescript and many cools dev tools"
+},{
+    "where": "github",
+    "link": "https://github.com/lnug/website",
+    "title": "LNUG website",
+    "description": "The London Node User Group Website"
+}, {
+    "where": "github",
+    "link": "https://github.com/jameslnewell/xhr-mock/pulls?q=is%3Apr+author%3Asielay+is%3Aclosed",
+    "title": "xhr-mock",
+    "description": "Utility for mocking XMLHttpRequest."
+}, {
+    "where": "github",
+    "link": "https://github.com/deepakaggarwal7/react-social-login/pulls?q=is%3Apr+author%3Asielay+is%3Aclosed",
+    "title": "react-social-login",
+    "description": "React Social Login is an HOC which provides social login through multiple providers."
+}, {
+    "where": "github",
+    "link": "https://github.com/adcentury/react-mobile-picker/pull/17",
+    "title": "react-mobile-picker",
+    "description": "react-mobile-picker"
+}, {
+    "where": "github",
+    "link": "https://github.com/fkhadra/react-contexify/pulls?q=is%3Apr+author%3Asielay+is%3Aclosed",
+    "title": "react-contexify",
+    "description": "Add a context menu to your react app with ease"
+}, {
+    "where": "github",
+    "link": "https://github.com/adcentury/react-mobile-picker/pull/17",
+    "title": "react-mobile-picker",
+    "description": "react-mobile-picker"
+}, {
+    "where": "github",
+    "link": "https://github.com/cody-greene/scssify/pull/29",
+    "title": "scssify",
+    "description": "Browserify transfomer to compile Sass styles and optionally inject them into the browser. Plus watchify support!"
+}, {
+    "where": "github",
+    "link": "https://github.com/conradoqg/naivecoin/issues/18",
+    "title": "naivecoin",
+    "description": "A cryptocurrency implementation in less than 1500 lines of code"
+}, {
+    "where": "github",
+    "link": "https://github.com/adcentury/react-mobile-picker/pull/17",
+    "title": "react-mobile-picker",
+    "description": "react-mobile-picker"
+}]
