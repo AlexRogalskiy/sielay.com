@@ -1,7 +1,7 @@
 ---
 title: Hello again
 createdDate: '2018-01-21'
-updatedDate: '2018-03-19'
+updatedDate: '2018-03-29'
 author: sielay
 tags:
   - starter
@@ -22,7 +22,8 @@ I do it for myself. To address few challenges I need to confront.
 -   learn to filter what is shareable and what shouldn’t
 -   fight my social media addiction by channelling my feedback to one, organised medium
 -   enforce routine and rhythm in life, work and self-improvement.
--   To do that I’m going to keep writing, at least once a week following few simple rules:
+
+To do that I’m going to keep writing, at least once a week following few simple rules:
 
 -   I’ll write in English, as despite it not being my native tongue or language used at home, it’s most important in my daily and professional communication,
 -   I’ll write about findings, results, tests, experiences, instead of free opinions without argumentation,

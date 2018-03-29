@@ -2,7 +2,7 @@ import * as React from "react";
 import { connect } from "react-redux";
 import { Dispatch } from "redux";
 import { toggleSidebar } from "../../store";
-import { Container, Label, Menu, Icon } from "semantic-ui-react";
+import { Container, Label, Menu, Icon, Message } from "semantic-ui-react";
 import { MenuProps } from "../Menu";
 
 interface HeaderMenuProps extends MenuProps {
@@ -27,6 +27,10 @@ export const HeaderMenu = ({ items, pathname, Link, inverted, dispatch }: Header
         />;
       })}
     </Menu>
+    <Message color={pathname === "/" ? "black" : "yellow"} size="mini">This page uses cookies to track visits using 
+    Google Analytics with 
+    <code>anonymize</code> and <code>respect do not track</code> enabled. You 
+    can <a href="http://donottrack.us/" target="_blank">opt out</a> from being tracked.</Message>
   </Container>;
 
 export default connect()(HeaderMenu);

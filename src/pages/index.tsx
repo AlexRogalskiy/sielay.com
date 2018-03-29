@@ -45,40 +45,42 @@ export default (props: IndexPageProps) =>
       </Container>
     </Segment>
     <Container>
-      <Segment vertical>
-        <Grid stackable columns={2}>
-          <Grid.Column>
-            <Segment vertical>
-              <Header as="h3">Worthwhile repos</Header>
-              <List divided relaxed>
-                {
-                  props.data.repos.edges.map(({ node }, index) => <List.Item key={index}>
-                    <List.Icon name={node.where} size="large" verticalAlign="middle" />
-                    <List.Content>
-                      <List.Header as="a" href={node.link}>{node.title}</List.Header>
-                      <List.Description as="a" href={node.link}>{node.description}</List.Description>
-                    </List.Content>
-                  </List.Item>,
-                  )
-                }
-              </List>
-            </Segment>
-          </Grid.Column>
-          <Grid.Column>
-            <Segment vertical>
-              <Header as="h3">Posts</Header>
-              <List divided relaxed>
-                {
-                  props.data.posts.edges.map(Post)
-                }
-                <Item>
-                  <Link to="/blog/">More posts</Link>
-                </Item>
-              </List>
-            </Segment>
-          </Grid.Column>
-        </Grid>
-      </Segment>
+      {props.data &&
+        <Segment vertical>
+          <Grid stackable columns={2}>
+            <Grid.Column>
+              <Segment vertical>
+                <Header as="h3">Worthwhile repos</Header>
+                <List divided relaxed>
+                  {
+                    props.data.repos.edges.map(({ node }, index) => <List.Item key={index}>
+                      <List.Icon name={node.where} size="large" verticalAlign="middle" />
+                      <List.Content>
+                        <List.Header as="a" href={node.link}>{node.title}</List.Header>
+                        <List.Description as="a" href={node.link}>{node.description}</List.Description>
+                      </List.Content>
+                    </List.Item>,
+                    )
+                  }
+                </List>
+              </Segment>
+            </Grid.Column>
+            <Grid.Column>
+              <Segment vertical>
+                <Header as="h3">Posts</Header>
+                <List divided relaxed>
+                  {
+                    props.data.posts.edges.map(Post)
+                  }
+                  <Item>
+                    <Link to="/blog/">More posts</Link>
+                  </Item>
+                </List>
+              </Segment>
+            </Grid.Column>
+          </Grid>
+        </Segment>
+      }
     </Container>
   </div>;
 

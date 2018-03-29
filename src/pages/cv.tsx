@@ -116,6 +116,15 @@ export default (props: CVProps) => <Container>
             and organisation, not only to my taste.
                 </p>
     </Segment>
+    <Segment vertical piled>
+        <p style={{textAlign: "center"}}>
+            <a href="mailto:lukaszsielski+cv@gmail.com">Click here to contact</a>. This email address can be used by 
+            companies who
+            directly want to hire me. If you use it as a external recruiter or to send offers of your product or service
+            from May 25th 2018 you are breaching <a href="https://www.eugdpr.org/" target="_blank">GDPR</a> regulation 
+            and can be fined. 
+        </p>
+    </Segment>
     <Header as="h2">References</Header>
     <Grid stackable columns={4}>
         {
