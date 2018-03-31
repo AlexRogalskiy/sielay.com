@@ -26,6 +26,13 @@ exports.modifyWebpackConfig = ({config, stage}) => {
         'ts-loader'
       ]
     });
+    const timestamp = Date.now();
+    config.merge({
+      output: {
+        filename: `[name]-${timestamp}.js`,
+        chunkFilename: `[name]-${timestamp}.js`
+      }
+    });
   }
 };
 
