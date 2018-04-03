@@ -4,7 +4,7 @@ import { Dispatch } from "redux";
 import { GatsbyLinkProps } from "gatsby-link";
 import { StoreState } from "../../store";
 import { MenuProps, MenuItem } from "../Menu";
-import { Menu, Icon, Sidebar } from "semantic-ui-react";
+import { Menu, Icon, Sidebar, SemanticICONS } from "semantic-ui-react";
 
 interface SidebarMenuProps extends MenuProps {
   visible?: boolean;
@@ -22,7 +22,7 @@ export const SidebarMenu = ({ items, pathname, Link, visible }: SidebarMenuProps
         const active = isActive(item);
         return (
           <Menu.Item as={Link} to={item.path} active={active} key={item.path}>
-            <Icon name={item.icon} />
+            <Icon name={item.icon as SemanticICONS} />
             {item.name}
           </Menu.Item>
         );

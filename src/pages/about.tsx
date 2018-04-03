@@ -1,10 +1,11 @@
 import * as React from "react";
-import { Header, Container, Segment, Icon, List, Grid } from "semantic-ui-react";
+import { Header, Container, Segment, Icon, List, Grid, SemanticICONS } from "semantic-ui-react";
 import {
   ProjectsJsonConnection,
   ContributionsJsonConnection,
   ReposJsonConnection,
 } from "../graphql-types";
+import ga from "./ga";
 
 interface AboutProps {
   data: {
@@ -14,7 +15,7 @@ interface AboutProps {
   };
 }
 
-export default (props: AboutProps) =>
+export default ga((props: AboutProps) =>
   <Container>
     <Segment vertical>
       <Header as="h2">
@@ -47,7 +48,7 @@ export default (props: AboutProps) =>
           <List divided relaxed>
             {
               props.data.repos.edges.map(({ node }, index) => <List.Item key={index}>
-                <List.Icon name={node.where} size="large" verticalAlign="middle" />
+                <List.Icon name={node.where as SemanticICONS} size="large" verticalAlign="middle" />
                 <List.Content>
                   <List.Header as="a" href={node.link}>{node.title}</List.Header>
                   <List.Description as="a" href={node.link}>{node.description}</List.Description>
@@ -58,14 +59,14 @@ export default (props: AboutProps) =>
           </List>
         </Segment>
       </Grid.Column>
-      
+
       <Grid.Column>
         <Segment vertical>
           <Header as="h3">Other contributions (incl. rejected but worth keeping)</Header>
           <List divided relaxed>
             {
               props.data.contributions.edges.map(({ node }, index) => <List.Item key={index}>
-                <List.Icon name={node.where} size="large" verticalAlign="middle" />
+                <List.Icon name={node.where as SemanticICONS} size="large" verticalAlign="middle" />
                 <List.Content>
                   <List.Header as="a" href={node.link}>{node.title}</List.Header>
                   <List.Description as="a" href={node.link}>{node.description}</List.Description>
@@ -83,7 +84,7 @@ export default (props: AboutProps) =>
           <List divided relaxed>
             {
               props.data.projects.edges.map(({ node }, index) => <List.Item key={index}>
-                <List.Icon name={node.where} size="large" verticalAlign="middle" />
+                <List.Icon name={node.where as SemanticICONS} size="large" verticalAlign="middle" />
                 <List.Content>
                   <List.Header as="a" href={node.link}>{node.title}</List.Header>
                   <List.Description as="a" href={node.link}>{node.description}</List.Description>
@@ -95,7 +96,7 @@ export default (props: AboutProps) =>
         </Segment>
       </Grid.Column>
     </Grid>
-  </Container>;
+  </Container>);
 
 export const pageQuery = graphql`
 query About 

@@ -5,6 +5,7 @@ import { MarkdownRemarkConnection, ImageSharp, MarkdownRemarkEdge } from "../gra
 import BlogTitle from "../components/BlogTitle";
 import TagsCard from "../components/TagsCard/TagsCard";
 import BlogPagination from "../components/BlogPagination/BlogPagination";
+import ga from "./ga";
 
 interface BlogProps {
   data: {
@@ -65,7 +66,7 @@ export const Post = ({ node }: MarkdownRemarkEdge) => {
     );
   };
 
-export default (props: BlogProps) => {
+export default ga((props: BlogProps) => {
 
   if (!props.data) {
     return <Segment color="red">No data</Segment>;
@@ -105,7 +106,7 @@ export default (props: BlogProps) => {
       </Segment>
     </Container>
   );
-};
+});
 
 export const pageQuery = graphql`
 query PageBlog {

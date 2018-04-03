@@ -1,8 +1,9 @@
 import * as React from "react";
-import { Header, Container, Segment, Icon, List, Grid } from "semantic-ui-react";
+import { Header, Container, Segment, Icon, List, Grid, SemanticICONS } from "semantic-ui-react";
 import {
   ArticlesJsonConnection,
 } from "../graphql-types";
+import ga from "./ga";
 
 interface ArticlesProps {
   data: {
@@ -10,7 +11,7 @@ interface ArticlesProps {
   };
 }
 
-export default (props: ArticlesProps) =>
+export default ga((props: ArticlesProps) =>
   <Container>
     <Segment vertical>
       <Header as="h2">
@@ -27,7 +28,7 @@ export default (props: ArticlesProps) =>
           <List divided relaxed>
             {
               props.data.articles.edges.map(({ node }, index) => <List.Item key={index}>
-                <List.Icon name={node.where} size="large" verticalAlign="middle" />
+                <List.Icon name={node.where as SemanticICONS} size="large" verticalAlign="middle" />
                 <List.Content>
                   <List.Header as="a" href={node.link}>{node.title}</List.Header>
                   <List.Description as="a" href={node.link}>{node.date}</List.Description>
@@ -39,7 +40,7 @@ export default (props: ArticlesProps) =>
         </Segment>
       </Grid.Column>
     </Grid>
-  </Container>;
+  </Container>);
 
 export const pageQuery = graphql`
 query Articles 

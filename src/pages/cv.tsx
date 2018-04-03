@@ -1,6 +1,6 @@
 import * as React from "react";
 import {
-    Header, Container, Segment, Icon, List, Grid, Label, SemanticCOLORS, Card, Image, Divider,
+    Header, Container, Segment, Icon, List, Grid, Label, SemanticCOLORS, Card, Image, Divider, SemanticICONS,
 } from "semantic-ui-react";
 import {
     ReferencesJsonConnection,
@@ -9,6 +9,7 @@ import {
     ExperienceJsonEdge,
     SkillsJsonEdge,
 } from "../graphql-types";
+import ga from "./ga";
 
 interface CVProps {
     data: {
@@ -41,7 +42,7 @@ const experience = (xp: ExperienceJsonEdge[]) => xp.map(({ node }, index) =>
                         <List.Item key={index3}>
                             <List.Content>
                                 <Label as="span" image color={tag.color as SemanticCOLORS}>
-                                    <Icon name={tag.icon} />
+                                    <Icon name={tag.icon as SemanticICONS} />
                                     {tag.label}
                                 </Label>
                             </List.Content>
@@ -61,7 +62,7 @@ const skills = (skillSets: SkillsJsonEdge[]) => skillSets.map(({ node }, index) 
         <List divided relaxed>
             {
                 node.items.map((item, index2) => <List.Item key={index2}>
-                    {item.icon && <List.Icon name={item.icon} size="large" verticalAlign="middle" />}
+                    {item.icon && <List.Icon name={item.icon as SemanticICONS} size="large" verticalAlign="middle" />}
                     <List.Content>
                         <List.Header as="span">{item.label}</List.Header>
                         {item.description
@@ -74,7 +75,7 @@ const skills = (skillSets: SkillsJsonEdge[]) => skillSets.map(({ node }, index) 
         </List>
     </Segment>, <Divider />]);
 
-export default (props: CVProps) => <Container>
+export default ga((props: CVProps) => <Container>
     <Segment vertical>
         <Header as="h2">
             <Icon name="info circle" />
@@ -117,12 +118,12 @@ export default (props: CVProps) => <Container>
                 </p>
     </Segment>
     <Segment vertical piled>
-        <p style={{textAlign: "center"}}>
-            <a href="mailto:lukaszsielski+cv@gmail.com">Click here to contact</a>. This email address can be used by 
+        <p style={{ textAlign: "center" }}>
+            <a href="mailto:lukaszsielski+cv@gmail.com">Click here to contact</a>. This email address can be used by
             companies who
             directly want to hire me. If you use it as a external recruiter or to send offers of your product or service
-            from May 25th 2018 you are breaching <a href="https://www.eugdpr.org/" target="_blank">GDPR</a> regulation 
-            and can be fined. 
+            from May 25th 2018 you are breaching <a href="https://www.eugdpr.org/" target="_blank">GDPR</a> regulation
+            and can be fined.
         </p>
     </Segment>
     <Header as="h2">References</Header>
@@ -153,7 +154,7 @@ export default (props: CVProps) => <Container>
             {skills(props.data.skills.edges)}
         </Grid.Column>
     </Grid>
-</Container>;
+</Container>);
 
 export const pageQuery = graphql`
 query CV 

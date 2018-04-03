@@ -1,7 +1,8 @@
 import * as React from "react";
 import { Header, Icon, Grid } from "semantic-ui-react";
+import ga from "./ga";
 
-export default () =>
+export default ga(() =>
   <Grid centered verticalAlign="middle"
     style={{
       minHeight: "700px",
@@ -14,4 +15,4 @@ export default () =>
         <Header as="h2">But nothing found for you #404</Header>
       </Grid.Row>
     </Grid.Column>
-  </Grid>;
+  </Grid>);

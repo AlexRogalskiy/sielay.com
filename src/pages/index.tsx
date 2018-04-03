@@ -13,10 +13,12 @@ import {
   Icon,
   List,
   Item,
+  SemanticICONS,
 } from "semantic-ui-react";
 import {
   ReposJsonConnection, MarkdownRemarkConnection,
 } from "../graphql-types";
+import ga from "./ga";
 
 interface IndexPageProps {
   data: {
@@ -28,7 +30,7 @@ interface IndexPageProps {
   };
 }
 
-export default (props: IndexPageProps) =>
+export default ga((props: IndexPageProps) =>
   <div>
     {/* Master head */}
     <Segment vertical inverted textAlign="center" className="masthead">
@@ -54,7 +56,10 @@ export default (props: IndexPageProps) =>
                 <List divided relaxed>
                   {
                     props.data.repos.edges.map(({ node }, index) => <List.Item key={index}>
-                      <List.Icon name={node.where} size="large" verticalAlign="middle" />
+                      <List.Icon
+                        name={node.where as SemanticICONS}
+                        size="large"
+                        verticalAlign="middle" />
                       <List.Content>
                         <List.Header as="a" href={node.link}>{node.title}</List.Header>
                         <List.Description as="a" href={node.link}>{node.description}</List.Description>
@@ -82,7 +87,7 @@ export default (props: IndexPageProps) =>
         </Segment>
       }
     </Container>
-  </div>;
+    </div>);
 
 export const pageQuery = graphql`
     query Index
