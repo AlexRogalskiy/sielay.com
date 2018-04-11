@@ -1,7 +1,7 @@
 ---
 title: doc2dot
 createdDate: '2018-01-21'
-updatedDate: '2018-03-28'
+updatedDate: '2018-04-11'
 author: sielay
 image: dot.png
 tags:
@@ -22,7 +22,7 @@ Recently we have undergone quite a serious upgrade of our project. I faced quite
 
 We knew we have to say goodbye to old good Angular 2 (half way migrating it to 4) as it’s quite chunky and made with SPAs in mind. I did not want to drop into the trap of single framework, but really hated the idea of losing unified data model either.
 
-That’s how our [TypedDocker](https://github.com/Pushfor/typeddocker) came to life. Fast baked set of various, light stacks that can easily be composed into full-stack, multi-head javascript project, easy to ship as a set of Docker containers. That solved the problem of being bound to one solution but did not address sharability of the model layer.
+That’s how our [TypedDocker](https://github.com/Pushfor/typeddocker) came to life. Fast baked set of various, light stacks that can easily be composed into full-stack, multi-head javascript project, easy to ship as a set of Docker containers. That solved the problem of being bound to one solution but did not address shareability of the model layer.
 
 TypedDocker also it a good material for another article in the future.
 

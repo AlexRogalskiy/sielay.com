@@ -1,6 +1,6 @@
 import * as React from "react";
 import Link from "gatsby-link";
-import { Header, Grid, Card, List, Container, Feed, Segment, Comment } from "semantic-ui-react";
+import { Header, Grid, Card, List, Container, Feed, Segment, Comment, Feed } from "semantic-ui-react";
 import { MarkdownRemarkConnection, ImageSharp, MarkdownRemarkEdge } from "../graphql-types";
 import BlogTitle from "../components/BlogTitle";
 import TagsCard from "../components/TagsCard/TagsCard";
@@ -21,50 +21,32 @@ interface BlogProps {
 }
 
 export const Post = ({ node }: MarkdownRemarkEdge) => {
-    const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
-    const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
-    const cover = frontmatter.image ? frontmatter.image.children[0] as ImageSharp : null;
+  const { frontmatter, timeToRead, fields: { slug }, excerpt } = node;
+  const avatar = frontmatter.author.avatar.children[0] as ImageSharp;
+  const cover = frontmatter.image ? frontmatter.image.children[0] as ImageSharp : null;
 
-    const extra = (
-      <Comment.Group>
-        <Comment>
-          <Comment.Avatar
-            src={avatar.responsiveResolution.src}
-            srcSet={avatar.responsiveResolution.srcSet}
-          />
-          <Comment.Content>
-            <Comment.Author style={{ fontWeight: 400 }}>
-              {frontmatter.author.id}
-            </Comment.Author>
-            <Comment.Metadata style={{ margin: 0 }}>
-              {frontmatter.updatedDate} - {timeToRead} min read
-          </Comment.Metadata>
-          </Comment.Content>
-        </Comment>
-      </Comment.Group>
-    );
+  return (
+    <Feed.Event key={slug}>
+      <Feed.Label>
+        <img
+          src={avatar.responsiveResolution.src}
+          srcSet={avatar.responsiveResolution.srcSet} />
 
-    const description = (
-      <Card.Description>
-        {excerpt}
-        <br />
-        <Link to={slug}>Read more…</Link>
-      </Card.Description>
-    );
-
-    return (
-      <Card key={slug}
-        fluid
-        image={cover && {
-          src: cover.responsiveResolution.src,
-          srcSet: cover.responsiveResolution.srcSet,
-        }}
-        header={frontmatter.title}
-        extra={extra}
-        description={description}
-      />
-    );
-  };
+      </Feed.Label>
+      <Feed.Content>
+        <Feed.Summary>
+          <Feed.User>{frontmatter.author.id}</Feed.User>
+          <Feed.Date>{frontmatter.updatedDate} - {timeToRead} min read</Feed.Date>
+        </Feed.Summary>
+        <Feed.Extra text>
+          {excerpt}
+          <br />
+          <Link to={slug}>Read more…</Link>
+        </Feed.Extra>
+      </Feed.Content>
+    </Feed.Event>
+  );
+};
 
 export default ga((props: BlogProps) => {
 
@@ -80,9 +62,9 @@ export default ga((props: BlogProps) => {
   // TODO export posts in a proper component
 
   const Posts = (
-    <Container>
+    <Feed>
       {posts.map(Post)}
-    </Container>
+    </Feed>
   );
 
   return (

@@ -2,7 +2,7 @@ import Link from "gatsby-link";
 import * as React from "react";
 import HeaderMenu from "../components/HeaderMenu/HeaderMenu";
 import SidebarMenu from "../components/SidebarMenu/SidebarMenu";
-import { Segment, Icon, Container, Sidebar, Button } from "semantic-ui-react";
+import { Segment, Icon, Container, Sidebar, Button, Message } from "semantic-ui-react";
 import "../css/styles.css";
 import "../css/responsive.css";
 import "../css/semantic.min.css";
@@ -37,15 +37,20 @@ export default (props: DefaultLayoutProps) => {
 
         <Sidebar.Pusher style={{ minHeight: "100vh" }}>
           {/* Header */}
-          {isHome ? null : <HeaderMenu
+          <HeaderMenu
             Link={Link}
             pathname={pathname}
             items={menuItems}
-          />}
+          />
 
           {/* Render children pages */}
           <div style={{ paddingBottom: 60 }}>
             {props.children()}
+            <Container>
+              <Message color={pathname === "/" ? "black" : "yellow"} size="mini">This page uses cookies to track visits
+            using Google Analytics with <code>anonymize</code> and <code>respect do not track</code> enabled. You
+            can <a href="http://donottrack.us/" target="_blank">opt out</a> from being tracked.</Message>
+            </Container>
           </div>
 
           {/* Footer */}
@@ -58,6 +63,7 @@ export default (props: DefaultLayoutProps) => {
                   target="_blank" title="Gatsby 1.0 starter with typescript and many cools dev tools">fabien0102</a>
               </p>
             </Container>
+
           </Segment>
         </Sidebar.Pusher>
       </Sidebar.Pushable>

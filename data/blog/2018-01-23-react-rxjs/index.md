@@ -1,7 +1,7 @@
 ---
 title: React with RxJS
 createdDate: '2018-01-23'
-updatedDate: '2018-03-19'
+updatedDate: '2018-04-11'
 author: sielay
 tags:
   - redux
@@ -53,7 +53,7 @@ class MyComponent extends React.Component {
     /**
      * Registering subscriptions before component
      * being mounted. As Observables are synchronous
-     * by default that will allow prepopulate state
+     * by default that will allow pre-populate state
      * without need of re-rendering
      */
     public componentWillMount() {

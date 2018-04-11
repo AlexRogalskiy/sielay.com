@@ -14,7 +14,7 @@ export const HeaderMenu = ({ items, pathname, Link, inverted, dispatch }: Header
   <Container>
     <Menu size="large" pointing secondary inverted={inverted}>
       <Menu.Item as="a" className="mobile only" icon="sidebar" onClick={() => dispatch && dispatch(toggleSidebar())} />
-      <Menu.Item className="mobile hidden"><Icon name="spy" size="big" /></Menu.Item>
+      <Menu.Item className="mobile hidden">SIELAY - Łukasz Marek Sielski</Menu.Item>
       {items.map((item) => {
         const active = (item.exact) ? pathname === item.path : pathname.startsWith(item.path);
         return <Menu.Item
@@ -26,11 +26,16 @@ export const HeaderMenu = ({ items, pathname, Link, inverted, dispatch }: Header
           active={active}
         />;
       })}
+      <Menu.Item
+        as={"a"}
+        href={"https://calendly.com/lukaszsielski/f2f/04-18-2018"}
+        target="_blank"
+        className="mobile hidden"
+        name={"F2F interview"}
+        key={"f2f"}
+        active={false}
+      />
     </Menu>
-    <Message color={pathname === "/" ? "black" : "yellow"} size="mini">This page uses cookies to track visits using 
-    Google Analytics with 
-    <code>anonymize</code> and <code>respect do not track</code> enabled. You 
-    can <a href="http://donottrack.us/" target="_blank">opt out</a> from being tracked.</Message>
   </Container>;
 
 export default connect()(HeaderMenu);

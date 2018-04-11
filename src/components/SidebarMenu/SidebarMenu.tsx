@@ -27,6 +27,17 @@ export const SidebarMenu = ({ items, pathname, Link, visible }: SidebarMenuProps
           </Menu.Item>
         );
       })}
+      <Menu.Item
+        as={"a"}
+        href={"https://calendly.com/lukaszsielski/f2f/04-18-2018"}
+        target="_blank"
+        className="mobile only"
+        name={"F2F interview"}
+        key={"f2f"}
+        active={false}
+      ><Icon name={"globe" as SemanticICONS} />
+        {"F2F interview"}
+      </Menu.Item>
     </Sidebar>
   );
 };
