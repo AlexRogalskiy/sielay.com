@@ -13,6 +13,13 @@ query TemplateBlogPage($skip: Int) {
     }
   }
 
+  categories: allMarkdownRemark(filter: {frontmatter: {draft: {ne: true}}}) {
+    group(field: frontmatter___category) {
+      fieldValue
+      totalCount
+    }
+  }
+
   # Get posts
   posts: allMarkdownRemark(
     sort: { order: DESC, fields: [frontmatter___updatedDate] },
@@ -39,7 +46,7 @@ query TemplateBlogPage($skip: Int) {
            image {
           	children {
               ... on ImageSharp {
-                responsiveResolution(width: 700, height: 100) {
+                responsiveResolution(width: 400, height: 400) {
                   src
                   srcSet
                 }

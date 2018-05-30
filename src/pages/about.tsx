@@ -31,13 +31,17 @@ export default ga((props: AboutProps) =>
         in Wimbledon, London, United Kingdom.
         </p>
       <p>
-        I’m a father, husband, software developer, team lead, aspiring enreprenour and amatour
+        I’m a father, husband, software developer, team lead, aspiring entrepreneur and amatour
         cyclist.
         </p>
       <p>
         I started with web early. I kept failing and reinventing myself. Now I start over, simpler,
         without too much stress.
         </p>
+        <p>
+          See <a href="/cv/">CV</a> for more details or <a href="/blog/category/projects">projects</a> for specific
+          experience cases.
+          </p>
     </Segment>
     <Grid stackable columns={2}>
 

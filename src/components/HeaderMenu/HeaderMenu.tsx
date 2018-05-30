@@ -14,7 +14,6 @@ export const HeaderMenu = ({ items, pathname, Link, inverted, dispatch }: Header
   <Container>
     <Menu size="large" pointing secondary inverted={inverted}>
       <Menu.Item as="a" className="mobile only" icon="sidebar" onClick={() => dispatch && dispatch(toggleSidebar())} />
-      <Menu.Item className="mobile hidden">SIELAY - Łukasz Marek Sielski</Menu.Item>
       {items.map((item) => {
         const active = (item.exact) ? pathname === item.path : pathname.startsWith(item.path);
         return <Menu.Item
@@ -31,7 +30,7 @@ export const HeaderMenu = ({ items, pathname, Link, inverted, dispatch }: Header
         href={"https://calendly.com/lukaszsielski/f2f/04-18-2018"}
         target="_blank"
         className="mobile hidden"
-        name={"F2F interview"}
+        name={"Book an interview"}
         key={"f2f"}
         active={false}
       />

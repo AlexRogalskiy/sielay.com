@@ -8,8 +8,9 @@ tags:
   - redux
   - redux-observable
   - doc
-  - case study
+  - case-study
 draft: false
+category: blog
 ---
 
 **TLDR** Documenting massive redux models with asynchronous actions can be simplified by using old good Graphviz and few comments in the code.

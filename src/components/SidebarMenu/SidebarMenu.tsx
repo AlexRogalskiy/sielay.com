@@ -32,11 +32,11 @@ export const SidebarMenu = ({ items, pathname, Link, visible }: SidebarMenuProps
         href={"https://calendly.com/lukaszsielski/f2f/04-18-2018"}
         target="_blank"
         className="mobile only"
-        name={"F2F interview"}
+        name={"Book an interview"}
         key={"f2f"}
         active={false}
       ><Icon name={"globe" as SemanticICONS} />
-        {"F2F interview"}
+        {"Book an interview"}
       </Menu.Item>
     </Sidebar>
   );

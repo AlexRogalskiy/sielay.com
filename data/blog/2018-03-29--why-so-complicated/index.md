@@ -10,6 +10,7 @@ tags:
   - project
   - mvp
 draft: false
+category: blog
 ---
 
 Sometimes it's worth to share an opinion. But as I decided to go more [with the facts](https://sielay.com/blog/2018/01/21/hello-again/) I'm going to base it on some recent experiences.

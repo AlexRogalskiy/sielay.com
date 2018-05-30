@@ -80,7 +80,7 @@ export default ga((props: CVProps) => <Container>
         <Header as="h2">
             <Icon name="info circle" />
             <Header.Content>
-                Curriculum Vitae
+                Curriculum Vitae - Łukasz Marek Sielski
                     </Header.Content>
         </Header>
     </Segment>
@@ -108,6 +108,14 @@ export default ga((props: CVProps) => <Container>
             experience. Try to divide concerns to small,
             easy to manage and delegate parts.
                 </p>
+                <p>
+                Managing style:
+</p>
+<ul>
+<li>Solo or up to 2 reports - lean XP programming with fast iterations just on OODA loops</li>
+<li>Team up to 5 - lean kanban lead agile with full process</li>
+<li>Team over 5 - directed opportunism and management by exception</li>
+    </ul>
     </Segment>
     <Segment vertical piled>
         <Header as="h3">Senior/Lead Developer approach</Header>
@@ -118,13 +126,13 @@ export default ga((props: CVProps) => <Container>
                 </p>
     </Segment>
     <Segment vertical piled>
-        <p style={{ textAlign: "center" }}>
-            <a href="mailto:lukaszsielski+cv@gmail.com">Click here to contact</a>. This email address can be used by
-            companies who
-            directly want to hire me. If you use it as a external recruiter or to send offers of your product or service
-            from May 25th 2018 you are breaching <a href="https://www.eugdpr.org/" target="_blank">GDPR</a> regulation
-            and can be fined.
-        </p>
+        <ul>
+            <li><a href="mailto:lukaszsielski+cv@gmail.com" target="_blank"><Icon name="mail"/>Email address</a></li>
+            <li><a href="https://linkedin.com/in/sielay" target="_blank"><Icon name="linkedin"/>LinkedIn profile</a></li>
+            <li><a href="https://github.com/sielay" target="_blank"><Icon name="github"/>Github profile</a></li>
+            <li><a href="https://twitter.com/sielay" target="_blank"><Icon name="twitter"/>Twitter account</a></li>
+            <li><a href="https://angel.co/sielay" target="_blank"><Icon name="angellist"/>AngelList profile</a></li>
+        </ul>
     </Segment>
     <Header as="h2">References</Header>
     <Grid stackable columns={4}>

@@ -8,6 +8,7 @@ tags:
   - tdd
   - project
 draft: false
+category: blog
 ---
 
 **TLDR** If you have no time for TDD, you should at least use types.

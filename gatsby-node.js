@@ -1,6 +1,6 @@
 const path = require('path');
 const slash = require('slash');
-const {kebabCase, uniq, get, compact, times} = require('lodash');
+const { kebabCase, uniq, get, compact, times } = require('lodash');
 
 // Don't forget to update hard code values into:
 // - `templates/blog-page.tsx:23`
@@ -17,12 +17,12 @@ const extractQueryPlugin = path.resolve(
 
 // Temporary workaround to ensure Gatsby builds minified, production build of React.
 // https://github.com/fabien0102/gatsby-starter/issues/39#issuecomment-343647558
-exports.modifyWebpackConfig = ({config, stage}) => {
+exports.modifyWebpackConfig = ({ config, stage }) => {
   if (stage === 'build-javascript') {
     config.loader('typescript', {
       test: /\.tsx?$/,
       loaders: [
-        `babel-loader?${JSON.stringify({presets: ['babel-preset-env'], plugins: [extractQueryPlugin]})}`,
+        `babel-loader?${JSON.stringify({ presets: ['babel-preset-env'], plugins: [extractQueryPlugin] })}`,
         'ts-loader'
       ]
     });
@@ -38,8 +38,8 @@ exports.modifyWebpackConfig = ({config, stage}) => {
 
 // Create slugs for files.
 // Slug will used for blog page path.
-exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
-  const {createNodeField} = boundActionCreators;
+exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+  const { createNodeField } = boundActionCreators;
   let slug;
   switch (node.internal.type) {
     case `MarkdownRemark`:
@@ -51,7 +51,7 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
       break;
   }
   if (slug) {
-    createNodeField({node, name: `slug`, value: slug});
+    createNodeField({ node, name: `slug`, value: slug });
   }
 };
 
@@ -59,14 +59,14 @@ exports.onCreateNode = ({node, boundActionCreators, getNode}) => {
 // This is called after the Gatsby bootstrap is finished
 // so you have access to any information necessary to
 // programatically create pages.
-exports.createPages = ({graphql, boundActionCreators}) => {
-  const {createPage} = boundActionCreators;
+exports.createPages = ({ graphql, boundActionCreators }) => {
+  const { createPage } = boundActionCreators;
 
   return new Promise((resolve, reject) => {
-    const templates = ['blogPost', 'tagsPage', 'blogPage']
+    const templates = ['blogPost', 'tagsPage', 'blogPage', 'categoryPage']
       .reduce((mem, templateName) => {
         return Object.assign({}, mem,
-          {[templateName]: path.resolve(`src/templates/${kebabCase(templateName)}.tsx`)});
+          { [templateName]: path.resolve(`src/templates/${kebabCase(templateName)}.tsx`) });
       }, {});
 
     graphql(
@@ -79,7 +79,8 @@ exports.createPages = ({graphql, boundActionCreators}) => {
                 slug
               }
               frontmatter {
-                tags
+                tags,
+                category
               }
             }
           }
@@ -116,6 +117,21 @@ exports.createPages = ({graphql, boundActionCreators}) => {
             component: slash(templates.tagsPage),
             context: {
               tag
+            }
+          });
+        });
+
+      // Create category pages
+      posts
+        .reduce((mem, post) => 
+          cleanArray(mem.concat(get(post, 'frontmatter.category')))
+          , [])
+        .forEach(category => {
+          createPage({
+            path: `/blog/category/${kebabCase(category)}/`,
+            component: slash(templates.categoryPage),
+            context: {
+              category
             }
           });
         });

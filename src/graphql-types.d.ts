@@ -1963,8 +1963,8 @@ export interface File extends Node {
   childrenReposJson: Array<ReposJson> | null;
   childrenSkillsJson: Array<SkillsJson> | null;
   childrenTechJson: Array<TechJson> | null;
-  childMarkdownRemark: MarkdownRemark | null;
   childImageSharp: ImageSharp | null;
+  childMarkdownRemark: MarkdownRemark | null;
   internal: internal_20 | null;
   sourceInstanceName: string | null;
   absolutePath: string | null;
@@ -2232,90 +2232,11 @@ export interface internal_29 {
   owner: string | null;
 }
 
-export interface MarkdownRemark extends Node {
-  id: string;
-  parent: Node | null;
-  children: Array<Node> | null;
-  internal: internal_30 | null;
-  frontmatter: frontmatter_2 | null;
-  fileAbsolutePath: string | null;
-  fields: fields_2 | null;
-  html: string | null;
-  excerpt: string | null;
-  headings: Array<MarkdownHeading> | null;
-  timeToRead: number | null;
-  tableOfContents: string | null;
-  wordCount: wordCount | null;
-}
-
-export interface ExcerptMarkdownRemarkArgs {
-  pruneLength: number | null;
-}
-
-export interface HeadingsMarkdownRemarkArgs {
-  depth: HeadingLevels | null;
-}
-
-export interface internal_30 {
-  content: string | null;
-  contentDigest: string | null;
-  type: string | null;
-  owner: string | null;
-  fieldOwners: fieldOwners_2 | null;
-}
-
-export interface fieldOwners_2 {
-  slug: string | null;
-}
-
-export interface frontmatter_2 {
-  title: string | null;
-  createdDate: string | null;
-  updatedDate: string | null;
-  author: AuthorJson | null;
-  tags: Array<string> | null;
-  draft: boolean | null;
-  _PARENT: string | null;
-  parent: string | null;
-  image: File | null;
-}
-
-export interface CreatedDatefrontmatter_2Args {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface UpdatedDatefrontmatter_2Args {
-  formatString: string | null;
-  fromNow: boolean | null;
-  difference: string | null;
-  locale: string | null;
-}
-
-export interface fields_2 {
-  slug: string | null;
-}
-
-export type HeadingLevels = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
-
-export interface MarkdownHeading {
-  value: string | null;
-  depth: number | null;
-}
-
-export interface wordCount {
-  paragraphs: number | null;
-  sentences: number | null;
-  words: number | null;
-}
-
 export interface ImageSharp extends Node {
   id: string;
   parent: Node | null;
   children: Array<Node> | null;
-  internal: internal_31 | null;
+  internal: internal_30 | null;
   original: ImageSharpOriginal | null;
   resolutions: ImageSharpResolutions | null;
   sizes: ImageSharpSizes | null;
@@ -2389,7 +2310,7 @@ export interface ResizeImageSharpArgs {
   rotate: number | null;
 }
 
-export interface internal_31 {
+export interface internal_30 {
   contentDigest: string | null;
   type: string | null;
   owner: string | null;
@@ -2477,6 +2398,86 @@ export interface ImageSharpResize {
   height: number | null;
   aspectRatio: number | null;
   originalName: string | null;
+}
+
+export interface MarkdownRemark extends Node {
+  id: string;
+  parent: Node | null;
+  children: Array<Node> | null;
+  internal: internal_31 | null;
+  frontmatter: frontmatter_2 | null;
+  fileAbsolutePath: string | null;
+  fields: fields_2 | null;
+  html: string | null;
+  excerpt: string | null;
+  headings: Array<MarkdownHeading> | null;
+  timeToRead: number | null;
+  tableOfContents: string | null;
+  wordCount: wordCount | null;
+}
+
+export interface ExcerptMarkdownRemarkArgs {
+  pruneLength: number | null;
+}
+
+export interface HeadingsMarkdownRemarkArgs {
+  depth: HeadingLevels | null;
+}
+
+export interface internal_31 {
+  content: string | null;
+  contentDigest: string | null;
+  type: string | null;
+  owner: string | null;
+  fieldOwners: fieldOwners_2 | null;
+}
+
+export interface fieldOwners_2 {
+  slug: string | null;
+}
+
+export interface frontmatter_2 {
+  title: string | null;
+  createdDate: string | null;
+  updatedDate: string | null;
+  author: AuthorJson | null;
+  tags: Array<string> | null;
+  draft: boolean | null;
+  category: string | null;
+  _PARENT: string | null;
+  parent: string | null;
+  image: File | null;
+}
+
+export interface CreatedDatefrontmatter_2Args {
+  formatString: string | null;
+  fromNow: boolean | null;
+  difference: string | null;
+  locale: string | null;
+}
+
+export interface UpdatedDatefrontmatter_2Args {
+  formatString: string | null;
+  fromNow: boolean | null;
+  difference: string | null;
+  locale: string | null;
+}
+
+export interface fields_2 {
+  slug: string | null;
+}
+
+export type HeadingLevels = "h1" | "h2" | "h3" | "h4" | "h5" | "h6";
+
+export interface MarkdownHeading {
+  value: string | null;
+  depth: number | null;
+}
+
+export interface wordCount {
+  paragraphs: number | null;
+  sentences: number | null;
+  words: number | null;
 }
 
 export interface internal_20 {
@@ -2941,7 +2942,7 @@ export interface markdownRemarkConnectionSort {
   order: markdownRemarkConnectionSortOrderValues | null;
 }
 
-export type MarkdownRemarkConnectionSortByFieldsEnum = "id" | "children" | "parent" | "internal___content" | "internal___contentDigest" | "internal___type" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___draft" | "frontmatter____PARENT" | "frontmatter___parent" | "frontmatter___image" | "fileAbsolutePath" | "fields___slug" | "html" | "excerpt" | "headings" | "timeToRead" | "tableOfContents" | "wordCount___paragraphs" | "wordCount___sentences" | "wordCount___words";
+export type MarkdownRemarkConnectionSortByFieldsEnum = "id" | "children" | "parent" | "internal___content" | "internal___contentDigest" | "internal___type" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___draft" | "frontmatter___category" | "frontmatter____PARENT" | "frontmatter___parent" | "frontmatter___image" | "fileAbsolutePath" | "fields___slug" | "html" | "excerpt" | "headings" | "timeToRead" | "tableOfContents" | "wordCount___paragraphs" | "wordCount___sentences" | "wordCount___words";
 
 export type markdownRemarkConnectionSortOrderValues = "ASC" | "DESC";
 
@@ -3020,6 +3021,7 @@ export interface markdownRemarkConnectionFrontmatterInputObject_2 {
   author: markdownRemarkConnectionFrontmatterAuthorQueryString_2 | null;
   tags: markdownRemarkConnectionFrontmatterTagsQueryList_2 | null;
   draft: markdownRemarkConnectionFrontmatterDraftQueryBoolean_2 | null;
+  category: markdownRemarkConnectionFrontmatterCategoryQueryString_2 | null;
   _PARENT: markdownRemarkConnectionFrontmatterParentQueryString_3 | null;
   parent: markdownRemarkConnectionFrontmatterParentQueryString_4 | null;
   image: markdownRemarkConnectionFrontmatterImageQueryString_2 | null;
@@ -3064,6 +3066,13 @@ export interface markdownRemarkConnectionFrontmatterTagsQueryList_2 {
 export interface markdownRemarkConnectionFrontmatterDraftQueryBoolean_2 {
   eq: boolean | null;
   ne: boolean | null;
+}
+
+export interface markdownRemarkConnectionFrontmatterCategoryQueryString_2 {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
 }
 
 export interface markdownRemarkConnectionFrontmatterParentQueryString_3 {
@@ -3199,9 +3208,9 @@ export interface MarkdownRemarkEdge {
   previous: MarkdownRemark | null;
 }
 
-export type markdownRemarkDistinctEnum = "id" | "parent" | "internal___content" | "internal___contentDigest" | "internal___type" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___draft" | "frontmatter____PARENT" | "frontmatter___parent" | "frontmatter___image" | "fileAbsolutePath" | "fields___slug";
+export type markdownRemarkDistinctEnum = "id" | "parent" | "internal___content" | "internal___contentDigest" | "internal___type" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___draft" | "frontmatter___category" | "frontmatter____PARENT" | "frontmatter___parent" | "frontmatter___image" | "fileAbsolutePath" | "fields___slug";
 
-export type markdownRemarkGroupEnum = "id" | "parent" | "internal___content" | "internal___contentDigest" | "internal___type" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___draft" | "frontmatter____PARENT" | "frontmatter___parent" | "frontmatter___image" | "fileAbsolutePath" | "fields___slug";
+export type markdownRemarkGroupEnum = "id" | "parent" | "internal___content" | "internal___contentDigest" | "internal___type" | "internal___owner" | "internal___fieldOwners___slug" | "frontmatter___title" | "frontmatter___createdDate" | "frontmatter___updatedDate" | "frontmatter___author" | "frontmatter___tags" | "frontmatter___draft" | "frontmatter___category" | "frontmatter____PARENT" | "frontmatter___parent" | "frontmatter___image" | "fileAbsolutePath" | "fields___slug";
 
 export interface markdownRemarkGroupConnectionConnection {
   pageInfo: PageInfo;
@@ -6057,6 +6066,7 @@ export interface markdownRemarkFrontmatterInputObject_2 {
   author: markdownRemarkFrontmatterAuthorQueryString_2 | null;
   tags: markdownRemarkFrontmatterTagsQueryList_2 | null;
   draft: markdownRemarkFrontmatterDraftQueryBoolean_2 | null;
+  category: markdownRemarkFrontmatterCategoryQueryString_2 | null;
   _PARENT: markdownRemarkFrontmatterParentQueryString_3 | null;
   parent: markdownRemarkFrontmatterParentQueryString_4 | null;
   image: markdownRemarkFrontmatterImageQueryString_2 | null;
@@ -6101,6 +6111,13 @@ export interface markdownRemarkFrontmatterTagsQueryList_2 {
 export interface markdownRemarkFrontmatterDraftQueryBoolean_2 {
   eq: boolean | null;
   ne: boolean | null;
+}
+
+export interface markdownRemarkFrontmatterCategoryQueryString_2 {
+  eq: string | null;
+  ne: string | null;
+  regex: string | null;
+  glob: string | null;
 }
 
 export interface markdownRemarkFrontmatterParentQueryString_3 {

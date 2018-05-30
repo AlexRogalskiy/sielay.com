@@ -11,11 +11,12 @@ import { Provider } from "react-redux";
 import { store } from "../store";
 
 export const menuItems = [
-  { name: "Home", path: "/", exact: true, icon: "home", inverted: true },
+  { name: "SIELAY", path: "/", exact: true, icon: "home", inverted: true },
   { name: "About", path: "/about/", exact: true, icon: "info circle" },
-  { name: "CV", path: "/cv/", exact: true, icon: "info circle" },
-  { name: "Blog", path: "/blog/", exact: false, icon: "newspaper" },
-  { name: "Publications", path: "/publications/", exact: false, icon: "newspaper" },
+  { name: "CV", path: "/cv/", exact: true, icon: "id card" },
+  { name: "Projects", path: "/blog/category/projects", exact: true, icon: "bar chart" },
+  { name: "Blog", path: "/blog/category/blog", exact: false, icon: "newspaper" },
+  { name: "Publications", path: "/publications/", exact: false, icon: "book" },
 ];
 
 interface DefaultLayoutProps extends React.HTMLProps<HTMLDivElement> {

@@ -4,8 +4,9 @@ import Blog from "../pages/blog";
 export default Blog;
 
 export const pageQuery = graphql`
-query TemplateTagPage($tag: String) {
-  # Get tags
+query CategoryTagPage($category: String) {
+  # Get categories
+
   tags: allMarkdownRemark(filter: {frontmatter: {draft: {ne: true}}}) {
     group(field: frontmatter___tags) {
       fieldValue
@@ -26,7 +27,7 @@ query TemplateTagPage($tag: String) {
     filter: {
       frontmatter: {
         draft: { ne: true }
-        tags: { in: [$tag] }
+        category: { eq: $category }
       },
       fileAbsolutePath: { regex: "/blog/" }
     }
@@ -48,7 +49,7 @@ query TemplateTagPage($tag: String) {
                 responsiveResolution(width: 400, height: 400) {
                   src
                   srcSet
-               }
+                }
               }
             }
            }

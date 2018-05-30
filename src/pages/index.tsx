@@ -136,7 +136,9 @@ export const pageQuery = graphql`
 posts: allMarkdownRemark(
           sort: {order: DESC, fields: [frontmatter___createdDate] },
           filter: {
-        frontmatter: {draft: {ne: true } },
+            frontmatter: {
+              draft: {ne: true }
+              category: {eq: "blog"} },
             fileAbsolutePath: {regex: "/blog/" }
     },
     limit: 15

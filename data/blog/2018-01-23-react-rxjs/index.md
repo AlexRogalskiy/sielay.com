@@ -6,8 +6,9 @@ author: sielay
 tags:
   - redux
   - redux-observable
-  - case study
+  - case-study
 draft: false
+category: blog
 ---
 
 When we started the migration to React we faced an interesting problem. Most of the resources explained data structures in React on very simple examples. Our data model was far more complex. Also, we had to combine React with other stacks, like GridLayout (based on jQuery) and leave the ability to shift to any other codebase in the future.

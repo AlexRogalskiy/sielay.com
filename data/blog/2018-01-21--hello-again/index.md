@@ -7,6 +7,7 @@ tags:
   - starter
   - gatsby
 draft: false
+category: blog
 ---
 
 In the beginning, over here was a blog. Teenage, developer-plus-anyone wannabe blog. It turned to portfolio-showoff. Then I-want-to-look-serious business site. Then nothing. For one-month random porn site. And as I turned full self-discovery circle it’s blog again.

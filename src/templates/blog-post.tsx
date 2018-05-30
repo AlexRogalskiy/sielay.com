@@ -61,7 +61,6 @@ export default (props: BlogPostProps) => {
   const recentCover = frontmatter.image ? frontmatter.image.children[0] as ImageSharp : null;
   return (
     <Container>
-      <BlogTitle />
       <Segment vertical style={{ border: "none" }} className="blog-post">
         <Item.Group>
           <Item>
@@ -71,7 +70,7 @@ export default (props: BlogPostProps) => {
             />
             <Item.Content>
               <Item.Description>{frontmatter.author.id}</Item.Description>
-              <Item.Meta>{frontmatter.author.bio}</Item.Meta>
+              <Item.Meta>Category: {frontmatter.category}</Item.Meta>
               <Item.Extra>{frontmatter.updatedDate} - {timeToRead} min read</Item.Extra>
             </Item.Content>
           </Item>
@@ -127,6 +126,7 @@ export const pageQuery = graphql`
     }
     frontmatter {
       tags
+      category
       author {
         id
         bio
