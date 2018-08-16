@@ -4,8 +4,9 @@ createdDate: '2018-08-10'
 updatedDate: '2018-08-10'
 author: sielay
 tags:
-  - starter
-  - gatsby
+  - javascript
+  - react
+  - reactjs
 draft: false
 ---
 
