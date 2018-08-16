@@ -4,7 +4,7 @@ import { kebabCase } from "lodash";
 
 export default (props) => {
   return (
-    <Card>
+    <Card fluid>
       <Card.Content>
         <Card.Header>
           Tags

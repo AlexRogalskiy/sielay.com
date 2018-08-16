@@ -5,6 +5,7 @@ import Link from 'gatsby-link'
 import '../css/styles.css'
 import '../css/responsive.css'
 import '../css/semantic.min.css'
+require("prismjs/themes/prism-twilight.css");
 import { Provider } from 'react-redux'
 import { store } from '../store'
 import { Sidebar, Segment, Container, Icon } from 'semantic-ui-react'
@@ -13,26 +14,11 @@ import HeaderMenu from '../components/HeaderMenu'
 
 export const menuItems = [
   { name: 'Home', path: '/', exact: true, icon: 'home', inverted: true },
-  {
-    name: '2017',
-    path: '/blog/2018-05-17--2017/',
-    exact: true,
-    icon: 'info circle',
-  },
-  { name: '2018', path: '/blog/tags/2018', exact: true, icon: 'info circle' },
+  { name: 'About', path: '/about/', exact: true, icon: 'info', inverted: true },
   { name: 'Blog', path: '/blog/', exact: false, icon: 'newspaper' },
-  {
-    name: 'Donate',
-    path: 'https://www.justgiving.com/crowdfunding/cyclingdevs2018',
-    exact: false,
-    icon: 'money',
-  },
-  {
-    name: 'Club',
-    path: 'https://www.strava.com/clubs/cyclingdevs',
-    exact: false,
-    icon: 'group',
-  },
+  { name: 'Instagram', path: 'https://instagram.com/sielay', iconOnly: true, icon: 'instagram' },
+  { name: 'LinkedIn', path: 'https://www.linkedin.com/in/sielay/', iconOnly: true, icon: 'linkedin' },
+  { name: 'Twitter', path: 'https://twitter.com/sielay', iconOnly: true, icon: 'twitter' }
 ]
 
 const Layout = ({ children, data, location }) => {
@@ -56,9 +42,7 @@ const Layout = ({ children, data, location }) => {
         />
         <Sidebar.Pusher style={{ minHeight: '100vh' }}>
           {/* Header */}
-          {isHome ? null : (
-            <HeaderMenu Link={Link} pathname={pathname} items={menuItems} dispath={store.dispatch.bind(store)} />
-          )}
+          <HeaderMenu Link={Link} pathname={pathname} items={menuItems} dispath={store.dispatch.bind(store)} />
           {/* Render children pages */}
           <div style={{ paddingBottom: 60 }}>{children()}</div>
 

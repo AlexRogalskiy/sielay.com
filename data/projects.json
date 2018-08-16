@@ -1,0 +1,20 @@
+[
+  {
+    "where": "github",
+    "link": "https://github.com/sielay/sielay.com",
+    "title": "sielay.com",
+    "description": "This website"
+  },
+  {
+    "where": "bicycle",
+    "link": "https://cyclingdev.com",
+    "title": "Cycling Devs",
+    "description": "Cycling for Charity"
+  },
+  {
+    "where": "instagram",
+    "link": "https://instagram.com/sielayshrinks",
+    "title": "Sielay Shirinks",
+    "description": "Cycling, Low Carb High Fat food, weightloss"
+  }
+]

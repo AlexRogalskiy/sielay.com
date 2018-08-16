@@ -32,7 +32,7 @@ class HeaderMenu extends React.Component {
                         onClick={this.onSidebar}
                     />
                     <Menu.Item className="mobile hidden">
-                        <Icon name="bicycle" size="big" />
+                        SIELAY
                     </Menu.Item>
                     {items.map((item) => {
                         const active = item.exact
@@ -46,7 +46,9 @@ class HeaderMenu extends React.Component {
                                     href={item.path}
                                     target="_blank"
                                 >
-                                    {item.name}
+                                    {item.iconOnly
+                                    ? <Icon name={item.icon} />
+                                    : item.name}
                                 </a>
                             );
                         }

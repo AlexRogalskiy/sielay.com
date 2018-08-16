@@ -60,8 +60,7 @@ export default (props) => {
 
   return (
     <Container>
-      <BlogTitle />
-      <Segment vertical style={{ border: "none" }}>
+      <Segment vertical size={"huge"} style={{ border: "none" }}>
         <Item.Group>
           <Item>
             <Item.Image size="tiny" shape="circular"
@@ -81,8 +80,7 @@ export default (props) => {
         {...cover}
         fluid
       />
-      <Segment vertical size={"huge"}
-        style={{ border: "none" }}
+      <Segment vertical size={"huge"} style={{ border: "none" }}
       >
         {
           renderAst(htmlAst)

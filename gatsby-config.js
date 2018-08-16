@@ -1,11 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: '#cyclingDevs',
+    title: 'SIELAY',
     googleVerification: `_ZC-ovxrZsNam95r9N9266c-hJvulE2GnROdwHkSuBU`,
-    disqus: `cyclingdevs`
+    disqus: `sielay-com`
   },
   mapping: {
-    'MarkdownRemark.frontmatter.author': `AuthorJson`
+    'MarkdownRemark.frontmatter.author': `AuthorJson`,
+    'ExperienceJson.items.tech': `TechJson`
   },
   plugins: [
     // Expose `/data` to graphQL layer
@@ -19,7 +20,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-11342805-7',
+        trackingId: 'UA-11342805-1',
         // Puts tracking script in the head instead of the body
         head: false,
         // Setting this parameter is optional
@@ -57,8 +58,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `CyclingDevs`,
-        short_name: `CyclingDevs`,
+        name: `SIELAY`,
+        short_name: `siealy`,
         start_url: `/`,
         background_color: `#f7f7f7`,
         theme_color: `#191919`,

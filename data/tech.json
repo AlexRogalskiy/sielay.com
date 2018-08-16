@@ -1,0 +1,92 @@
+[
+    {
+        "id": "JAVASCRIPT",
+        "icon": "html5",
+        "color": "yellow",
+        "label": "JavaScript"
+    },
+    {
+        "id": "TYPESCRIPT",
+        "icon": "html5",
+        "color": "blue",
+        "label": "TypeScript"
+    },
+    {
+        "id": "ELECTRON",
+        "icon": "desktop",
+        "color": "olive",
+        "label": "Electron"
+    },
+    {
+        "id": "REACT",
+        "icon": "facebook",
+        "color": "teal",
+        "label": "React"
+    },
+    {
+        "id": "ANGULAR",
+        "icon": "google",
+        "color": "red",
+        "label": "Angular"
+    },
+    {
+        "id": "DOCKER",
+        "icon": "server",
+        "color": "teal",
+        "label": "Docker"
+    },
+    {
+        "id": "NODE",
+        "icon": "server",
+        "color": "green",
+        "label": "NodeJS"
+    },
+    {
+        "id": "ANSIBLE",
+        "icon": "server",
+        "color": "black",
+        "label": "Ansible"
+    },
+    {
+        "id": "MONGO",
+        "icon": "database",
+        "color": "green",
+        "label": "Mongo"
+    },
+    {
+        "id": "AWS",
+        "icon": "amazon",
+        "color": "yellow",
+        "label": "AWS"
+    },
+    {
+        "id": "PHP",
+        "icon": "server",
+        "color": "blue",
+        "label": "PHP"
+    },
+    {
+        "id": "SYMFONY",
+        "icon": "server",
+        "color": "green",
+        "label": "Symfony"
+    },
+    {
+        "id": "ACTIONSCRIPT",
+        "icon": "file pdf outline",
+        "color": "red",
+        "label": "ActionScript/Flash"
+    },
+    {
+        "id": "MYSQL",
+        "icon": "database",
+        "color": "teal",
+        "label": "MySQL"
+    },
+    {
+        "id": "VB",
+        "icon": "microsoft edge",
+        "color": "teal",
+        "label": "VisualBasic"
+    }
+]
