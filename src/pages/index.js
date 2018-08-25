@@ -13,6 +13,7 @@ import {
   Icon,
 } from 'semantic-ui-react'
 import { get } from 'lodash'
+import Posts from '../components/Posts'
 
 const TWTR = 'https://twitter.com/sielay?ref_src=twsrc%5Etfw'
 
@@ -66,10 +67,6 @@ export default class IndexPage extends React.Component {
 
   twitter() {
     return [
-      <Header icon key="twitter-h">
-        <Icon name="twitter" />
-        My Twitter feed
-      </Header>,
       <a
         key="twitter"
         className="twitter-timeline"
@@ -86,10 +83,6 @@ export default class IndexPage extends React.Component {
     const instafeedTarget = 'instafeed'
     const TOKEN = '724495177.31d7865.c0a1efd39b6641aca0aa482982d93d04'
     return [
-      <Header icon key="insta-h">
-        <Icon name="instagram" />
-        My Instagram feed
-      </Header>,
       <div id={instafeedTarget} key="insta">
         <Instafeed
           limit="5"
@@ -124,112 +117,35 @@ export default class IndexPage extends React.Component {
     ]
   }
 
-  posts(posts) {
-    return (
-      <Container>
-        {posts.map(({ node }) => {
-          const {
-            frontmatter,
-            timeToRead,
-            fields: { slug },
-            excerpt,
-          } = node
-          const avatar = frontmatter.author.avatar.children[0]
-          const cover = get(
-            frontmatter,
-            'image.children.0.responsiveResolution',
-            {}
-          )
-
-          const extra = (
-            <Comment.Group>
-              <Comment>
-                <Comment.Avatar
-                  src={avatar.responsiveResolution.src}
-                  srcSet={avatar.responsiveResolution.srcSet}
-                />
-                <Comment.Content>
-                  <Comment.Author style={{ fontWeight: 400 }}>
-                    {frontmatter.author.id}
-                  </Comment.Author>
-                  <Comment.Metadata style={{ margin: 0 }}>
-                    {frontmatter.updatedDate} - {timeToRead} min read
-                  </Comment.Metadata>
-                </Comment.Content>
-              </Comment>
-            </Comment.Group>
-          )
-
-          const description = (
-            <Card.Description>
-              {excerpt}
-              <br />
-              <Link to={slug}>Read more…</Link>
-            </Card.Description>
-          )
-
-          return (
-            <Card
-              key={slug}
-              fluid
-              image={cover}
-              header={frontmatter.title}
-              extra={extra}
-              description={description}
-            />
-          )
-        })}
-      </Container>
-    )
-  }
-
   render() {
     const props = this.props
     const posts =
       (props.data && props.data.posts && props.data.posts.edges) || []
     return (
-      <div>
-        <Segment
-          vertical
-          size={'huge'}
-          className="stripe alternate feature"
-          key="posts"
-        >
-          {this.posts(posts)}
-        </Segment>
-
+      <Segment vertical  className="stripe alternate feature">
         <Grid
           stackable
           verticalAlign="top"
           className="container"
-          size={'huge'}
           key="extra"
         >
           <Grid.Row>
-            <Grid.Column
-              width="4"
-              verticalAlign={'top'}
-              stretched={true}
-              textAlign="center"
-            >
-              <Segment vertical className="stripe alternate feature">
-                {this.insta()}
-              </Segment>
+            <Grid.Column width="8" verticalAlign={'top'} stretched={true}>
+              <Posts posts={posts.map(post => post.node)} />
+              {this.insta()}
+
             </Grid.Column>
-            <Grid.Column width="8" verticalAlign={'top'} stretched={true} />
             <Grid.Column
-              width="4"
+              width="8"
               verticalAlign={'top'}
               stretched={true}
               textAlign="center"
             >
-              <Segment vertical className="stripe alternate feature">
                 {this.twitter(props)}
-              </Segment>
             </Grid.Column>
           </Grid.Row>
         </Grid>
-      </div>
+      </Segment>
     )
   }
 }

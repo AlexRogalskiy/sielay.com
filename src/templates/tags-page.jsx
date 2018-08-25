@@ -13,6 +13,14 @@ query TemplateTagPage($tag: String) {
     }
   }
 
+  # Get calendar
+  calendar: allMarkdownRemark {
+      group(field: frontmatter___updatedDate) {
+        fieldValue
+        totalCount
+      }
+  }
+
   # Get posts
   posts: allMarkdownRemark(
     sort: { order: DESC, fields: [frontmatter___updatedDate] },
@@ -34,6 +42,7 @@ query TemplateTagPage($tag: String) {
         }
         frontmatter {
           title
+          tags
           updatedDate(formatString: "DD MMMM, YYYY")
           image {
           	children {

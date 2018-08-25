@@ -2,11 +2,11 @@ module.exports = {
   siteMetadata: {
     title: 'SIELAY',
     googleVerification: `_ZC-ovxrZsNam95r9N9266c-hJvulE2GnROdwHkSuBU`,
-    disqus: `sielay-com`
+    disqus: `sielay-com`,
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': `AuthorJson`,
-    'ExperienceJson.items.tech': `TechJson`
+    'ExperienceJson.items.tech': `TechJson`,
   },
   plugins: [
     // Expose `/data` to graphQL layer
@@ -14,8 +14,8 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `data`,
-        path: `${__dirname}/data`
-      }
+        path: `${__dirname}/data`,
+      },
     },
     {
       resolve: `gatsby-plugin-google-analytics`,
@@ -26,8 +26,8 @@ module.exports = {
         // Setting this parameter is optional
         anonymize: true,
         // Setting this parameter is also optional
-        respectDNT: true
-      }
+        respectDNT: true,
+      },
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -37,17 +37,16 @@ module.exports = {
             resolve: `gatsby-remark-images`,
             options: {
               maxWidth: 690,
-              backgroundColor: `#f7f0eb`
-            }
+              backgroundColor: `#f7f0eb`,
+            },
           },
           `gatsby-remark-prismjs`,
           `gatsby-remark-copy-linked-files`,
-          `gatsby-remark-autolink-headers`
-        ]
-      }
+          `gatsby-remark-autolink-headers`,
+        ],
+      },
     },
-    // Parse all images files
-    `gatsby-transformer-sharp`,
+    `gatsby-transformer-sharp`, // Parse all images files
     `gatsby-plugin-sharp`,
     // Parse JSON files
     `gatsby-transformer-json`,
@@ -63,8 +62,8 @@ module.exports = {
         start_url: `/`,
         background_color: `#f7f7f7`,
         theme_color: `#191919`,
-        display: `minimal-ui`
-      }
+        display: `minimal-ui`,
+      },
     },
     /* eslint-enable camelcase */
 
@@ -73,6 +72,6 @@ module.exports = {
     // resistant to bad networks. Works with almost any
     // site!
     `gatsby-plugin-offline`,
-    `gatsby-plugin-react-helmet`
-  ]
+    `gatsby-plugin-react-helmet`,
+  ],
 }

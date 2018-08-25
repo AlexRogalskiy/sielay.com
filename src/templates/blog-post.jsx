@@ -1,137 +1,127 @@
-import * as React from "react";
-import Link from "gatsby-link";
-import { get } from "lodash";
-import { Header, Container, Segment, Label, Grid, Card, Image, Item, Comment } from "semantic-ui-react";
-import BlogTitle from "../components/BlogTitle";
-import { DiscussionEmbed } from "disqus-react";
-import rehypeReact from "rehype-react";
+import * as React from 'react'
+import Link from 'gatsby-link'
+import { get } from 'lodash'
+import {
+  Header,
+  Container,
+  Segment,
+  Label,
+  Image,
+  Icon,
+  Message,
+} from 'semantic-ui-react'
+import { DiscussionEmbed } from 'disqus-react'
+import rehypeReact from 'rehype-react'
 import InstagramEmbed from 'react-instagram-embed'
+import Posts from '../components/Posts'
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { "instagram-embed": InstagramEmbed },
-}).Compiler;
+  components: { 'instagram-embed': InstagramEmbed },
+}).Compiler
 
-export default (props) => {
-  const { frontmatter, htmlAst, timeToRead } = props.data.post;
-  const avatar = frontmatter.author.avatar.children[0];
+export default props => {
+  const { frontmatter, htmlAst, timeToRead } = props.data.post
+  const avatar = frontmatter.author.avatar.children[0]
 
-  const tags = props.data.post.frontmatter.tags
-    .map((tag) => <Label key={tag}><Link to={`/blog/tags/${tag}/`}>{tag}</Link></Label>);
+  const tags = props.data.post.frontmatter.tags.map(tag => (
+    <Label key={tag}>
+      <Link to={`/blog/tags/${tag}/`}>{tag}</Link>
+    </Label>
+  ))
 
-  const recents = (props.data.recents ? props.data.recents.edges : [])
-    .map(({ node }) => {
-      const recentAvatar = node.frontmatter.author.avatar.children[0];
-      const recentCover = get(node, "frontmatter.image.children.0.responsiveResolution", {});
-      const extra = (
-        <Comment.Group>
-          <Comment>
-            <Comment.Avatar
-              src={recentAvatar.responsiveResolution.src}
-              srcSet={recentAvatar.responsiveResolution.srcSet}
-            />
-            <Comment.Content>
-              <Comment.Author style={{ fontWeight: 400 }}>
-                {node.frontmatter.author.id}
-              </Comment.Author>
-              <Comment.Metadata style={{ margin: 0 }}>
-                {node.timeToRead} min read
-              </Comment.Metadata>
-            </Comment.Content>
-          </Comment>
-        </Comment.Group>
-      );
+  const recents = (props.data.recents ? props.data.recents.edges : []).map(
+    ({ node }) => node
+  )
 
-      return (
-        <div key={node.fields.slug} style={{ paddingBottom: "1em" }}>
-          <Card as={Link}
-            to={node.fields.slug}
-            image={recentCover}
-            header={node.frontmatter.title}
-            extra={extra}
-          />
-        </div>
-      );
-    });
-
-  const cover = get(frontmatter, "image.children.0.responsiveResolution", {});
+  const cover = get(frontmatter, 'image.children.0.responsiveResolution', {})
 
   // console.log();
 
+  const updated = Date.parse(props.data.post.frontmatter.updatedDate)
+  const born = Date.parse('1984-04-10')
+  const age = Math.floor((updated - born) / 1000 / 60 / 60 / 24 / 365.25)
+
   return (
     <Container>
-      <Segment vertical size={"huge"} style={{ border: "none" }}>
-        <Item.Group>
-          <Item>
-            <Item.Image size="tiny" shape="circular"
-              src={avatar.responsiveResolution.src}
-              srcSet={avatar.responsiveResolution.srcSet}
-            />
-            <Item.Content>
-              <Item.Description>{frontmatter.author.id}</Item.Description>
-              <Item.Meta>{frontmatter.author.bio}</Item.Meta>
-              <Item.Extra>{frontmatter.updatedDate} - {timeToRead} min read</Item.Extra>
-            </Item.Content>
-          </Item>
-        </Item.Group>
-        <Header as="h1">{frontmatter.title}</Header>
+      <Segment vertical size={'huge'} style={{ border: 'none' }}>
+        <Header as="h1">
+          <Icon name="chat" />
+          <Header.Content>
+            {frontmatter.title}
+            <Header.Subheader>
+              {frontmatter.updatedDate} - {timeToRead} min read
+            </Header.Subheader>
+          </Header.Content>
+        </Header>
       </Segment>
-      <Image
-        {...cover}
-        fluid
-      />
-      <Segment vertical size={"huge"} style={{ border: "none" }}
-      >
-        {
-          renderAst(htmlAst)
-        }
+      <Image {...cover} fluid />
+      <Segment vertical size={'huge'} style={{ border: 'none' }}>
+        {props.data.post.frontmatter.tags.indexOf('recovered') !== -1 ? (
+          <Message size={'mini'} warning>
+            <Message.Header>DISCLAIMER</Message.Header>
+              This article has been recovered using archive.org as my plan to
+              find back how I evolved over the years. My opinons might have
+              changed since. I was {age} years old when I wrote it.
+          </Message>
+        ) : null}
+        {renderAst(htmlAst)}
         {/* dangerouslySetInnerHTML={{
           __html: html,
         }} */}
       </Segment>
+      <Segment vertical>{tags}</Segment>
+      {props.data.site &&
+        props.data.site.siteMetadata &&
+        props.data.site.siteMetadata.disqus && (
+          <Segment vertical>
+            <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus} />
+          </Segment>
+        )}
       <Segment vertical>
-        {tags}
-      </Segment>
-      {props.data.site
-        && props.data.site.siteMetadata
-        && props.data.site.siteMetadata.disqus
-        && <Segment vertical>
-          <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus} />
-        </Segment>
-      }
-      <Segment vertical>
-        <Grid padded centered>
-          {recents}
-        </Grid>
+        <Posts posts={recents} />
       </Segment>
     </Container>
-  );
-};
+  )
+}
 
 export const pageQuery = graphql`
   query TemplateBlogPost($slug: String!) {
-  site: site {
-    siteMetadata {
+    site: site {
+      siteMetadata {
         disqus
+      }
     }
-  }
-  post: markdownRemark(fields: {slug: {eq: $slug}}) {
-    htmlAst
-    excerpt
-    timeToRead
-    fields {
-      slug
-    }
-    frontmatter {
-      tags
-      author {
-        id
-        bio
-        twitter
-        avatar {
+    post: markdownRemark(fields: { slug: { eq: $slug } }) {
+      htmlAst
+      excerpt
+      timeToRead
+      fields {
+        slug
+      }
+      frontmatter {
+        tags
+        author {
+          id
+          bio
+          twitter
+          avatar {
+            children {
+              ... on ImageSharp {
+                responsiveResolution(width: 80, height: 80, quality: 100) {
+                  src
+                  srcSet
+                }
+              }
+            }
+          }
+        }
+        title
+        updatedDate(formatString: "MMM D, YYYY")
+        image {
           children {
             ... on ImageSharp {
-              responsiveResolution(width: 80, height: 80, quality: 100) {
+              responsiveResolution(width: 900, height: 300, quality: 100) {
                 src
                 srcSet
               }
@@ -139,55 +129,46 @@ export const pageQuery = graphql`
           }
         }
       }
-      title
-      updatedDate(formatString: "MMM D, YYYY")
-      image {
-        children {
-          ... on ImageSharp {
-            responsiveResolution(width: 900, height: 300, quality: 100) {
-              src
-              srcSet
-            }
-          }
-        }
-      }
     }
-  }
-  recents: allMarkdownRemark(
-    filter: {
-      fields: {slug: {ne: $slug}}
-      frontmatter: {draft: {ne: true}},
-      fileAbsolutePath: {regex: "/blog/"},
-    },
-    sort: {order: DESC, fields: [frontmatter___updatedDate]},
-    limit: 4
-  ) {
-    edges {
-      node {
-        fields {
-          slug
-        }
-        timeToRead
-        frontmatter {
-          title
-          image {
-            children {
-              ... on ImageSharp {
-                responsiveResolution(width: 300, height: 100) {
-                  src
-                  srcSet
+    recents: allMarkdownRemark(
+      filter: {
+        fields: { slug: { ne: $slug } }
+        frontmatter: { draft: { ne: true } }
+        fileAbsolutePath: { regex: "/blog/" }
+      }
+      sort: { order: DESC, fields: [frontmatter___updatedDate] }
+      limit: 4
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          excerpt
+          timeToRead
+          frontmatter {
+            title
+            updatedDate(formatString: "MMM D, YYYY")
+            tags
+            image {
+              children {
+                ... on ImageSharp {
+                  responsiveResolution(width: 300, height: 100) {
+                    src
+                    srcSet
+                  }
                 }
               }
             }
-          }
-          author {
-            id
-            avatar {
-              children {
-                ... on ImageSharp {
-                  responsiveResolution(width: 36, height: 36) {
-                    src
-                    srcSet
+            author {
+              id
+              avatar {
+                children {
+                  ... on ImageSharp {
+                    responsiveResolution(width: 36, height: 36) {
+                      src
+                      srcSet
+                    }
                   }
                 }
               }
@@ -197,5 +178,4 @@ export const pageQuery = graphql`
       }
     }
   }
-}
-`;
+`
