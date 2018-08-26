@@ -132,7 +132,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         )
         .forEach(month => {
           createPage({
-            path: `/blog/months/${kebabCase(month.replace('-',''))}/`,
+            path: `/blog/months/${kebabCase(month)}/`,
             component: slash(templates.monthsPage),
             context: {
               month,
