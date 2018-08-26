@@ -2,10 +2,8 @@ import * as React from 'react'
 import Link from 'gatsby-link'
 import {
   Grid,
-  Icon,
   Container,
   Segment,
-  Feed,
 } from 'semantic-ui-react'
 import TagsCard from '../components/TagsCard/TagsCard'
 import BlogPagination from '../components/BlogPagination/BlogPagination'
@@ -24,9 +22,6 @@ export default props => {
 
   return (
     <Container>
-      {/* Title */}
-
-      {/* Content */}
       <Segment vertical size={'huge'}>
         <Grid padded style={{ justifyContent: 'space-around' }}>
           <Grid.Column width={10}>

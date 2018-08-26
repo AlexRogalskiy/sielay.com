@@ -22,7 +22,6 @@ const renderAst = new rehypeReact({
 
 export default props => {
   const { frontmatter, htmlAst, timeToRead } = props.data.post
-  const avatar = frontmatter.author.avatar.children[0]
 
   const tags = props.data.post.frontmatter.tags.map(tag => (
     <Label key={tag}>
@@ -35,8 +34,6 @@ export default props => {
   )
 
   const cover = get(frontmatter, 'image.children.0.responsiveResolution', {})
-
-  // console.log();
 
   const updated = Date.parse(props.data.post.frontmatter.updatedDate)
   const born = Date.parse('1984-04-10')

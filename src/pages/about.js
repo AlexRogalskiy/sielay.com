@@ -109,6 +109,12 @@ const labelledList = (list, decorator) => (
         <Label as="a" ribbon>
           {node.label || `${node.from} - ${node.to}`}
         </Label>
+        {node.company ? (
+          <Header as="h2">
+            {node.logo ? <Image circular src={node.log} /> : null}{' '}
+            {node.company}
+          </Header>
+        ) : null}
         <List divided relaxed>
           {decorator(node)}
         </List>
@@ -179,20 +185,39 @@ const xpNodes = node =>
 export default props => (
   <Container>
     <Segment vertical size={'huge'}>
-      <Segment piled size={'huge'}>
+      <Segment piled >
         <p>
           My name is Łukasz (pronounced [ˈwukaʂ]). Originally from Szczecin,
-          Poland. Now living in Wimbledon, London, United Kingdom.
-        </p>
-        <p>
-          I’m a father, husband, software developer, team lead, aspiring
-          enreprenour and amatour cyclist.
-        </p>
-        <p>
-          I started with web early. I kept failing and reinventing myself. Now I
+          Poland. Now living in Wimbledon, London, United Kingdom. I’m a father, husband, software developer, team lead, aspiring
+          enreprenour and amatour cyclist. I started with web early. I kept failing and reinventing myself. Now I
           start over, simpler, without too much stress.
         </p>
       </Segment>
+      <Tab
+        panes={[
+          {
+            menuItem: 'Experience',
+            render: () => (
+              <Tab.Pane>
+                {labelledList(props.data.experience.edges, xpNodes)}
+              </Tab.Pane>
+            ),
+          },
+          {
+            menuItem: 'References',
+            render: () => <Tab.Pane>{refrences(props)}</Tab.Pane>,
+          },
+          {
+            menuItem: 'Skills',
+            render: () => (
+              <Tab.Pane>
+                {labelledList(props.data.skills.edges, skillNodes)}
+              </Tab.Pane>
+            ),
+          }
+        ]}
+      />
+      <br/>
       <Tab
         panes={[
           {
@@ -208,33 +233,9 @@ export default props => (
             render: () => <Tab.Pane>{contributions(props)}</Tab.Pane>,
           },
           {
-            menuItem: 'References',
-            render: () => <Tab.Pane>{refrences(props)}</Tab.Pane>,
-          },
-          {
-            menuItem: 'Skills',
-            render: () => (
-              <Tab.Pane>
-                {labelledList(props.data.skills.edges, skillNodes)}
-              </Tab.Pane>
-            ),
-          },
-          {
-            menuItem: 'Experience',
-            render: () => (
-              <Tab.Pane>
-                {labelledList(props.data.experience.edges, xpNodes)}
-              </Tab.Pane>
-            ),
-          },
-          {
             menuItem: 'Articles',
-            render: () => (
-              <Tab.Pane>
-                {articles(props)}
-              </Tab.Pane>
-            ),
-          }
+            render: () => <Tab.Pane>{articles(props)}</Tab.Pane>,
+          },
         ]}
       />
     </Segment>

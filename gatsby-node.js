@@ -111,23 +111,6 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           })
         })
 
-      // Create months pages
-      posts
-        .reduce(
-          (mem, post) =>
-            cleanArray(mem.concat(get(post, 'frontmatter.yearWithMonth'))),
-          []
-        )
-        .forEach(month => {
-            createPage({
-              path: `/blog/months/${kebabCase(month)}/`,
-              component: slash(templates.monthsPage),
-              context: {
-                month,
-              },
-            })
-        })
-
       // Create blog pagination
       const pageCount = Math.ceil(posts.length / POSTS_PER_PAGE)
       times(pageCount, index => {
@@ -139,6 +122,23 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           },
         })
       })
+
+      // Create months pages
+      posts
+        .reduce(
+          (mem, post) =>
+            cleanArray(mem.concat(get(post, 'frontmatter.yearWithMonth'))),
+          []
+        )
+        .forEach(month => {
+          createPage({
+            path: `/blog/months/${kebabCase(month.replace('-',''))}/`,
+            component: slash(templates.monthsPage),
+            context: {
+              month,
+            },
+          })
+        })
 
       resolve()
     })

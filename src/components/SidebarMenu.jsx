@@ -44,7 +44,6 @@ const SidebarMenu = ({ items, pathname, Link, visible }) => {
 }
 
 const mapStateToProps = state => {
-  console.log('mapStateToProps 2', state)
   return {
     visible: state.isSidebarVisible,
   }
