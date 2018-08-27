@@ -5,6 +5,7 @@ import {
   Card,
   Container,
   Segment,
+  Message,
   Icon,
   Label,
   Image,
@@ -113,6 +114,9 @@ const labelledList = (list, decorator) => (
           <Header as="h2">
             {node.logo ? <Image circular src={node.log} /> : null}{' '}
             {node.company}
+            {node.position ? (
+              <Header.Subheader>{node.position}</Header.Subheader>
+            ) : null}
           </Header>
         ) : null}
         <List divided relaxed>
@@ -184,15 +188,28 @@ const xpNodes = node =>
 
 export default props => (
   <Container>
+    <br/>
+    <Message
+      size="mini"
+      negative
+      icon="warning"
+      header="No. I'm not for hire now"
+      content="If you send me job offers using my contact details, including LinkedIn
+        may result in block. That includes &quot;contact in case I change my mind in
+        the future&quot;"
+    />
     <Segment vertical size={'huge'}>
-      <Segment piled >
+      <Segment piled>
         <p>
-          My name is Łukasz (pronounced [ˈwukaʂ]). Originally from Szczecin,
-          Poland. Now living in Wimbledon, London, United Kingdom. I’m a father, husband, software developer, team lead, aspiring
-          enreprenour and amatour cyclist. I started with web early. I kept failing and reinventing myself. Now I
-          start over, simpler, without too much stress.
+          Hi, my name is Łukasz (pronounced [ˈwukaʂ]). Originally from Szczecin,
+          Poland. Now living in Wimbledon, London, United Kingdom. I’m a father,
+          husband, software developer, team lead, aspiring enreprenour and
+          amatour cyclist. I started with web early. I kept failing and
+          reinventing myself. Now I start over, simpler, without too much
+          stress.
         </p>
       </Segment>
+
       <Tab
         panes={[
           {
@@ -214,10 +231,10 @@ export default props => (
                 {labelledList(props.data.skills.edges, skillNodes)}
               </Tab.Pane>
             ),
-          }
+          },
         ]}
       />
-      <br/>
+      <br />
       <Tab
         panes={[
           {

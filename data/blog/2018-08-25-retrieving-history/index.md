@@ -11,24 +11,26 @@ I decided to dig in my history and find records of my internet activity since
 the begining. And I've been here for a while, constantly rediscovering myself.
 Why I want to do? For myself, for my memories, but also to show how I developed
 so maybe someone can learn from it to. This post will be used as a list for research
-and will be updated continously.
+and will be updated continously...
 
   * 1999
     * Oct
       * * [1999-10-03](/blog/1999-10-03-first-blog-post-ever/)
-    * Nov ?
+    * Nov - wrong date while migration, shold be October
   * 2000
   * 2001
   * 2002
     * Feb ?
-    * Apr ?
+    * Apr - photos from students exhange, not text posts
     * Oct ?
+    * Nov - photos from students exhange, not text posts
   * 2003
     * Jul
-      * [2003-07-11 Vampir, BAGIETKA, dziewczyny i Windows](http://localhost:8000/blog/2003-07-31-vampir-bagietka-dziewczyny-i-windows/)
+      * [2003-07-11 Vampir, BAGIETKA, dziewczyny i Windows](/blog/2003-07-31-vampir-bagietka-dziewczyny-i-windows/)
       * 2003-07-30 Upload z deczka
       * 2003-07-30 Szaleni Brujah, biedni Gangrel
       * 2003-07-28 Jak to wyrazić?
+      * 2003-07-28 [Kiedyś potrafiłem Ciebie nazwać](/blog/2003-07-28-kiedy-potrafi-em-ciebie-nazwa/)
       * 2003-07-27 Poprawka LAY
       * 2003-07-27 Praca, praca i VAMPIRE
       * 2003-07-23 Pierwszy dzień w MAKRO
@@ -46,14 +48,14 @@ and will be updated continously.
       * 2003-08-09 Jest dobrze...
       * 2003-08-08 Muszę jechać w Bieszczady!!!!
       * 2003-08-08 Rzeczy, których nigdy nie powiem
-      * 2003-08-07 Ono jest jak kryształowe szkło, nie lubi zmian temperatur
+      * [2003-08-07 Ono jest jak kryształowe szkło, nie lubi zmian temperatur](/blog/2003-08-07-ono-jest-jak-szk-o-kryszta-owe/)
       * 2003-08-07 Dzień leci za dniem... szybko
       * 2003-08-06 Wielka zmiana
-      * 2003-08-05 Wczoraj dół, dziś zaocznie
+      * [2003-08-05 Wczoraj dół, dziś zaocznie](/blog/2003-08-05-nie-dosta-em-si/)
       * 2003-08-04 Nieprzespana noc... zakręcone myśli
       * 2003-08-02 Dwie ofiary, dwie kłótnie, dwie pensje
       * 2003-08-01 My REALity
-      * 2003-08-01 Jak to wyrazić II
+      * [2003-08-01 Jak to wyrazić II](/blog/2003-08-01-czasem-gdy-widz-t-g-bi-w-oczach/)
       * 2003-08-01 Kolejny dzień pełen niespodzianek
     * Sep
       * [2003-09-24 Koniec bloga](/blog/2003-09-24-koniec-bloga/)
@@ -79,14 +81,14 @@ and will be updated continously.
       * 2003-10-02 Blog na zero
     * Nov
       * [2003-11-05 Powrót na IRC](/blog/2003-11-05--powr-t-na-irc/)
-      * 2003-11-05 Dobrze, za dobrze, nie dobrze
+      * [2003-11-05 Dobrze, za dobrze, nie dobrze](/blog/2003-11-05-dobrze-za-dobrze-niedobrze/)
       * 2003-11-03 Senne powieki mego miasta
   * 2004
     * Jan
-      * [2004-01-31](/blog/2004-01-31-pod-napi-ciem-i-czarna-wrona/)
-      * 2004-01-31 Pod napięciem...i czarna Wrona
+      * [2004-01-31 Pod napięciem i czarna wronga](/blog/2004-01-31-pod-napi-ciem-i-czarna-wrona/)
       * 2004-01-29 Szok, zmarzła pupa i przeboje
       * 2004-01-28 Dla każdego!
+      * [2004-01-27 walczysz](/blog/2004-01-27-walczysz/)
       * 2004-01-27 Bajka o Byczku i Wole
       * 2004-01-27 Nocna szarość mego miasta
       * 2004-01-26 Życie, życie jest nowelą, produkcji wenezuelskiej
@@ -105,15 +107,21 @@ and will be updated continously.
       * 2004-01-15 Mówcie co chcecie, Sielay jest na diecie
       * 2004-01-14 Tekst nocną na starym podkładzie
       * 2004-01-13 Nowy Layout
-    * Apr ?
-    * Jul ?
-    * Sep ?
-    * Nov ?
+    * Apr
+      * [2004-04-18 Choć śnieg](/blog/2004-04-18-cho-nieg/)
+    * Jul - some photos
+    * Sep - some photos (Warsaw)
+    * Nov - some photos (Idol)
   * 2005
-    * Jan ?
-    * Feb ?
-    * Mar ?
-    * Apr ?
+    * Jan
+      * [2005-01-08 Tak jak niszczącą mocą potrafią być ludzie](/blog/2005-01-08-tak-jak-niszcz-c-moc-potrafi-by-ludzie/)
+    * Feb - some photos
+    * Mar
+      * [2005-03-26 Tak jak obiecywałem](/blog/2005-03-26-tak-jak-obieca-em/)
+      * [2005-03-28 Nastrój świąteczno-weekendowo-wieczorny](/blog/2005-03-28-nastr-j-wi-teczno-weekendowo-wieczorny/)
+    * Apr
+      * [2005-04-13 Wiosna](/blog/2005-04-13-wiosna)
+      * [2005-04-14 Miałem pisać o jednej reczy](/blog/2005-04-14-mia-em-pisa-o-jednej-rzeczy/)
     * May ?
     * Jun ?
     * Sep ?

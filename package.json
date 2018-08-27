@@ -24,6 +24,7 @@
     "inquirer": "^6.1.0",
     "plugin": "^0.3.3",
     "prismjs": "^1.15.0",
+    "react-cookie-consent": "^1.7.0",
     "react-helmet": "^5.2.0",
     "react-instafeed": "^0.4.0",
     "react-instagram-embed": "^1.4.0",
