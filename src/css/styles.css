@@ -126,3 +126,7 @@ li  {
 #instafeed > .ui.card {
   margin: 1em auto;
 }
+
+li > p {
+  margin: 0px !important;
+}

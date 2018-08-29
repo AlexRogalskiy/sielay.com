@@ -57,15 +57,12 @@ export default props => {
         {props.data.post.frontmatter.tags.indexOf('recovered') !== -1 ? (
           <Message size={'mini'} warning>
             <Message.Header>DISCLAIMER</Message.Header>
-              This article has been recovered using archive.org as my plan to
-              find back how I evolved over the years. My opinons might have
-              changed since. I was {age} years old when I wrote it.
+            This article has been recovered using archive.org as my plan to find
+            back how I evolved over the years. My opinons might have changed
+            since. I was {age} years old when I wrote it.
           </Message>
         ) : null}
         {renderAst(htmlAst)}
-        {/* dangerouslySetInnerHTML={{
-          __html: html,
-        }} */}
       </Segment>
       <Segment vertical>{tags}</Segment>
       {props.data.site &&
@@ -89,6 +86,7 @@ export const pageQuery = graphql`
         disqus
       }
     }
+
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
       htmlAst
       excerpt

@@ -25,6 +25,15 @@ inquirer
       'data',
       'blog',
       `${date}-${title}`
+        .replace(/ą/g,'a')
+        .replace(/ę/g,'e')
+        .replace(/ć/g,'c')
+        .replace(/ś/g,'s')
+        .replace(/ó/g,'o')
+        .replace(/ł/g,'l')
+        .replace(/ń/g,'n')
+        .replace(/ź/g,'z')
+        .replace(/ż/g,'z')
         .replace(/[^a-zA-Z0-9-]+/g, '-')
         .replace(/(^-+|-+$)/g, '')
         .toLowerCase()
