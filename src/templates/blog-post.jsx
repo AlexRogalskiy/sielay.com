@@ -5,6 +5,7 @@ import {
   Header,
   Container,
   Segment,
+  Button,
   Label,
   Image,
   Icon,
@@ -62,6 +63,25 @@ export default props => {
             since. I was {age} years old when I wrote it.
           </Message>
         ) : null}
+        {props.data.post.frontmatter.source && (
+          <Message size={'mini'} info>
+            <Icon name={props.data.post.frontmatter.sourceType} />
+            This article war originally posted on{' '}
+            {props.data.post.frontmatter.sourceType}
+            <Button
+              as="a"
+              size="mini"
+              href={props.data.post.frontmatter.source}
+              target="_blank"
+              style={{
+                float:'right',
+                marginTop: '-4px'
+              }}
+            >
+              View Original
+            </Button>
+          </Message>
+        )}
         {renderAst(htmlAst)}
       </Segment>
       <Segment vertical>{tags}</Segment>
@@ -69,7 +89,14 @@ export default props => {
         props.data.site.siteMetadata &&
         props.data.site.siteMetadata.disqus && (
           <Segment vertical>
-            <DiscussionEmbed shortname={props.data.site.siteMetadata.disqus} />
+            <DiscussionEmbed
+              shortname={props.data.site.siteMetadata.disqus}
+              config={{
+                url: `https://sielay.com${props.data.post.fields.slug}`,
+                identifier: props.data.post.fields.slug,
+                title: props.data.post.frontmatter.title,
+              }}
+            />
           </Segment>
         )}
       <Segment vertical>
@@ -112,6 +139,8 @@ export const pageQuery = graphql`
           }
         }
         title
+        source
+        sourceType
         updatedDate(formatString: "MMM D, YYYY")
         image {
           children {

@@ -30,12 +30,16 @@ exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
   if (slug) {
     createNodeField({ node, name: `slug`, value: slug })
   }
-  if (node.frontmatter && node.frontmatter.updatedDate) {
-    const parts = node.frontmatter.updatedDate.split('-')
-    node.frontmatter.year = parts[0]
-    node.frontmatter.month = parts[1]
-    node.frontmatter.day = parts[2]
-    node.frontmatter.yearWithMonth = parts.slice(0, 2).join('-')
+  if (node.frontmatter) {
+    node.frontmatter.source = node.frontmatter.source || '';
+    node.frontmatter.sourceType = node.frontmatter.sourceType || '';
+    if (node.frontmatter.updatedDate) {
+      const parts = node.frontmatter.updatedDate.split('-')
+      node.frontmatter.year = parts[0]
+      node.frontmatter.month = parts[1]
+      node.frontmatter.day = parts[2]
+      node.frontmatter.yearWithMonth = parts.slice(0, 2).join('-')
+    }
   }
 }
 

@@ -20,8 +20,7 @@ const normalize = list => {
   const hash = list.reduce((prev, current) => {
     const parts = current.fieldValue.split('-')
     const year = (prev[parts[0]] = prev[parts[0]] || {})
-    const month = (year[parts[1]] = year[parts[1]] || {})
-    month[parts[2]] = current.totalCount
+    year[parts[1]] = (year[parts[1]] || 0) + current.totalCount
     return prev
   }, {})
   const output = Object.keys(hash)
@@ -29,7 +28,12 @@ const normalize = list => {
     .reverse()
     .map(year => ({
       year,
-      months: Object.keys(hash[year]).sort(),
+      months: Object.keys(hash[year])
+        .map(month => ({
+          month,
+          count: hash[year][month],
+        }))
+        .sort((a, b) => (a.month === b.month ? 0 : a.month > b.month ? -1 : 1)),
     }))
   return output
 }
@@ -43,12 +47,12 @@ export const Calendar = props => (
         </Card.Content>
         <Card.Content>
           <List>
-            {year.months.map(month => (
+            {year.months.map(({ month, count }) => (
               <List.Item as="span" key={month}>
                 <List.Icon name="clock" />
                 <List.Content>
                   <props.Link to={`/blog/months/${year.year}-${month}/`}>
-                    {months[month - 1]}
+                    {months[month - 1]} ({count})
                   </props.Link>
                 </List.Content>
               </List.Item>

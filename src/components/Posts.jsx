@@ -48,7 +48,7 @@ export default props => (
                 </Feed.Extra>
               ) : null}
               <Feed.Meta>
-                <Feed.Like>
+                <Feed.Like as="span">
                   {frontmatter.tags
                     ? frontmatter.tags.map(tag => (
                         <Label

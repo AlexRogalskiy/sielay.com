@@ -1,36 +1,56 @@
 import * as React from 'react'
-import { Card, List, Segment } from 'semantic-ui-react'
+import { Card, Label, Segment } from 'semantic-ui-react'
 import { kebabCase } from 'lodash'
+import Link from 'gatsby-link'
+
+const sizes = {
+  mini: .001,
+  tiny: .002,
+  small: .003,
+  medium: .005,
+  large: .01,
+  big: .02,
+  huge: .05,
+  massive: .2
+}
+
+const tagToSize = (total, count) => {
+  const weight = count / total;
+  return Object.keys(sizes).filter(size => weight >= sizes[size]).pop() || 'mini';
+}
 
 export default props => {
+  const total = props.tags.reduce(
+    (previous, tag) => previous + tag.totalCount,
+    0
+  )
+  const tags = [...props.tags.sort(() => Math.random() - 0.5)]
+
   return (
     <Segment vertical>
       <Card fluid>
         <Card.Content>
           <Card.Header>Tags</Card.Header>
         </Card.Content>
-        <Card.Content>
-          <List>
-            {props.tags.map(tag => {
-              const isActive = tag.fieldValue === props.tag
-              const activeStyle = {
-                fontWeight: '700',
-              }
-              const tagLink = isActive
-                ? `/blog`
-                : `/blog/tags/${kebabCase(tag.fieldValue)}/`
-              return (
-                <List.Item as="span" key={tag.fieldValue}>
-                  <List.Icon name="tag" color={isActive ? 'blue' : null} />
-                  <List.Content style={isActive ? activeStyle : null}>
-                    <props.Link to={tagLink}>
-                      {tag.fieldValue} ({tag.totalCount})
-                    </props.Link>
-                  </List.Content>
-                </List.Item>
-              )
-            })}
-          </List>
+        <Card.Content style={{textAlign:'center'}}>
+          {tags.map(tag => {
+            const isActive = tag.fieldValue === props.tag
+            const tagLink = isActive
+              ? `/blog`
+              : `/blog/tags/${kebabCase(tag.fieldValue)}/`
+            return (
+              <Label
+                as={Link}
+                to={tagLink}
+                key={tag.fieldValue}
+                size={tagToSize(total, tag.totalCount)}
+                color={isActive ? 'green' : 'grey'}
+                style={{marginBottom: '2px'}}
+              >
+                {tag.fieldValue}
+              </Label>
+            )
+          })}
         </Card.Content>
       </Card>
     </Segment>

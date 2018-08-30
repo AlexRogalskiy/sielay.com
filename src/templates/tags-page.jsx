@@ -1,13 +1,9 @@
 import * as React from 'react'
 import Link from 'gatsby-link'
-import {
-  Grid,
-  Container,
-  Segment,
-} from 'semantic-ui-react'
+import { Grid, Container, Segment } from 'semantic-ui-react'
 import TagsCard from '../components/TagsCard/TagsCard'
 import { Calendar } from '../components/Calendar'
-import Posts from '../components/Posts';
+import Posts from '../components/Posts'
 
 export default props => {
   const tags = (props.data && props.data.tags && props.data.tags.group) || []
@@ -20,7 +16,7 @@ export default props => {
       <Segment vertical size={'huge'}>
         <Grid padded style={{ justifyContent: 'space-around' }}>
           <Grid.Column width={10}>
-            <Posts posts={posts.map(post => post.node)}/>
+            <Posts posts={posts.map(post => post.node)} />
           </Grid.Column>
           <Grid.Column width={6}>
             <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag} />
@@ -33,64 +29,67 @@ export default props => {
 }
 
 export const pageQuery = graphql`
-query TemplateTagPage($tag: String) {
-  # Get tags
-  tags: allMarkdownRemark(filter: {frontmatter: {draft: {ne: true}}}) {
-    group(field: frontmatter___tags) {
-      fieldValue
-      totalCount
+  query TemplateTagPage($tag: String) {
+    site: site {
+      siteMetadata {
+        disqus
+      }
     }
-  }
+    # Get tags
+    tags: allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
+      group(field: frontmatter___tags) {
+        fieldValue
+        totalCount
+      }
+    }
 
-  # Get calendar
-  calendar: allMarkdownRemark {
+    # Get calendar
+    calendar: allMarkdownRemark {
       group(field: frontmatter___updatedDate) {
         fieldValue
         totalCount
       }
-  }
-
-  # Get posts
-  posts: allMarkdownRemark(
-    sort: { order: DESC, fields: [frontmatter___updatedDate] },
-    filter: {
-      frontmatter: {
-        draft: { ne: true }
-        tags: { in: [$tag] }
-      },
-      fileAbsolutePath: { regex: "/blog/" }
     }
-  ) {
-    totalCount
-    edges {
-      node {
-        excerpt
-        timeToRead
-        fields {
-          slug
-        }
-        frontmatter {
-          title
-          tags
-          updatedDate(formatString: "DD MMMM, YYYY")
-          image {
-          	children {
-              ... on ImageSharp {
-                responsiveResolution(width: 700, height: 100) {
-                  src
-                  srcSet
+
+    # Get posts
+    posts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___updatedDate] }
+      filter: {
+        frontmatter: { draft: { ne: true }, tags: { in: [$tag] } }
+        fileAbsolutePath: { regex: "/blog/" }
+      }
+    ) {
+      totalCount
+      edges {
+        node {
+          excerpt
+          timeToRead
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            tags
+            updatedDate(formatString: "DD MMMM, YYYY")
+            image {
+              children {
+                ... on ImageSharp {
+                  responsiveResolution(width: 700, height: 100) {
+                    src
+                    srcSet
+                  }
                 }
               }
             }
-          }
-          author {
-            id
-            avatar {
-              children {
-                ... on ImageSharp {
-                  responsiveResolution(width: 35, height: 35) {
-                    src
-                    srcSet
+            author {
+              id
+              avatar {
+                children {
+                  ... on ImageSharp {
+                    responsiveResolution(width: 35, height: 35) {
+                      src
+                      srcSet
+                    }
                   }
                 }
               }
@@ -100,5 +99,4 @@ query TemplateTagPage($tag: String) {
       }
     }
   }
-}
-`;
+`

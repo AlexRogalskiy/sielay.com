@@ -32,7 +32,7 @@ and will be updated continously...
       * 2003-07-30 Upload z deczka
       * 2003-07-30 Szaleni Brujah, biedni Gangrel
       * 2003-07-28 Jak to wyrazić?
-      * 2003-07-28 [Kiedyś potrafiłem Ciebie nazwać](/blog/2003-07-28-kiedy-potrafilem-ciebie-nazwac/)
+      * [2003-07-28 Kiedyś potrafiłem Ciebie nazwać](/blog/2003-07-28-kiedy-potrafilem-ciebie-nazwac/)
       * 2003-07-27 Poprawka LAY
       * 2003-07-27 Praca, praca i VAMPIRE
       * 2003-07-23 Pierwszy dzień w MAKRO
@@ -119,14 +119,29 @@ and will be updated continously...
       * [2005-01-08 Tak jak niszczącą mocą potrafią być ludzie](/blog/2005-01-08-tak-jak-niszczaca-moca-potrafia-byc-ludzie/)
     * Feb - some photos
     * Mar
-      * [2005-03-26 Tak jak obiecywałem](/blog/2005-03-26-tak-jak-obiecalem/)
       * [2005-03-28 Nastrój świąteczno-weekendowo-wieczorny](/blog/2005-03-28-nastroj-swiateczno-weekendowo-wieczorny/)
+      * [2005-03-26 Tak jak obiecywałem](/blog/2005-03-26-tak-jak-obiecalem/)
     * Apr
-      * [2005-04-13 Wiosna](/blog/2005-04-13-wiosna)
-      * [2005-04-14 Miałem pisać o jednej reczy](/blog/2005-04-14-mialem-pisac-o-jednej-rzeczy/)
+      * [2005-04-21 Wiosną](/blog/2005-04-21-wiosna/)
+      * [2005-04-20 Cruel](/blog/2005-04-20-cruel/)
+      * [2005-04-17 I oto nadjechał](/blog/2005-04-17-i-oto-nadjechal/)
       * [2005-04-16 Jeśli ktoś powie](/blog/2005-04-16-jesli-ktos-powie/)
-    * May ?
-    * Jun ?
+      * [2005-04-14 Miałem pisać o jednej reczy](/blog/2005-04-14-mialem-pisac-o-jednej-rzeczy/)
+      * [2005-04-13 Wiosna](/blog/2005-04-13-wiosna)
+    * May
+      * [2005-05-29 Nigdy nie wykonuj dwóch kroków pod rząd](/blog/2005-05-29-nigdy-nie-wykonuj-dwoch-krokow-pod-rzad/)
+      * [2005-05-25 Zabrakło kawy](/blog/2005-05-25-zabraklo-kawy/)
+      * [2005-05-21 Deszcz był wyjątkowo ciepły](/blog/2005-05-21-deszcz-byl-wyjatkowo-cieply/)
+      * [2005-05-19 Ale jak to?](/blog/2005-05-19-ale-jak-to/)
+      * [2005-05-19 Trzy księgi](/blog/2005-05-19-trzy-ksiegi/)
+      * [2005-05-19 Zawirowany](/blog/2005-05-19-zawirowany/)
+    * Jun
+      * [2005-06-30 Nastał porządek](/blog/2005-06-30-nastal-porzadek/)
+      * [2005-06-16 Jeden egzamin w plecy](/blog/2005-06-16-jeden-egazamin-w-plecy/)
+      * [2005-06-13 Tam tam tam](/blog/2005-06-13-tam-tam-tam/)
+      * [2005-06-11 Powiedziałabyś](/blog/2005-06-11-powiedzialabys/)
+      * [2005-06-07 Avril](/blog/2005-06-07-avril/)
+      * [2005-06-05 Coś mnie boli](/blog/2005-06-05-cos-mnie-boli/)
     * Sep
       * [2005-09-29 Huśtawki nastrojów](/blog/2005-09-29-hustawki-nastrojow/)
     * Oct
@@ -241,6 +256,8 @@ and will be updated continously...
   * 2015
   * 2016
   * 2017
+    * Dec
+
   * 2018
 
 ---
