@@ -7,6 +7,7 @@ import {
   Segment,
   Card,
   Comment,
+  Button,
   Container,
   Grid,
   Header,
@@ -67,6 +68,7 @@ export default class IndexPage extends React.Component {
 
   twitter() {
     return [
+      <Header className="mobile only" key="t-h" size="large" style={{marginTop: '1rem', textAlign: 'center'}}>Twitter</Header>,
       <a
         key="twitter"
         className="twitter-timeline"
@@ -84,6 +86,7 @@ export default class IndexPage extends React.Component {
     const TOKEN = '724495177.31d7865.c0a1efd39b6641aca0aa482982d93d04'
     return [
       <div id={instafeedTarget} key="insta">
+        <Header className="mobile only" size="large" style={{marginTop: '1rem', textAlign: 'center'}}>Instagram</Header>
         <Instafeed
           limit="5"
           ref="instafeed"
@@ -132,6 +135,7 @@ export default class IndexPage extends React.Component {
           <Grid.Row>
             <Grid.Column width="8" verticalAlign={'top'} stretched={true}>
               <Posts posts={posts.map(post => post.node)} />
+              <Button as={Link} to="/blog">More blog posts</Button>
               {this.insta()}
 
             </Grid.Column>

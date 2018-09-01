@@ -130,3 +130,19 @@ li  {
 li > p {
   margin: 0px !important;
 }
+
+.gatsby-resp-image-wrapper:before {
+  display: block;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: #AAA;
+  transform: rotateZ(2deg);
+  content: ' ';
+  box-shadow: 5px 5px 1px 1px rgba(0,0,0,0.75);
+}
+
+.gatsby-resp-image-wrapper {
+  margin-bottom: 3rem;
+  box-shadow: 5px 5px 1px 1px rgba(0,0,0,0.75);
+}

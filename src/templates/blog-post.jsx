@@ -18,7 +18,9 @@ import Posts from '../components/Posts'
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
-  components: { 'instagram-embed': InstagramEmbed },
+  components: {
+    'instagram-embed': InstagramEmbed
+  },
 }).Compiler
 
 export default props => {

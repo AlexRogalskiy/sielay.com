@@ -23,7 +23,7 @@ export default props => {
   return (
     <Container>
       <Segment vertical size={'huge'}>
-        <Grid padded style={{ justifyContent: 'space-around' }}>
+        <Grid stackable padded style={{ justifyContent: 'space-around' }}>
           <Grid.Column width={10}>
             <Posts posts={posts.map(post => post.node)}/>
             <Segment vertical textAlign="center">

@@ -25,7 +25,7 @@ and will be updated continously...
     * Oct ?
     * Nov - photos from students exhange, not text posts
   * 2003
-    * Mar
+    * May
       * [2003-05-23 spodnie się porwały](/blog/2003-05-23-spodnie-sie-porwaly/)
     * Jul
       * [2003-07-11 Vampir, BAGIETKA, dziewczyny i Windows](/blog/2003-07-31-vampir-bagietka-dziewczyny-i-windows/)
@@ -109,9 +109,111 @@ and will be updated continously...
       * 2004-01-15 Mówcie co chcecie, Sielay jest na diecie
       * 2004-01-14 Tekst nocną na starym podkładzie
       * 2004-01-13 Nowy Layout
+    * Feb
+      * [2004-02-28 Ostatnia notka lutego](/blog/2004-02-29-ostatnia-notka-lutego/)
+      * 2004-02-28 Permanenta plama w moim zyciorysie
+      * 2004-02-28 Powrót do przeszłości
+      * 2004-02-26 Szkoła uwodzenia...
+      * 2004-02-25 Isn't it ironic?
+      * 2004-02-23 "Dlaczego faceci to świnie" zajawka
+      * 2004-02-23 I'm just a man
+      * 2004-02-22 Sąd nad czarownicą
+      * 2004-02-21 LuMi's BiRzDaJ
+      * 2004-02-20 Just a little come back
+      * 2004-02-19 Słowo do was... raz na jakiś czas
+      * 2004-02-17 Krótka notka
+      * 2004-02-16 Sirala szaleńśtwa, jak mi tego było brak
+      * 2004-02-15 Tymbark... i damsko-męskie tajemnice lingwistyczne
+      * 2004-02-14 Facet - samonakręcająca się maszynka
+      * 2004-02-14 Będę konformistą, więc a pro pos Walentynek...
+      * 2004-02-13 Piątek trzynastego i weź tu kurwa nie bądź przesądny
+      * 2004-02-12 Gdzie twki szczecińska moda?
+      * 2004-02-12 Paczka pełna niespodzianek
+      * 2004-02-11 Kto zrozumie kobiety, temu konia z rzędem
+      * 2004-02-10 Ja mam 20 lat, ty masz 20 lat, przed nami siódme niebo
+      * 2004-02-09 Na wspólnej drodze zycia mkniemy niczym wiatr
+      * 2004-02-09 Zblazowany niczym toster po aerobiku
+      * 2004-02-06 Ramię pręz, słabość krusz i nie zawiedź w potrzebie...
+      * 2004-02-05 Wolisz gorzką prawdę, czy słodki matrix?
+      * 2004-02-03 Nie jestem z zelaza, nie jestem z tytanu, jestem z gumy...
+      * 2004-02-03 Padają bateryjki
+      * 2004-02-02 Sny jakich nigdy nie miałem...
+      * 2004-02-01 Viagra i trzy plemniki
+    * Mar
+      * [2004-03-31 Sny były dziś wyjątkowo długie](/blog/2004-03-31-sny-byly-dzis-wyjatkowo-dlugie/)
+      * 2004-03-30 Spadła gwiazda i strąciła pozostałe...
+      * 2004-03-28 Za mocno, czyli to co zdarzać się nie powinno...
+      * 2004-03-27 Dla was...
+      * 2004-03-24 Mówiłem serio...
+      * 2004-03-24 Koniec
+      * 2004-03-22 Moze tamta nocka była za długa
+      * 2004-03-20 A jedna... odrodzenie...
+      * 2004-03-18 Nijako
+      * 2004-03-17 Wynik egzaminu - zgadnijcie
+      * 2004-03-17 Widocznie za mało skandali
+      * 2004-03-16 Głęboki szok pourazowy
+      * 2004-03-15 Miała być nie-notka, ale wyjdzie mieszaniec
+      * 2004-03-13 Railroad Adventure
+      * 2004-03-12 Urodzinki Gwiazdeczki i coś o testach
+      * 2004-03-11 Notka nie-notka
+      * 2004-03-10 "Pij mleko będziesz wielka" czyli spychologia czyli podwójna moralność
+      * 2004-03-09 Kochaj misie
+      * 2004-03-08 Cruel Intentions
+      * 2004-03-08 Salomonowa mądrość
+      * 2004-03-07 Crossfire tuz po północy
+      * 2004-03-06 Nie chwal dnia przed zachodem słońca... ups!
+      * 2004-03-05 Notkoholiczna notka
+      * 2004-03-04 Rozmowa i znaki
+      * 2004-03-04 Gardziołek boli
+      * 2004-03-03 W biegu...
+      * 2004-03-02 Zapomniałem co miałem napisać
+      * 2004-03-01 Czy wy wiecie, ze to juz jest marzec?
     * Apr
+      * [2004-04-30 Who do you think you are?](/blog/2004-04-30-who-do-you-think-you-are/)
+      * [2004-04-28 Fallen... nie ja, wy... a może i ja](/blog/2004-04-28-fallen-not-i-you-or-maybe-i-have-fallen-too/)
+      * 2004-04-26 ...i mądrości z jakiegoś filmu
+      * 2004-04-24 Matematycy są wśród nas
+      * 2004-04-22 Dziś jest dziś, jutro będzie jutro
+      * 2004-04-21 Status Quo?
+      * 2004-04-19 Z innej beczki, oddychamy
+      * 2004-04-18 Nic szczególnego, a jednak
       * [2004-04-18 Choć śnieg](/blog/2004-04-18-choc-snieg/)
+      * 2004-04-14 Prowok-akcja
+      * 2004-04-14 Lewy sercowy
+      * 2004-04-11 System Plask-Shock
+      * 2004-04-10 Birthday, bloody birthday
+      * 2004-04-09 Znajomi, znajomi, bliscy znajomi
+      * 2004-04-08 Kocham kobiety o zabójczych oczach
+      * 2004-04-06 3 serca
+      * 2004-04-05 ...a Szczecin pięknie wyglądał w deszczu...
+      * 2004-04-04 Hyponotyczna noc
+      * 2004-04-02 Zaginiony w czasie...
+    * May
+      * [2004-05-26 Double trouble](/blog/2004-05-26-double-trouble/)
+      * 2004-05-25 Job freak
+      * 2004-05-22 Troglodycie otaczają mnie
+      * 2004-05-20 Tired but happy
+      * 2004-05-17 Ostro, ostro, za ostro
+      * 2004-05-15 Machinacje
+      * 2004-05-14 Colalibation
+      * 2004-05-11 Normalnie happy men jestem
+      * 2004-05-09 Ciężka była ta noc
+      * 2004-05-07 Skoro jestem zły to wy jesteście gorsze
+      * 2004-05-06 Bezpieczniej jest przed komputerem
+      * 2004-05-05 Przerwa w nadawaniu
+      * 2004-05-03 Cieńka różowa linia
+      * 2004-05-01 Kto nie wierzy, ten się zjeży
+    * Jun
+      * [2004-06-30 Zmiany](/blog/2004-06-30-zmiany/)
+      * 2004-06-18 Kazdy ma swoje granice
+      * 2004-06-15 Tears of Sun
+      * [2004-06-10 Zielono mi](/blog/2004-06-10-zielono-mi/)
+      * 2004-06-06 Kurtyna opada
+      * 2004-06-03 Życie to nie film
     * Jul - some photos
+      * [2004-07-31 Czasu wolnego początków podwoje](/blog/2004-07-31-czasu-wolnego-poczatkow-podwoje/)
+      * 2004-07-25 Pan kotek był chory i lezał w łózeczku
+      * 2004-07-22 Errata
     * Sep - some photos (Warsaw)
     * Nov - some photos (Idol)
   * 2005
@@ -253,12 +355,22 @@ and will be updated continously...
   * 2012
   * 2013
   * 2014
+    * [Jun](/blog/months/2014-06/) imported from LinkedIn
+    * [Jul](/blog/months/2014-07/) imported from LinkedIn
+    * [Aug](/blog/months/2014-08/) imported from LinkedIn
+    * [Sep](/blog/months/2014-09/) imported from LinkedIn
+    * [Oct](/blog/months/2014-10/) imported from LinkedIn
+    * [Nov](/blog/months/2014-11/) imported from LinkedIn
+    * [Dec](/blog/months/2014-12/) imported from LinkedIn
   * 2015
-  * 2016
+    * [Jan](/blog/months/2015-01/) imported from LinkedIn
+    * [Aug](/blog/months/2015-08/) imported from LinkedIn
+    * [Sep](/blog/months/2015-09/) imported from LinkedIn
+    * [Oct](/blog/months/2015-10/) imported from LinkedIn
+  * 2016 ?
   * 2017
-    * Dec
-
-  * 2018
+    * [Dec](/blog/months/2017-12/) imported from LinkedIn
+    * [Oct](/blog/months/2017-10/) imported from LinkedIn
 
 ---
 

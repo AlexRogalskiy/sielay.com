@@ -31,7 +31,7 @@ class HeaderMenu extends React.Component {
                         icon="sidebar"
                         onClick={this.onSidebar}
                     />
-                    <Menu.Item className="mobile hidden">
+                    <Menu.Item>
                         SIELAY
                     </Menu.Item>
                     {items.map((item) => {
