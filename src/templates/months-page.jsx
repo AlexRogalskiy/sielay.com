@@ -74,7 +74,7 @@ export const pageQuery = graphql`
             image {
               children {
                 ... on ImageSharp {
-                  responsiveResolution(width: 700, height: 100) {
+                  responsiveResolution(width: 100, height: 100) {
                     src
                     srcSet
                   }

@@ -14,7 +14,6 @@ export default props => (
           excerpt,
         } = node
 
-        const avatar = frontmatter.author.avatar.children[0]
         const cover = get(
           frontmatter,
           'image.children.0.responsiveResolution',
@@ -24,10 +23,8 @@ export default props => (
         return (
           <Feed.Event key={slug}>
             <Feed.Label>
-              <img
-                src={avatar.responsiveResolution.src}
-                srcSet={avatar.responsiveResolution.srcSet}
-              />
+              {cover &&
+                cover.src && <img src={cover.src} srcSet={cover.srcSet} />}
             </Feed.Label>
             <Feed.Content>
               <Feed.Summary>
@@ -69,6 +66,7 @@ export default props => (
           </Feed.Event>
         )
       } catch (error) {
+        console.log(error)
         return (
           <Message
             key={`post-${index}`}

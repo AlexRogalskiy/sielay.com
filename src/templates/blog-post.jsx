@@ -19,7 +19,7 @@ import Posts from '../components/Posts'
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
-    'instagram-embed': InstagramEmbed
+    'instagram-embed': InstagramEmbed,
   },
 }).Compiler
 
@@ -35,6 +35,24 @@ export default props => {
   const recents = (props.data.recents ? props.data.recents.edges : []).map(
     ({ node }) => node
   )
+
+  const myIndex = (props.data.posts ? props.data.posts.edges : []).findIndex(
+    ({
+      node: {
+        fields: { slug },
+      },
+    }) => slug === props.data.post.fields.slug
+  )
+
+  const previousAndNext =
+    myIndex !== -1
+      ? [
+          props.data.posts.edges[myIndex - 1],
+          props.data.posts.edges[myIndex + 1],
+        ]
+          .filter(Boolean)
+          .map(({ node }) => node)
+      : []
 
   const cover = get(frontmatter, 'image.children.0.responsiveResolution', {})
 
@@ -76,8 +94,8 @@ export default props => {
               href={props.data.post.frontmatter.source}
               target="_blank"
               style={{
-                float:'right',
-                marginTop: '-4px'
+                float: 'right',
+                marginTop: '-4px',
               }}
             >
               View Original
@@ -87,6 +105,11 @@ export default props => {
         {renderAst(htmlAst)}
       </Segment>
       <Segment vertical>{tags}</Segment>
+      <Segment vertical>
+        <Header size={'small'}>Previous &amp; Next</Header>
+        <Posts posts={previousAndNext} />
+      </Segment>
+
       {props.data.site &&
         props.data.site.siteMetadata &&
         props.data.site.siteMetadata.disqus && (
@@ -102,6 +125,7 @@ export default props => {
           </Segment>
         )}
       <Segment vertical>
+      <Header size={'small'}>Recent</Header>
         <Posts posts={recents} />
       </Segment>
     </Container>
@@ -113,6 +137,36 @@ export const pageQuery = graphql`
     site: site {
       siteMetadata {
         disqus
+      }
+    }
+
+    posts: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___updatedDate] }
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
+    ) {
+      edges {
+        node {
+          excerpt
+          timeToRead
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            tags
+            updatedDate(formatString: "DD MMMM, YYYY")
+            image {
+              children {
+                ... on ImageSharp {
+                  responsiveResolution(width: 100, height: 100) {
+                    src
+                    srcSet
+                  }
+                }
+              }
+            }
+          }
+        }
       }
     }
 
@@ -179,7 +233,7 @@ export const pageQuery = graphql`
             image {
               children {
                 ... on ImageSharp {
-                  responsiveResolution(width: 300, height: 100) {
+                  responsiveResolution(width: 100, height: 100) {
                     src
                     srcSet
                   }
