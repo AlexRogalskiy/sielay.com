@@ -45,9 +45,10 @@ updatedDate: '${date}'
 author: sielay
 tags: [${tags}]
 draft: false
+image: .jpg
 ---
 
-Lorem ipsum
+![](.jpg)
 `
     fs.mkdir(dir, err => {
       if (err) {
