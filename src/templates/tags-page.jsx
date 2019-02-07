@@ -1,11 +1,13 @@
 import * as React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import { Grid, Container, Segment } from 'semantic-ui-react'
 import TagsCard from '../components/TagsCard/TagsCard'
 import { Calendar } from '../components/Calendar'
 import Posts from '../components/Posts'
+import { graphql } from 'gatsby'
+import Layout from '../layouts';
 
-export default props => {
+const TagsPage = props => {
   const tags = (props.data && props.data.tags && props.data.tags.group) || []
   const posts = (props.data && props.data.posts && props.data.posts.edges) || []
   const calendar =
@@ -19,7 +21,7 @@ export default props => {
             <Posts posts={posts.map(post => post.node)} />
           </Grid.Column>
           <Grid.Column width={6}>
-            <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag} />
+            <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
             <Calendar Link={Link} entries={calendar} />
           </Grid.Column>
         </Grid>
@@ -27,6 +29,8 @@ export default props => {
     </Container>
   )
 }
+
+export default props => <Layout {...props}><TagsPage {...props}/></Layout>
 
 export const pageQuery = graphql`
   query TemplateTagPage($tag: String) {
@@ -74,9 +78,8 @@ export const pageQuery = graphql`
             image {
               children {
                 ... on ImageSharp {
-                  responsiveResolution(width: 100, height: 100) {
-                    src
-                    srcSet
+                  fixed(width: 100, height: 100) {
+                    ...GatsbyImageSharpFixed_withWebp
                   }
                 }
               }
@@ -86,9 +89,8 @@ export const pageQuery = graphql`
               avatar {
                 children {
                   ... on ImageSharp {
-                    responsiveResolution(width: 35, height: 35) {
-                      src
-                      srcSet
+                    fixed(width: 35, height: 35) {
+                      ...GatsbyImageSharpFixed_withWebp
                     }
                   }
                 }

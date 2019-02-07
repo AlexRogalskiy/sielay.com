@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import {
   Grid,
   Container,
@@ -10,8 +10,10 @@ import BlogPagination from '../components/BlogPagination/BlogPagination'
 
 import { Calendar } from '../components/Calendar'
 import Posts from '../components/Posts';
+import { graphql } from 'gatsby'
+import Layout from '../layouts';
 
-export default props => {
+const Blog = props => {
   const tags = (props.data && props.data.tags && props.data.tags.group) || []
   const posts = (props.data && props.data.posts && props.data.posts.edges) || []
   const calendar =
@@ -35,7 +37,7 @@ export default props => {
             </Segment>
           </Grid.Column>
           <Grid.Column width={6}>
-            <TagsCard Link={Link} tags={tags} tag={props.pathContext.tag} />
+            <TagsCard Link={Link} tags={tags} tag={props.pageContext.tag} />
             <Calendar Link={Link} entries={calendar} />
           </Grid.Column>
         </Grid>
@@ -44,8 +46,17 @@ export default props => {
   )
 }
 
+export default (props) => <Layout {...props}><Blog {...props}/></Layout>
+
 export const pageQuery = graphql`
   query PageBlog {
+
+    site: site {
+      siteMetadata {
+        title
+      }
+    }
+
     # Get tags
     tags: allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
       group(field: frontmatter___tags) {
@@ -85,9 +96,8 @@ export const pageQuery = graphql`
             image {
               children {
                 ... on ImageSharp {
-                  responsiveResolution(width: 700, height: 100) {
-                    src
-                    srcSet
+                  fixed(width: 700, height: 100) {
+                    ...GatsbyImageSharpFixed_withWebp
                   }
                 }
               }
@@ -97,9 +107,8 @@ export const pageQuery = graphql`
               avatar {
                 children {
                   ... on ImageSharp {
-                    responsiveResolution(width: 35, height: 35) {
-                      src
-                      srcSet
+                    fixed(width: 35, height: 35) {
+                      ...GatsbyImageSharpFixed_withWebp
                     }
                   }
                 }

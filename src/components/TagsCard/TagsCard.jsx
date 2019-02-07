@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { Card, Label, Segment } from 'semantic-ui-react'
 import { kebabCase } from 'lodash'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 
 const sizes = {
   mini: .001,

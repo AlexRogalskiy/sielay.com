@@ -1,5 +1,5 @@
 import * as React from 'react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import { get } from 'lodash'
 import {
   Header,
@@ -15,6 +15,8 @@ import { DiscussionEmbed } from 'disqus-react'
 import rehypeReact from 'rehype-react'
 import InstagramEmbed from 'react-instagram-embed'
 import Posts from '../components/Posts'
+import { graphql } from 'gatsby'
+import Layout from '../layouts';
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
@@ -23,7 +25,7 @@ const renderAst = new rehypeReact({
   },
 }).Compiler
 
-export default props => {
+const BlogPost = props => {
   const { frontmatter, htmlAst, timeToRead } = props.data.post
 
   const tags = props.data.post.frontmatter.tags.map(tag => (
@@ -125,12 +127,14 @@ export default props => {
           </Segment>
         )}
       <Segment vertical>
-      <Header size={'small'}>Recent</Header>
+        <Header size={'small'}>Recent</Header>
         <Posts posts={recents} />
       </Segment>
     </Container>
   )
 }
+
+export default props => <Layout {...props}><BlogPost {...props}/></Layout>
 
 export const pageQuery = graphql`
   query TemplateBlogPost($slug: String!) {
@@ -158,9 +162,8 @@ export const pageQuery = graphql`
             image {
               children {
                 ... on ImageSharp {
-                  responsiveResolution(width: 100, height: 100) {
-                    src
-                    srcSet
+                  fixed(width: 100, height: 100) {
+                    ...GatsbyImageSharpFixed_withWebp
                   }
                 }
               }
@@ -186,9 +189,8 @@ export const pageQuery = graphql`
           avatar {
             children {
               ... on ImageSharp {
-                responsiveResolution(width: 80, height: 80, quality: 100) {
-                  src
-                  srcSet
+                fixed(width: 80, height: 80, quality: 100) {
+                  ...GatsbyImageSharpFixed_withWebp
                 }
               }
             }
@@ -201,9 +203,8 @@ export const pageQuery = graphql`
         image {
           children {
             ... on ImageSharp {
-              responsiveResolution(width: 900, height: 300, quality: 100) {
-                src
-                srcSet
+              fixed(width: 900, height: 300, quality: 100) {
+                ...GatsbyImageSharpFixed_withWebp
               }
             }
           }
@@ -233,9 +234,8 @@ export const pageQuery = graphql`
             image {
               children {
                 ... on ImageSharp {
-                  responsiveResolution(width: 100, height: 100) {
-                    src
-                    srcSet
+                  fixed(width: 100, height: 100) {
+                    ...GatsbyImageSharpFixed_withWebp
                   }
                 }
               }
@@ -245,9 +245,8 @@ export const pageQuery = graphql`
               avatar {
                 children {
                   ... on ImageSharp {
-                    responsiveResolution(width: 36, height: 36) {
-                      src
-                      srcSet
+                    fixed(width: 36, height: 36) {
+                      ...GatsbyImageSharpFixed_withWebp
                     }
                   }
                 }

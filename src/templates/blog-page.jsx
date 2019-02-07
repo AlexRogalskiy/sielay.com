@@ -1,7 +1,7 @@
-import * as React from 'react'
-import Blog from '../pages/blog'
+import { graphql } from 'gatsby';
+import Blog from '../pages/blog';
 
-export default Blog
+export default Blog;
 
 export const pageQuery = graphql`
   query TemplateBlogPage($skip: Int) {
@@ -51,9 +51,8 @@ export const pageQuery = graphql`
             image {
               children {
                 ... on ImageSharp {
-                  responsiveResolution(width: 100, height: 100) {
-                    src
-                    srcSet
+                  fixed(width: 100, height: 100) {
+                    ...GatsbyImageSharpFixed_withWebp
                   }
                 }
               }
@@ -63,9 +62,8 @@ export const pageQuery = graphql`
               avatar {
                 children {
                   ... on ImageSharp {
-                    responsiveResolution(width: 100, height: 100) {
-                      src
-                      srcSet
+                    fixed(width: 100, height: 100) {
+                      ...GatsbyImageSharpFixed_withWebp
                     }
                   }
                 }

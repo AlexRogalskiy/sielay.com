@@ -26,6 +26,7 @@ const SidebarMenu = ({ items, pathname, Link, visible }) => {
               key={item.path}
               href={item.path}
               target="_blank"
+              rel="noopener noreferrer"
             >
               <Icon name={item.icon} />
               {item.name}

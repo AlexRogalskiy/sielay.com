@@ -22,7 +22,7 @@ my [GitHub](https://github.com/sielay/sielay.com)
     // ..
     // Create slugs for files.
     // Slug will used for blog page path.
-    exports.onCreateNode = ({ node, boundActionCreators, getNode }) => {
+    exports.onCreateNode = ({ node, actions, getNode }) => {
     // ...
     // exptract date elements for indexing
     // yearWithMonth allows concatenation otherwise difficult/impossible while
@@ -53,8 +53,8 @@ my [GitHub](https://github.com/sielay/sielay.com)
     * That can be done using `createPages` of `/gatsby-node.js` (Example on [GitHub](https://github.com/sielay/sielay.com/blob/master/gatsby-node.js#L126))
 
     ```javascript
-    exports.createPages = ({ graphql, boundActionCreators }) => {
-    const { createPage } = boundActionCreators
+    exports.createPages = ({ graphql, actions }) => {
+    const { createPage } = actions
 
     return new Promise((resolve, reject) => {
         // added monthsPage to the templates

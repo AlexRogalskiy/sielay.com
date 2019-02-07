@@ -1,7 +1,6 @@
 import * as React from 'react'
 import {
   Header,
-  Divider,
   Card,
   Container,
   Segment,
@@ -13,6 +12,8 @@ import {
   Grid,
   Tab,
 } from 'semantic-ui-react'
+import { graphql } from 'gatsby'
+import Layout from '../layouts';
 
 const repos = props => (
   <List divided relaxed>
@@ -186,7 +187,7 @@ const xpNodes = node =>
     </List.Item>
   ))
 
-export default props => (
+const About = props => (
   <Container>
     <br/>
     <Message
@@ -259,8 +260,17 @@ export default props => (
   </Container>
 )
 
+export default props => <Layout {...props}><About {...props}/></Layout>
+
 export const pageQuery = graphql`
   query About {
+
+    site: site {
+      siteMetadata {
+        title
+      }
+    }
+
     repos: allReposJson {
       edges {
         node {

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { Feed, Icon, Label, Image, Message } from 'semantic-ui-react'
-import Link from 'gatsby-link'
+import { Link } from 'gatsby'
 import { get, kebabCase } from 'lodash'
 
 export default props => (
