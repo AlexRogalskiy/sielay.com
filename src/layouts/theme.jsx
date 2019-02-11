@@ -1,6 +1,14 @@
 /** @jsx jsx */
 import React from 'react';
 import { Global, jsx, css } from '@emotion/core';
+import { upperFirst, camelCase } from 'lodash';
+import * as Fa from 'react-icons/fa';
+
+export const FaIcon = icon => {
+  const path = `Fa${upperFirst(camelCase(icon))}`;
+  const Component = Fa[path]
+  return Component ? <Component /> : null;
+};
 
 export const Body = () => (
   <Global

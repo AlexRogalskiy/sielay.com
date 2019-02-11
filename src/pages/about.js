@@ -2,15 +2,16 @@
 import * as React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../layouts';
+import { FaIcon } from '../layouts/theme';
 import { jsx, css } from '@emotion/core';
 import { withTheme } from 'emotion-theming';
 
 const List = ({ edges }) => (
   <ul>
-    {edges.map(({ node }, index) => (
-      <li key={index}>
-        <a href={node.link}>{node.title}</a>
-        <p>{node.description || node.date}</p>
+    {edges.map(({ node: { link, title, date, description } }, key) => (
+      <li key={key}>
+        <a href={link}>{title}</a>
+        <p>{description || date}</p>
       </li>
     ))}
   </ul>
@@ -18,14 +19,14 @@ const List = ({ edges }) => (
 
 const References = ({ edges }) => (
   <ul>
-    {edges.map(({ node }, index) => (
-      <li key={index}>
-        <h3>{node.name}</h3>
+    {edges.map(({ node: { name, title, content, when } }, key) => (
+      <li key={key}>
+        <h3>{name}</h3>
         <p>
-          <strong>{node.title}</strong>
+          <strong>{title}</strong>
         </p>
-        <p>{node.content}</p>
-        <p>{node.when}</p>
+        <p>{content}</p>
+        <p>{when}</p>
       </li>
     ))}
   </ul>
@@ -33,36 +34,38 @@ const References = ({ edges }) => (
 
 const LabelledList = ({ list, Decorator }) => (
   <ul>
-    {list.map(({ node }, index) => (
-      <li key={index}>
-        <a>{node.label || `${node.from} - ${node.to}`}</a>
-        {node.company ? (
-          <h2>
-            {node.logo ? <im src={node.logo} alt={node.company} /> : null}{' '}
-            {node.company}
-            {node.position ? <small>{node.position}</small> : null}
-          </h2>
-        ) : null}
-        <ul>
-          <Decorator node={node} />
-        </ul>
-      </li>
-    ))}
+    {list.map(
+      ({ node, node: { label, from, to, company, logo, position } }, key) => (
+        <li key={key}>
+          <a>{label || `${from} - ${to}`}</a>
+          {company ? (
+            <h2>
+              {logo && <im src={logo} alt={company} />}
+              {company}
+              {position && <small>{position}</small>}
+            </h2>
+          ) : null}
+          <ul>
+            <Decorator node={node} />
+          </ul>
+        </li>
+      )
+    )}
   </ul>
 );
 
 const SkillNodes = ({ node }) =>
-  node.items.map(({ icon, label, description }, index) => (
-    <li key={index}>
-      {icon}
+  node.items.map(({ icon, label, description }, key) => (
+    <li key={key}>
+      {FaIcon(icon)}
       <h4>{label}</h4>
       {description && description.length && <p>{description}</p>}
     </li>
   ));
 
-const XpNodes = ({ node }) =>
-  node.items.map(({ link, label, description, tech }, index) => (
-    <li key={index}>
+const XpNodes = withTheme(({ node, theme }) =>
+  node.items.map(({ link, label, description, tech }, key) => (
+    <li key={key}>
       {link
         ? [
             <a key={0} href={link}>
@@ -75,21 +78,34 @@ const XpNodes = ({ node }) =>
             description && description.length && <p key={1}>{description}</p>
           ]}
       {tech && (
-        <ul horizontal key={2}>
+        <div key={2}>
           {' '}
           {tech.map(({ color, icon, label }, key) => (
-            <li key={key}>
-              <span>
-                {color}
-                {icon}
+              <span key={key}
+                css={css(`
+                  color: white;
+                  display: inline-block;
+                  padding: .5rem 1rem;
+                  margin-right: .5rem;
+                  margin-top: .5rem;
+                  & > svg {
+                    margin-right: .5rem;
+                    vertical-align: middle;
+                  }
+              `)}
+                style={{
+                  background: theme.named[color]
+                }}
+              >
+                {FaIcon(icon)}
                 {label}
               </span>
-            </li>
           ))}{' '}
-        </ul>
+        </div>
       )}
     </li>
-  ));
+  ))
+);
 
 const Tabs = withTheme(
   class extends React.Component {
