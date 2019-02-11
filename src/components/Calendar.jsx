@@ -1,5 +1,8 @@
-import { Card, Segment, List } from 'semantic-ui-react'
-import React from 'react'
+/** @jsx jsx */
+import React from 'react';
+import { Link } from 'gatsby';
+import { jsx, css } from '@emotion/core';
+import { withTheme } from 'emotion-theming';
 
 const months = [
   'Jan',
@@ -13,16 +16,16 @@ const months = [
   'Sep',
   'Oct',
   'Nov',
-  'Dec',
-]
+  'Dec'
+];
 
 const normalize = list => {
   const hash = list.reduce((prev, current) => {
-    const parts = current.fieldValue.split('-')
-    const year = (prev[parts[0]] = prev[parts[0]] || {})
-    year[parts[1]] = (year[parts[1]] || 0) + current.totalCount
-    return prev
-  }, {})
+    const parts = current.fieldValue.split('-');
+    const year = (prev[parts[0]] = prev[parts[0]] || {});
+    year[parts[1]] = (year[parts[1]] || 0) + current.totalCount;
+    return prev;
+  }, {});
   const output = Object.keys(hash)
     .sort()
     .reverse()
@@ -31,35 +34,59 @@ const normalize = list => {
       months: Object.keys(hash[year])
         .map(month => ({
           month,
-          count: hash[year][month],
+          count: hash[year][month]
         }))
-        .sort((a, b) => (a.month === b.month ? 0 : a.month > b.month ? -1 : 1)),
-    }))
-  return output
-}
+        .sort((a, b) => (a.month === b.month ? 0 : a.month > b.month ? -1 : 1))
+    }));
+  return output;
+};
 
-export const Calendar = props => (
-  <Segment vertical>
-    {normalize(props.entries).map(year => (
-      <Card key={year.year}>
-        <Card.Content>
-          <Card.Header>{year.year}</Card.Header>
-        </Card.Content>
-        <Card.Content>
-          <List>
-            {year.months.map(({ month, count }) => (
-              <List.Item as="span" key={month}>
-                <List.Icon name="clock" />
-                <List.Content>
-                  <props.Link to={`/blog/months/${year.year}-${month}/`}>
-                    {months[month - 1]} ({count})
-                  </props.Link>
-                </List.Content>
-              </List.Item>
-            ))}
-          </List>
-        </Card.Content>
-      </Card>
+export const Calendar = withTheme(({ entries, theme }) => (
+  <nav
+    css={css(`
+      clear: both;
+      & > div {
+        width: calc(33% - .5rem);
+        float: left;
+      }
+      & > div > ul {
+        background: ${theme.shade};
+        border-radius: .25rem;
+        padding: 1rem;
+        margin: 0 .5rem 0 0;
+        list-style: none;
+        height: 26rem;
+      }
+      & > br {
+        clear: both;
+      }
+    }
+`)}
+  >
+    {normalize(entries).map(year => (
+      <div key={year.year}>
+        <h3>{year.year}</h3>
+
+        <ul>
+          {year.months.map(({ month, count }) => (
+            <li key={month}>
+              <Link to={`/blog/months/${year.year}-${month}/`}>
+                {months[month - 1]} ({count})
+              </Link>
+            </li>
+          ))}
+        </ul>
+      </div>
     ))}
-  </Segment>
-)
+    <br/>
+  </nav>
+));
+
+export const pageQuery = graphql`
+  fragment calendarFragment on MarkdownRemarkConnection {
+    group(field: frontmatter___updatedDate) {
+      fieldValue
+      totalCount
+    }
+  }
+`;

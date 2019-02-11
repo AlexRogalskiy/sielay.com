@@ -1,11 +1,46 @@
-import { graphql } from 'gatsby'
-import Blog from './blog';
+/** @jsx jsx */
+import * as React from 'react';
+import { jsx, css } from '@emotion/core';
+import { withTheme } from 'emotion-theming';
+import { graphql, Link } from 'gatsby';
+import { Posts } from '../components';
+import Layout from '../layouts';
+import { theme } from '../layouts/colors';
 
-export default Blog;
+const IndexPage = withTheme(props => (
+  <main>
+    <Posts posts={props.data.posts.edges.map(post => post.node)} />
+    <Link
+      as={`button`}
+      css={css(`
+          background-color: ${props.theme.shade};
+          padding: 1rem;
+          width: 100%;
+          display: block;
+          border: none;
+          text-align: center;
+          color: ${props.theme.dark};
+          font-family: Montserrat, sans-serif;
+          margin-top: 1rem;
+          &:hover {
+
+          }
+      `)}
+      to={'/blog'}
+    >
+      Read more
+    </Link>
+  </main>
+));
+
+export default props => (
+  <Layout {...props}>
+    <IndexPage {...props} />
+  </Layout>
+);
 
 export const pageQuery = graphql`
   query PageIndexBlog {
-
     site: site {
       siteMetadata {
         title
@@ -13,11 +48,13 @@ export const pageQuery = graphql`
     }
 
     # Get tags
-    tags: allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
+    tags: allMarkdownRemark {
+      ...tagsFragment
+    }
+
+    # Get calendar
+    calendar: allMarkdownRemark {
+      ...calendarFragment
     }
 
     # Get posts
@@ -27,43 +64,9 @@ export const pageQuery = graphql`
         frontmatter: { draft: { ne: true } }
         fileAbsolutePath: { regex: "/blog/" }
       }
-      limit: 10
+      limit: 5
     ) {
-      totalCount
-      edges {
-        node {
-          excerpt
-          timeToRead
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            updatedDate(formatString: "DD MMMM, YYYY")
-            image {
-              children {
-                ... on ImageSharp {
-                  fixed(width: 100, height: 100) {
-                    ...GatsbyImageSharpFixed_withWebp
-                  }
-                }
-              }
-            }
-            author {
-              id
-              avatar {
-                children {
-                  ... on ImageSharp {
-                    fixed(width: 35, height: 35) {
-                      ...GatsbyImageSharpFixed_withWebp
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      ...blogFeedFragment
     }
   }
-`
+`;

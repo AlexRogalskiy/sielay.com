@@ -3,6 +3,8 @@ module.exports = {
     title: 'SIELAY',
     googleVerification: `_ZC-ovxrZsNam95r9N9266c-hJvulE2GnROdwHkSuBU`,
     disqus: `sielay-com`,
+    author: 'sielay',
+    description: 'SIELAY blog'
   },
   mapping: {
     'MarkdownRemark.frontmatter.author': `AuthorJson`,
@@ -74,5 +76,14 @@ module.exports = {
     // site!
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-plugin-nprogress`,
+      options: {
+        // Setting a color is optional.
+        color: `tomato`,
+        // Disable the loading spinner.
+        showSpinner: true,
+      },
+    },
   ],
 }

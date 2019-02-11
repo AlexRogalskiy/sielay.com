@@ -1,270 +1,250 @@
-import * as React from 'react'
-import {
-  Header,
-  Card,
-  Container,
-  Segment,
-  Message,
-  Icon,
-  Label,
-  Image,
-  List,
-  Grid,
-  Tab,
-} from 'semantic-ui-react'
-import { graphql } from 'gatsby'
+/** @jsx jsx */
+import * as React from 'react';
+import { graphql } from 'gatsby';
 import Layout from '../layouts';
+import { jsx, css } from '@emotion/core';
+import { withTheme } from 'emotion-theming';
 
-const repos = props => (
-  <List divided relaxed>
-    {props.data.repos.edges.map(({ node }, index) => (
-      <List.Item key={index}>
-        <List.Icon name={node.where} size="large" verticalAlign="middle" />
-        <List.Content>
-          <List.Header as="a" href={node.link}>
-            {node.title}
-          </List.Header>
-          <List.Description as="a" href={node.link}>
-            {node.description}
-          </List.Description>
-        </List.Content>
-      </List.Item>
+const List = ({ edges }) => (
+  <ul>
+    {edges.map(({ node }, index) => (
+      <li key={index}>
+        <a href={node.link}>{node.title}</a>
+        <p>{node.description || node.date}</p>
+      </li>
     ))}
-  </List>
-)
+  </ul>
+);
 
-const contributions = props => (
-  <List divided relaxed>
-    {props.data.contributions.edges.map(({ node }, index) => (
-      <List.Item key={index}>
-        <List.Icon name={node.where} size="large" verticalAlign="middle" />
-        <List.Content>
-          <List.Header as="a" href={node.link}>
-            {node.title}
-          </List.Header>
-          <List.Description as="a" href={node.link}>
-            {node.description}
-          </List.Description>
-        </List.Content>
-      </List.Item>
-    ))}
-  </List>
-)
-
-const articles = props => (
-  <List divided relaxed>
-    {props.data.articles.edges.map(({ node }, index) => (
-      <List.Item key={index}>
-        <List.Icon name={node.where} size="large" verticalAlign="middle" />
-        <List.Content>
-          <List.Header as="a" href={node.link}>
-            {node.title}
-          </List.Header>
-          <List.Description as="a" href={node.link}>
-            {node.date}
-          </List.Description>
-        </List.Content>
-      </List.Item>
-    ))}
-  </List>
-)
-
-const projects = props => (
-  <List divided relaxed>
-    {props.data.projects.edges.map(({ node }, index) => (
-      <List.Item key={index}>
-        <List.Icon name={node.where} size="large" verticalAlign="middle" />
-        <List.Content>
-          <List.Header as="a" href={node.link}>
-            {node.title}
-          </List.Header>
-          <List.Description as="a" href={node.link}>
-            {node.description}
-          </List.Description>
-        </List.Content>
-      </List.Item>
-    ))}
-  </List>
-)
-
-const refrences = props => (
-  <Grid stackable columns={1}>
-    {props.data.references.edges.map(({ node }, index) => (
-      <Grid.Column key={index}>
-        <Card fluid>
-          <Card.Content>
-            <Card.Header>{node.name}</Card.Header>
-            <Card.Meta>{node.title}</Card.Meta>
-            <Card.Description>{node.content}</Card.Description>
-          </Card.Content>
-          <Card.Content extra>{node.when}</Card.Content>
-        </Card>
-      </Grid.Column>
-    ))}
-  </Grid>
-)
-
-const labelledList = (list, decorator) => (
-  <Grid stackable columns={2}>
-    {list.map(({ node }, index) => (
-      <Grid.Column key={index}>
-        <Label as="a" ribbon>
-          {node.label || `${node.from} - ${node.to}`}
-        </Label>
-        {node.company ? (
-          <Header as="h2">
-            {node.logo ? <Image circular src={node.log} /> : null}{' '}
-            {node.company}
-            {node.position ? (
-              <Header.Subheader>{node.position}</Header.Subheader>
-            ) : null}
-          </Header>
-        ) : null}
-        <List divided relaxed>
-          {decorator(node)}
-        </List>
-      </Grid.Column>
-    ))}
-  </Grid>
-)
-
-const skillNodes = node =>
-  node.items.map((item, index2) => (
-    <List.Item key={index2}>
-      {item.icon && (
-        <List.Icon name={item.icon} size="large" verticalAlign="middle" />
-      )}
-      <List.Content>
-        <List.Header as="span">{item.label}</List.Header>
-        {item.description &&
-          item.description.length && (
-            <List.Description as="span">{item.description}</List.Description>
-          )}
-      </List.Content>
-    </List.Item>
-  ))
-
-const xpNodes = node =>
-  node.items.map((item, index2) => (
-    <List.Item key={index2}>
-      <List.Content>
-        {item.link
-          ? [
-              <List.Header key={0} as="a" href={item.link}>
-                {item.label}
-              </List.Header>,
-              <List.Description key={1} as="a" href={item.link}>
-                {item.description}
-              </List.Description>,
-            ]
-          : [
-              <List.Header as="span" key={0}>
-                {item.label}
-              </List.Header>,
-              item.description &&
-                item.description.length && (
-                  <List.Description key={1} as="span">
-                    {item.description}
-                  </List.Description>
-                ),
-            ]}
-        {item.tech && (
-          <List horizontal key={2}>
-            {' '}
-            {item.tech.map((tag, index3) => (
-              <List.Item key={index3}>
-                <List.Content>
-                  <Label as="span" image color={tag.color}>
-                    <Icon name={tag.icon} />
-                    {tag.label}
-                  </Label>
-                </List.Content>
-              </List.Item>
-            ))}{' '}
-          </List>
-        )}
-      </List.Content>
-    </List.Item>
-  ))
-
-const About = props => (
-  <Container>
-    <br/>
-    <Message
-      size="mini"
-      negative
-      icon="warning"
-      header="No. I'm not for hire now"
-      content="If you send me job offers using my contact details, including LinkedIn
-        may result in block. That includes &quot;contact in case I change my mind in
-        the future&quot;"
-    />
-    <Segment vertical size={'huge'}>
-      <Segment piled>
+const References = ({ edges }) => (
+  <ul>
+    {edges.map(({ node }, index) => (
+      <li key={index}>
+        <h3>{node.name}</h3>
         <p>
-          Hi, my name is Łukasz (pronounced [ˈwukaʂ]). Originally from Szczecin,
-          Poland. Now living in Wimbledon, London, United Kingdom. I’m a father,
-          husband, software developer, team lead, aspiring enreprenour and
-          amatour cyclist. I started with web early. I kept failing and
-          reinventing myself. Now I start over, simpler, without too much
-          stress.
+          <strong>{node.title}</strong>
         </p>
-      </Segment>
+        <p>{node.content}</p>
+        <p>{node.when}</p>
+      </li>
+    ))}
+  </ul>
+);
 
-      <Tab
+const LabelledList = ({ list, Decorator }) => (
+  <ul>
+    {list.map(({ node }, index) => (
+      <li key={index}>
+        <a>{node.label || `${node.from} - ${node.to}`}</a>
+        {node.company ? (
+          <h2>
+            {node.logo ? <im src={node.logo} alt={node.company} /> : null}{' '}
+            {node.company}
+            {node.position ? <small>{node.position}</small> : null}
+          </h2>
+        ) : null}
+        <ul>
+          <Decorator node={node} />
+        </ul>
+      </li>
+    ))}
+  </ul>
+);
+
+const SkillNodes = ({ node }) =>
+  node.items.map(({ icon, label, description }, index) => (
+    <li key={index}>
+      {icon}
+      <h4>{label}</h4>
+      {description && description.length && <p>{description}</p>}
+    </li>
+  ));
+
+const XpNodes = ({ node }) =>
+  node.items.map(({ link, label, description, tech }, index) => (
+    <li key={index}>
+      {link
+        ? [
+            <a key={0} href={link}>
+              {label}
+            </a>,
+            <p key={1}>{description}</p>
+          ]
+        : [
+            <strong>{label}</strong>,
+            description && description.length && <p key={1}>{description}</p>
+          ]}
+      {tech && (
+        <ul horizontal key={2}>
+          {' '}
+          {tech.map(({ color, icon, label }, key) => (
+            <li key={key}>
+              <span>
+                {color}
+                {icon}
+                {label}
+              </span>
+            </li>
+          ))}{' '}
+        </ul>
+      )}
+    </li>
+  ));
+
+const Tabs = withTheme(
+  class extends React.Component {
+    constructor(props) {
+      super(props);
+      this.state = {
+        active: 0
+      };
+    }
+    render() {
+      const { theme, panes } = this.props;
+      const { active } = this.state;
+      return (
+        <div
+          css={css(`
+            display: flex;
+            flex-direction: row;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-content: stretch;
+            align-items: stretch;
+            & > * {
+              order: 0;
+              align-self: auto;
+            }
+            & > ul:first-child {
+              margin: 0px;
+              flex: 0 0 auto;
+              padding: 0px;
+              width: 200px;
+              list-style: none;
+              border-right: 1px solid ${theme.shade};
+            }
+            & > ul:first-child > li {
+              border: 1px solid transparent;
+              padding: 1rem;
+              border-right: none;
+            }
+            & > ul:first-child > li.active, & > ul:first-child > li:hover {
+              cursor: pointer;
+              border: 1px solid ${theme.shade};
+              border-right: none;
+              border-radius: .5rem 0 0 .5rem;
+            }
+            & > *:not(:first-child) {
+              border-top: 1px solid ${theme.shade};
+              padding: 1rem;
+              flex: 1 1 auto;
+            }
+            & > ul:not(:first-child),
+            & > *:not(:first-child) ul {
+              list-style: none;
+              margin: 0px;
+              padding: 1rem 0 0 1rem
+            }
+            `)}
+        >
+          <ul>
+            {panes.map(({ label }, key) => (
+              <li
+                onClick={() => this.setState({ active: key })}
+                key={key}
+                className={key === active ? 'active' : null}
+              >
+                {label}
+              </li>
+            ))}
+          </ul>
+          {panes && panes[active] && panes[active].render()}
+        </div>
+      );
+    }
+  }
+);
+
+const About = withTheme(
+  ({
+    theme,
+    data: {
+      experience,
+      references,
+      skills,
+      projects,
+      repos,
+      contributions,
+      articles
+    }
+  }) => (
+    <main>
+      <p>
+        Hi, my name is Łukasz (pronounced [ˈwukaʂ]). Originally from Szczecin,
+        Poland. Now living in Wimbledon, London, United Kingdom. I’m a father,
+        husband, software developer, team lead, aspiring enreprenour and amatour
+        cyclist. I started with web early. I kept failing and reinventing
+        myself. Now I start over, simpler, without too much stress.
+      </p>
+      <div
+        css={css(`
+  background: ${theme.shade};
+  padding: 1rem;
+  border-radius: .5rem;
+  margin: 1rem 0;
+`)}
+      >
+        I'm currently <strong>OFF THE MARKET</strong> and I'm not planning to
+        come back to it anytime soon. Please don't send me job offers;
+      </div>
+      <Tabs
         panes={[
           {
-            menuItem: 'Experience',
+            label: 'Experience',
             render: () => (
-              <Tab.Pane>
-                {labelledList(props.data.experience.edges, xpNodes)}
-              </Tab.Pane>
-            ),
+              <LabelledList list={experience.edges} Decorator={XpNodes} />
+            )
           },
           {
-            menuItem: 'References',
-            render: () => <Tab.Pane>{refrences(props)}</Tab.Pane>,
+            label: 'References',
+            render: () => <References edges={references.edges} />
           },
           {
-            menuItem: 'Skills',
+            label: 'Skills',
             render: () => (
-              <Tab.Pane>
-                {labelledList(props.data.skills.edges, skillNodes)}
-              </Tab.Pane>
-            ),
+              <LabelledList list={skills.edges} Decorator={SkillNodes} />
+            )
           },
+          {
+            label: 'Projects',
+            render: () => <List edges={projects.edges} />
+          },
+          {
+            label: 'Repositories',
+            render: () => <List edges={repos.edges} />
+          },
+          {
+            label: 'Contributions',
+            render: () => <List edges={contributions.edges} />
+          },
+          {
+            label: 'Articles',
+            render: () => <List edges={articles.edges} />
+          }
         ]}
       />
-      <br />
-      <Tab
-        panes={[
-          {
-            menuItem: 'Projects',
-            render: () => <Tab.Pane>{projects(props)}</Tab.Pane>,
-          },
-          {
-            menuItem: 'Repositories',
-            render: () => <Tab.Pane>{repos(props)}</Tab.Pane>,
-          },
-          {
-            menuItem: 'Contributions',
-            render: () => <Tab.Pane>{contributions(props)}</Tab.Pane>,
-          },
-          {
-            menuItem: 'Articles',
-            render: () => <Tab.Pane>{articles(props)}</Tab.Pane>,
-          },
-        ]}
-      />
-    </Segment>
-  </Container>
-)
+    </main>
+  )
+);
 
-export default props => <Layout {...props}><About {...props}/></Layout>
+export default props => (
+  <Layout {...props}>
+    <About {...props} />
+  </Layout>
+);
 
 export const pageQuery = graphql`
   query About {
-
     site: site {
       siteMetadata {
         title
@@ -356,4 +336,4 @@ export const pageQuery = graphql`
       }
     }
   }
-`
+`;

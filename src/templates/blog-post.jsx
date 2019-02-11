@@ -1,143 +1,198 @@
-import * as React from 'react'
-import { Link } from 'gatsby'
-import { get } from 'lodash'
-import {
-  Header,
-  Container,
-  Segment,
-  Button,
-  Label,
-  Image,
-  Icon,
-  Message,
-} from 'semantic-ui-react'
-import { DiscussionEmbed } from 'disqus-react'
-import rehypeReact from 'rehype-react'
-import InstagramEmbed from 'react-instagram-embed'
-import Posts from '../components/Posts'
-import { graphql } from 'gatsby'
+/** @jsx jsx */
+import * as React from 'react';
+import { Link } from 'gatsby';
+import { jsx, css } from '@emotion/core';
+import { withTheme } from 'emotion-theming';
+import { get } from 'lodash';
+import { DiscussionEmbed } from 'disqus-react';
+import rehypeReact from 'rehype-react';
+import InstagramEmbed from 'react-instagram-embed';
+import { Posts } from '../components';
+import { graphql } from 'gatsby';
 import Layout from '../layouts';
+import { Sidebar } from '../components/Sidebar';
 
 const renderAst = new rehypeReact({
   createElement: React.createElement,
   components: {
-    'instagram-embed': InstagramEmbed,
-  },
-}).Compiler
+    'instagram-embed': InstagramEmbed
+  }
+}).Compiler;
 
-const BlogPost = props => {
-  const { frontmatter, htmlAst, timeToRead } = props.data.post
-
-  const tags = props.data.post.frontmatter.tags.map(tag => (
-    <Label key={tag}>
-      <Link to={`/blog/tags/${tag}/`}>{tag}</Link>
-    </Label>
+const Tags = withTheme(({ tags, theme }) =>
+  tags.map(tag => (
+    <Link
+      to={`/blog/tags/${tag}/`}
+      title={tag}
+      key={tag}
+      css={css(`
+      &:after {
+        content: '|';
+        padding: 0 .25rem;
+        color: ${theme.dark};
+      }
+      &:last-child:after {
+        display: none;
+      }
+    `)}
+    >
+      {tag}
+    </Link>
   ))
+);
 
-  const recents = (props.data.recents ? props.data.recents.edges : []).map(
-    ({ node }) => node
-  )
+const Recovered = withTheme(({ age, theme }) => (
+  <div
+    css={css(`
+    background: ${theme.shade};
+    padding: 1rem;
+    border-radius: .5rem;
+    margin: 1rem 0;
+  `)}
+  >
+    <h3>DISCLAIMER</h3>
+    This article has been recovered using archive.org as my plan to find back
+    how I evolved over the years. My opinons might have changed since. I was{' '}
+    {age} years old when I wrote it.
+  </div>
+));
 
-  const myIndex = (props.data.posts ? props.data.posts.edges : []).findIndex(
+const Source = withTheme(
+  ({ source, sourceType, theme }) =>
+    source && (
+      <p
+        className="small"
+        css={css(`
+  background: ${theme.shade};
+  padding: 1rem;
+  border-radius: .5rem;
+  margin: 1rem 0;
+`)}
+      >
+        This article war originally posted on {sourceType}
+        <a
+          href={source}
+          target="_blank"
+          style={{
+            float: 'right'
+          }}
+        >
+          View Original
+        </a>
+      </p>
+    )
+);
+
+const BlogPost = ({
+  data: {
+    site,
+    recents,
+    posts,
+    tags,
+    calendar,
+    post: { frontmatter, htmlAst, timeToRead, fields }
+  },
+  pageContext
+}) => {
+  const myIndex = (posts ? posts.edges : []).findIndex(
     ({
       node: {
-        fields: { slug },
-      },
-    }) => slug === props.data.post.fields.slug
-  )
+        fields: { slug }
+      }
+    }) => slug === fields.slug
+  );
 
   const previousAndNext =
     myIndex !== -1
-      ? [
-          props.data.posts.edges[myIndex - 1],
-          props.data.posts.edges[myIndex + 1],
-        ]
+      ? [posts.edges[myIndex - 1], posts.edges[myIndex + 1]]
           .filter(Boolean)
           .map(({ node }) => node)
-      : []
+      : [];
 
-  const cover = get(frontmatter, 'image.children.0.responsiveResolution', {})
+  const cover = get(frontmatter, 'image.children.0.responsiveResolution', {});
 
-  const updated = Date.parse(props.data.post.frontmatter.updatedDate)
-  const born = Date.parse('1984-04-10')
-  const age = Math.floor((updated - born) / 1000 / 60 / 60 / 24 / 365.25)
+  const updated = Date.parse(frontmatter.updatedDate);
+  const born = Date.parse('1984-04-10');
+  const age = Math.floor((updated - born) / 1000 / 60 / 60 / 24 / 365.25);
 
   return (
-    <Container>
-      <Segment vertical size={'huge'} style={{ border: 'none' }}>
-        <Header as="h1">
-          <Icon name="chat" />
-          <Header.Content>
-            {frontmatter.title}
-            <Header.Subheader>
-              {frontmatter.updatedDate} - {timeToRead} min read
-            </Header.Subheader>
-          </Header.Content>
-        </Header>
-      </Segment>
-      <Image {...cover} fluid />
-      <Segment vertical size={'huge'} style={{ border: 'none' }}>
-        {props.data.post.frontmatter.tags.indexOf('recovered') !== -1 ? (
-          <Message size={'mini'} warning>
-            <Message.Header>DISCLAIMER</Message.Header>
-            This article has been recovered using archive.org as my plan to find
-            back how I evolved over the years. My opinons might have changed
-            since. I was {age} years old when I wrote it.
-          </Message>
-        ) : null}
-        {props.data.post.frontmatter.source && (
-          <Message size={'mini'} info>
-            <Icon name={props.data.post.frontmatter.sourceType} />
-            This article war originally posted on{' '}
-            {props.data.post.frontmatter.sourceType}
-            <Button
-              as="a"
-              size="mini"
-              href={props.data.post.frontmatter.source}
-              target="_blank"
-              style={{
-                float: 'right',
-                marginTop: '-4px',
-              }}
-            >
-              View Original
-            </Button>
-          </Message>
-        )}
-        {renderAst(htmlAst)}
-      </Segment>
-      <Segment vertical>{tags}</Segment>
-      <Segment vertical>
-        <Header size={'small'}>Previous &amp; Next</Header>
-        <Posts posts={previousAndNext} />
-      </Segment>
+    <React.Fragment>
+      <main>
+        <article
+          css={css(`
+          & > div > p {
+            line-height: 2.5rem;
+          }
+        `)}
+        >
+          <h1>{frontmatter.title}</h1>
+          <p className="small">
+            {frontmatter.updatedDate} - {timeToRead} min read
+          </p>
 
-      {props.data.site &&
-        props.data.site.siteMetadata &&
-        props.data.site.siteMetadata.disqus && (
-          <Segment vertical>
+          <img {...cover} fluid />
+
+          {frontmatter.tags.indexOf('recovered') !== -1 && (
+            <Recovered age={age} />
+          )}
+
+          <Source
+            source={frontmatter.source}
+            sourceType={frontmatter.sourceType}
+          />
+
+          {renderAst(htmlAst)}
+
+          <div>
+            <Tags tags={frontmatter.tags} />
+          </div>
+        </article>
+      </main>
+      <aside>
+        <div>
+          <h3>Previous &amp; Next</h3>
+          <Posts posts={previousAndNext} />
+        </div>
+        {site && site.siteMetadata && site.siteMetadata.disqus && (
+          <div>
             <DiscussionEmbed
-              shortname={props.data.site.siteMetadata.disqus}
+              shortname={site.siteMetadata.disqus}
               config={{
-                url: `https://sielay.com${props.data.post.fields.slug}`,
-                identifier: props.data.post.fields.slug,
-                title: props.data.post.frontmatter.title,
+                url: `https://sielay.com${fields.slug}`,
+                identifier: fields.slug,
+                title: frontmatter.title
               }}
             />
-          </Segment>
+          </div>
         )}
-      <Segment vertical>
-        <Header size={'small'}>Recent</Header>
-        <Posts posts={recents} />
-      </Segment>
-    </Container>
-  )
-}
 
-export default props => <Layout {...props}><BlogPost {...props}/></Layout>
+        <h3>Recent</h3>
+        <Posts posts={(recents ? recents.edges : []).map(({ node }) => node)} />
+
+        <Sidebar data={{ tags, calendar }} pageContext={pageContext} />
+      </aside>
+    </React.Fragment>
+  );
+};
+
+export default props => (
+  <Layout {...props}>
+    <BlogPost {...props} />
+  </Layout>
+);
 
 export const pageQuery = graphql`
   query TemplateBlogPost($slug: String!) {
+    # Get tags
+    tags: allMarkdownRemark {
+      ...tagsFragment
+    }
+
+    # Get calendar
+    calendar: allMarkdownRemark {
+      ...calendarFragment
+    }
+
     site: site {
       siteMetadata {
         disqus
@@ -148,29 +203,7 @@ export const pageQuery = graphql`
       sort: { order: DESC, fields: [frontmatter___updatedDate] }
       filter: { fileAbsolutePath: { regex: "/blog/" } }
     ) {
-      edges {
-        node {
-          excerpt
-          timeToRead
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            tags
-            updatedDate(formatString: "DD MMMM, YYYY")
-            image {
-              children {
-                ... on ImageSharp {
-                  fixed(width: 100, height: 100) {
-                    ...GatsbyImageSharpFixed_withWebp
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      ...blogFeedFragment
     }
 
     post: markdownRemark(fields: { slug: { eq: $slug } }) {
@@ -220,41 +253,7 @@ export const pageQuery = graphql`
       sort: { order: DESC, fields: [frontmatter___updatedDate] }
       limit: 4
     ) {
-      edges {
-        node {
-          fields {
-            slug
-          }
-          excerpt
-          timeToRead
-          frontmatter {
-            title
-            updatedDate(formatString: "MMM D, YYYY")
-            tags
-            image {
-              children {
-                ... on ImageSharp {
-                  fixed(width: 100, height: 100) {
-                    ...GatsbyImageSharpFixed_withWebp
-                  }
-                }
-              }
-            }
-            author {
-              id
-              avatar {
-                children {
-                  ... on ImageSharp {
-                    fixed(width: 36, height: 36) {
-                      ...GatsbyImageSharpFixed_withWebp
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      ...blogFeedFragment
     }
   }
-`
+`;

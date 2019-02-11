@@ -1,7 +1,7 @@
 ---
-title: 'I thought that I'm bloody lucky'
-createdDate: '2007-02-28'
-updatedDate: '2007-02-28'
+title: I thought that I'm bloody lucky
+updatedDate: "2007-02-28"
+createdDate: "2007-02-28"
 author: sielay
 tags: [recovered]
 draft: false

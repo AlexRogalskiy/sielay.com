@@ -1,106 +1,88 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import Helmet from 'react-helmet'
-import { Link } from 'gatsby'
-import '../css/styles.css'
-import '../css/responsive.css'
-import '../css/semantic.min.css'
-import { Provider } from 'react-redux'
-import { store } from '../store'
-import { Sidebar, Segment, Container, Icon } from 'semantic-ui-react'
-import SidebarMenu from '../components/SidebarMenu'
-import HeaderMenu from '../components/HeaderMenu'
-import CookieConsent from 'react-cookie-consent'
-import { graphql } from 'gatsby'
+/** @jsx jsx */
+import React from 'react';
+import Helmet from 'react-helmet';
+import { Link } from 'gatsby';
+import { Provider } from 'react-redux';
+import CookieConsent from 'react-cookie-consent';
+import { store } from '../store';
+import { SidebarMenu, HeaderMenu, Footer } from '../components';
+import { jsx, css } from '@emotion/core';
+import { ThemeProvider, withTheme } from 'emotion-theming';
+import { menuItems } from './menu';
+import { connect } from 'react-redux';
+import { theme } from './colors';
+import { Body } from './theme';
 
-require('prismjs/themes/prism-twilight.css')
+const mapStateToProps = state => {
+  return {
+    visible: state.isSidebarVisible
+  };
+};
 
-export const menuItems = [
-  { name: 'Home', path: '/', exact: true, icon: 'home', inverted: true },
-  { name: 'About', path: '/about/', exact: true, icon: 'info', inverted: true },
-  // { name: 'Blog', path: '/blog/', exact: false, icon: 'newspaper' },
-  {
-    name: 'Instagram',
-    path: 'https://instagram.com/sielay',
-    iconOnly: true,
-    icon: 'instagram',
-  },
-  {
-    name: 'LinkedIn',
-    path: 'https://www.linkedin.com/in/sielay/',
-    iconOnly: true,
-    icon: 'linkedin',
-  },
-  {
-    name: 'Twitter',
-    path: 'https://twitter.com/sielay',
-    iconOnly: true,
-    icon: 'twitter',
-  },
-  {
-    name: 'YouTube',
-    path: 'https://www.youtube.com/channel/UCwGCL1LGlODVG_HyXqzGYcg',
-    iconOnly: true,
-    icon: 'youtube',
-  },
-]
+const HeaderMenuInstance = withTheme(connect()(HeaderMenu));
+const SidebarMenuInstance = connect(mapStateToProps)(SidebarMenu);
 
 const Layout = ({ children, data, location }) => {
-  const { pathname } = location
+  const { pathname } = location;
   return (
-    <div>
-      <Provider store={store}>
-        <Sidebar.Pushable as={Segment}>
+    <Provider store={store}>
+      <ThemeProvider theme={theme}>
+        <Body />
+        <div
+          css={css(`
+            margin: auto;
+            max-width: 700px;
+            width: 100%;
+            min-height: 100%;
+            & h1, & h2, & h3, & h4, & h5, & h6 {
+              margin-top: 0px;
+              margin: 0px;
+            }
+            & h2, & h3 {
+              padding: 1rem 0;
+            }
+            & h2 {
+              border-bottom: 1px solid ${theme.shade};
+            }
+      `)}
+        >
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
               { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' },
+              { name: 'keywords', content: 'sample, something' }
             ]}
           />
-          <SidebarMenu
+          <SidebarMenuInstance
             Link={Link}
             pathname={pathname}
             items={menuItems}
-            visible={false}
+            visible={true}
           />
-          <Sidebar.Pusher style={{ minHeight: '100vh' }}>
-            {/* Header */}
-            <HeaderMenu
-              Link={Link}
-              pathname={pathname}
-              items={menuItems}
-              dispath={store.dispatch.bind(store)}
-            />
-            {/* Render children pages */}
-            <div style={{ paddingBottom: 60 }}>{children}</div>
+          {/* Header */}
+          <HeaderMenuInstance
+            Link={Link}
+            pathname={pathname}
+            items={menuItems}
+            dispath={(...args) => store.dispatch(...args)}
+          />
+          {/* Render children pages */}
+          {children}
+          {/* Footer */}
+          <Footer />
+          <CookieConsent
+            buttonText="Sure man!!"
+            style={{ background: '#2B373B', position: 'fixed', botton: '0px' }}
+            buttonStyle={{ color: '#4e503b', fontSize: '13px' }}
+            expires={150}
+          >
+            This website uses cookies for Google Analytics, so I know if anyone
+            reads it at all. No ads are served, yet.
+          </CookieConsent>
+        </div>
+      </ThemeProvider>
+    </Provider>
+  );
+};
 
-            {/* Footer */}
-            <Segment
-              inverted
-              vertical
-              style={{ position: 'absolute', bottom: 0, width: '100%' }}
-            >
-              <Container textAlign="center">
-                <p>
-                  Powered with <Icon name="heart" /> by Gatsby 2.0
-                </p>
-              </Container>
-            </Segment>
-          </Sidebar.Pusher>
-        </Sidebar.Pushable>
-      </Provider>
-      <CookieConsent
-        buttonText="Sure man!!"
-        style={{ background: '#2B373B', position: 'fixed', botton: '0px' }}
-        buttonStyle={{ color: '#4e503b', fontSize: '13px' }}
-        expires={150}
-      >
-        This website uses cookies for Google Analytics, so I know if anyone
-        reads it at all. No ads are served, yet.
-      </CookieConsent>
-    </div>
-  )
-}
-
-export default Layout
+export default Layout;

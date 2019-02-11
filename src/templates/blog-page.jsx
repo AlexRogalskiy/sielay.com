@@ -10,20 +10,15 @@ export const pageQuery = graphql`
         disqus
       }
     }
+
     # Get tags
-    tags: allMarkdownRemark(filter: { frontmatter: { draft: { ne: true } } }) {
-      group(field: frontmatter___tags) {
-        fieldValue
-        totalCount
-      }
+    tags: allMarkdownRemark {
+      ...tagsFragment
     }
 
     # Get calendar
     calendar: allMarkdownRemark {
-      group(field: frontmatter___updatedDate) {
-        fieldValue
-        totalCount
-      }
+      ...calendarFragment
     }
 
     # Get posts
@@ -36,42 +31,7 @@ export const pageQuery = graphql`
       limit: 10
       skip: $skip
     ) {
-      totalCount
-      edges {
-        node {
-          excerpt
-          timeToRead
-          fields {
-            slug
-          }
-          frontmatter {
-            title
-            updatedDate(formatString: "DD MMMM, YYYY")
-            tags
-            image {
-              children {
-                ... on ImageSharp {
-                  fixed(width: 100, height: 100) {
-                    ...GatsbyImageSharpFixed_withWebp
-                  }
-                }
-              }
-            }
-            author {
-              id
-              avatar {
-                children {
-                  ... on ImageSharp {
-                    fixed(width: 100, height: 100) {
-                      ...GatsbyImageSharpFixed_withWebp
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      }
+      ...blogFeedFragment
     }
   }
 `

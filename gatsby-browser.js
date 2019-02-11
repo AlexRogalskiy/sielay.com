@@ -5,3 +5,8 @@
  */
 
  // You can delete this file if you're not using it
+ // custom typefaces
+import 'typeface-montserrat'
+import 'typeface-arvO';
+import './src/css/styles.css';
+import 'prismjs/themes/prism-twilight.css';

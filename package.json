@@ -4,12 +4,15 @@
   "version": "1.0.0",
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
+    "@emotion/core": "^10.0.7",
     "disqus-react": "^1.0.5",
+    "emotion-theming": "^10.0.7",
     "find": "^0.2.9",
     "gatsby": "latest",
     "gatsby-plugin-google-analytics": "latest",
     "gatsby-plugin-manifest": "latest",
     "gatsby-plugin-node-fields": "latest",
+    "gatsby-plugin-nprogress": "^2.0.8",
     "gatsby-plugin-offline": "latest",
     "gatsby-plugin-react-helmet": "latest",
     "gatsby-plugin-sharp": "latest",
@@ -24,18 +27,23 @@
     "gatsby-transformer-remark": "latest",
     "gatsby-transformer-sharp": "latest",
     "inquirer": "^6.1.0",
+    "lodash": "^4.17.11",
     "plugin": "^0.3.3",
     "prismjs": "^1.15.0",
     "react": "latest",
     "react-cookie-consent": "latest",
     "react-dom": "latest",
     "react-helmet": "latest",
+    "react-icons": "^3.3.0",
     "react-instafeed": "latest",
     "react-instagram-embed": "latest",
     "react-redux": "^5.0.7",
     "redux-devtools-extension": "^2.13.5",
     "rehype-react": "latest",
-    "semantic-ui-react": "latest"
+    "typeface-arvo": "^0.0.54",
+    "typeface-montserrat": "^0.0.54",
+    "typography": "^0.16.18",
+    "typography-theme-grand-view": "^0.16.18"
   },
   "keywords": [
     "gatsby"
@@ -43,12 +51,17 @@
   "license": "MIT",
   "scripts": {
     "patch": "sed -i -e 's/if(c\\.initial) return;/if(!c||c.initial) return;/g' ./node_modules/extract-text-webpack-plugin/index.js",
-    "build": "npm run patch && gatsby build",
+    "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
+    "eslint": "^5.13.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-react": "^7.12.4",
     "prettier": "^1.12.0"
   },
   "repository": {

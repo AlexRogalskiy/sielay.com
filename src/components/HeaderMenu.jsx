@@ -1,9 +1,48 @@
+/** @jsx jsx */
 import * as React from 'react'
-import { connect } from 'react-redux'
 import { toggleSidebar } from '../store'
-import { Container, Menu, Icon, Segment } from 'semantic-ui-react'
+import { jsx, css } from '@emotion/core'
+import { FaBars } from 'react-icons/fa'
+import { scale } from '../utils/typography'
+import { Link } from './Link'
 
-class HeaderMenu extends React.Component {
+const HEADER_LIST = `
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+  align-content: stretch;
+  align-items: stretch;
+  list-style: none;
+  font-family: Montserrat, sans-serif;
+  padding: 1rem;
+  margin: 0px;
+  border-bottom: 1px solid black;
+
+  & > li {
+    margin-bottom: 0px;
+  }
+  & > li > a {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-content: center;
+    align-items: stretch;
+    padding: .5rem 1rem;
+    height: 3rem;
+  }
+  & > li > a.active {
+    color: black;
+  }
+  & > li > a > * {
+    order: 0;
+    flex: 0 1 auto;
+    align-self: auto;
+  }
+`
+
+export class HeaderMenu extends React.Component {
   constructor(props) {
     super(props)
     this.onSidebar = this.onSidebar.bind(this)
@@ -15,50 +54,32 @@ class HeaderMenu extends React.Component {
   }
 
   render() {
-    const { items, pathname, Link, inverted } = this.props
+    const { items, pathname, theme } = this.props
     return (
-      <Container>
-        <Segment vertical size={'huge'}>
-          <Menu size="large" pointing secondary inverted={inverted} borderless>
-            <Menu.Item
-              as="a"
-              className="mobile only"
-              icon="sidebar"
-              onClick={this.onSidebar}
-            />
-            <Menu.Item>SIELAY</Menu.Item>
-            {items.map(item => {
-              const active = item.exact
-                ? pathname === item.path
-                : pathname.startsWith(item.path)
-              if (item.path.startsWith('https://')) {
-                return (
-                  <a
-                    className="item mobile hidden"
-                    key={item.path}
-                    href={item.path}
-                    target="_blank"
-                  >
-                    {item.iconOnly ? <Icon name={item.icon} /> : item.name}
-                  </a>
-                )
-              }
-              return (
-                <Menu.Item
-                  as={Link}
-                  className="mobile hidden"
-                  name={item.name}
-                  to={item.path}
-                  key={item.path}
-                  active={active}
-                />
-              )
-            })}
-          </Menu>
-        </Segment>
-      </Container>
+      <header>
+        <ul css={css(HEADER_LIST)} style={{ borderBottomColor: theme.shade, ...scale(0.5) }}>
+          <li className="mobile-only">
+            <a onClick={this.onSidebar}>
+              <FaBars />
+            </a>
+          </li>
+          <li>
+            <a name="top" className="active">
+              SIELAY
+            </a>
+          </li>
+          {items.map(({ path, exact, iconOnly, Icon, name }, key) => {
+            const active = exact ? pathname === path : pathname.startsWith(path)
+            return (
+              <li key={key} className="desktop-only">
+                <Link path={path} key={path} className={active ? 'active' : ''}>
+                  {iconOnly ? <Icon /> : name}
+                </Link>
+              </li>
+            )
+          })}
+        </ul>
+      </header>
     )
   }
 }
-
-export default connect()(HeaderMenu)
