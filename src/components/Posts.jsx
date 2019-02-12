@@ -51,11 +51,7 @@ export const Posts = withTheme(({ posts, theme }) => (
   `)}
   >
     {posts.map((post, key) => {
-      const cover = get(
-        post.frontmatter,
-        'image.children.0.responsiveResolution',
-        {}
-      );
+      const cover = get(post.frontmatter, 'image.children.0.fixed', {});
       return <Post post={post} key={key} cover={cover} />;
     })}
   </div>

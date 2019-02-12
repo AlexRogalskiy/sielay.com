@@ -7,9 +7,8 @@ tags: [linkedin, imported]
 draft: false
 source: https://www.linkedin.com/pulse/20140616212038-16801416-5-reasons-why-customer-support-in-poland-is-best-choice-for-you/
 sourceType: linkedin
+image: 0.jpeg
 ---
-
-![](0.jpeg)
 
 Last time I described raw cost of one Polish rambo-developer hired full time on remote basis ([read it](/blog/2014-06-15-how-much-does-polish-outsourcing-cost-part-1/)). This time I would like to explain much simpler and obvious scenario. Again I will explain you my personal views, but proved by actual client scenarios. Again I will offer you my help to find proper candidates and will point you few talents I worked with. If you have other opinion or questions, feel free to ask and comment.
 

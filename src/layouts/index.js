@@ -38,6 +38,9 @@ const Layout = ({ children, data, location }) => {
               margin-top: 0px;
               margin: 0px;
             }
+            & h1 {
+              font-size: 2.5rem;
+            }
             & h2, & h3 {
               padding: 1rem 0;
             }

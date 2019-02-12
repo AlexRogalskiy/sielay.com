@@ -37,14 +37,19 @@ const LabelledList = ({ list, Decorator }) => (
     {list.map(
       ({ node, node: { label, from, to, company, logo, position } }, key) => (
         <li key={key}>
-          <a>{label || `${from} - ${to}`}</a>
+          {from && <small>{`${from} - ${to}`}</small>}
           {company ? (
-            <h2>
-              {logo && <im src={logo} alt={company} />}
-              {company}
+            <React.Fragment>
+              <h4>
+                {logo && <im src={logo} alt={company} />}
+                {company}
+              </h4>
               {position && <small>{position}</small>}
-            </h2>
-          ) : null}
+            </React.Fragment>
+          ) : (
+            <h4>{label}</h4>
+          )}
+
           <ul>
             <Decorator node={node} />
           </ul>
@@ -74,15 +79,16 @@ const XpNodes = withTheme(({ node, theme }) =>
             <p key={1}>{description}</p>
           ]
         : [
-            <strong>{label}</strong>,
-            description && description.length && <p key={1}>{description}</p>
+            <strong key={2}>{label}</strong>,
+            description && description.length && <p key={3}>{description}</p>
           ]}
       {tech && (
         <div key={2}>
           {' '}
           {tech.map(({ color, icon, label }, key) => (
-              <span key={key}
-                css={css(`
+            <span
+              key={key}
+              css={css(`
                   color: white;
                   display: inline-block;
                   padding: .5rem 1rem;
@@ -93,13 +99,13 @@ const XpNodes = withTheme(({ node, theme }) =>
                     vertical-align: middle;
                   }
               `)}
-                style={{
-                  background: theme.named[color]
-                }}
-              >
-                {FaIcon(icon)}
-                {label}
-              </span>
+              style={{
+                background: theme.named[color]
+              }}
+            >
+              {FaIcon(icon)}
+              {label}
+            </span>
           ))}{' '}
         </div>
       )}
@@ -160,6 +166,12 @@ const Tabs = withTheme(
               list-style: none;
               margin: 0px;
               padding: 1rem 0 0 1rem
+            }
+            @media (max-width: 576px) {
+              & > ul:first-child {
+                width: 100px;
+                font-size: 0.8rem;
+              }
             }
             `)}
         >

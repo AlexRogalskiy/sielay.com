@@ -13,7 +13,9 @@ const STYLE = `
   background: white;
   transition: transform .5s;
   box-shadow: 1px 1px 1px 0px rgba(0,0,0,0.25);
+  z-index: 1000;
   & > ul {
+    font-family: Montserrat, sans-serif;
     list-style: none;
     margin: 0px;
     padding: 0px;

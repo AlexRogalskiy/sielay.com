@@ -7,9 +7,8 @@ tags: [linkedin, imported]
 draft: false
 source: https://www.linkedin.com/pulse/20140612210630-16801416-uhlans-fantasy-how-to-deal-with-polish-temper/
 sourceType: linkedin
+image: 0.jpeg
 ---
-
-![](0.jpeg)
 
 (In this article I would like to explain cultural differences, that may be difficult to handle while working with Poles. To give proper background I would have to start with some historical description. Anyhow article is still about Polish IT specialists)
 

@@ -1,43 +1,43 @@
 #!/usr/bin/env node
-const fs = require('fs')
-const path = require('path')
-const inquirer = require('inquirer')
+const fs = require('fs');
+const path = require('path');
+const inquirer = require('inquirer');
 
 inquirer
   .prompt([
     {
       name: 'title',
-      type: 'input',
+      type: 'input'
     },
     {
       name: 'date',
-      type: 'input',
+      type: 'input'
     },
     {
       name: 'tags',
-      type: 'input',
-    },
+      type: 'input'
+    }
   ])
   .then(answers => {
-    const { title, date, tags } = answers
+    const { title, date, tags } = answers;
     const dir = path.join(
       __dirname,
       'data',
       'blog',
       `${date}-${title}`
-        .replace(/ą/g,'a')
-        .replace(/ę/g,'e')
-        .replace(/ć/g,'c')
-        .replace(/ś/g,'s')
-        .replace(/ó/g,'o')
-        .replace(/ł/g,'l')
-        .replace(/ń/g,'n')
-        .replace(/ź/g,'z')
-        .replace(/ż/g,'z')
+        .replace(/ą/g, 'a')
+        .replace(/ę/g, 'e')
+        .replace(/ć/g, 'c')
+        .replace(/ś/g, 's')
+        .replace(/ó/g, 'o')
+        .replace(/ł/g, 'l')
+        .replace(/ń/g, 'n')
+        .replace(/ź/g, 'z')
+        .replace(/ż/g, 'z')
         .replace(/[^a-zA-Z0-9-]+/g, '-')
         .replace(/(^-+|-+$)/g, '')
         .toLowerCase()
-    )
+    );
     const content = `---
 title: '${title}'
 createdDate: '${date}'
@@ -49,16 +49,16 @@ image: .jpg
 ---
 
 ![](.jpg)
-`
+`;
     fs.mkdir(dir, err => {
       if (err) {
-        return console.error(err)
+        return console.error(err);
       }
       fs.writeFile(path.join(dir, 'index.md'), content, 'utf8', err => {
         if (err) {
-          return console.error(err)
+          return console.error(err);
         }
-        console.log('done')
-      })
-    })
-  })
+        console.log('done');
+      });
+    });
+  });

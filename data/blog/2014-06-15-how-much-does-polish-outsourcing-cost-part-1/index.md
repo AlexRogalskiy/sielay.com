@@ -7,9 +7,8 @@ tags: [linkedin, imported]
 draft: false
 source: https://www.linkedin.com/pulse/20140615173625-16801416-how-much-does-polish-outsourcing-cost-part-1/
 sourceType: linkedin
+image: 0.jpeg
 ---
-
-![](0.jpeg)
 
 > Disclaimer: Many agencies are hiding values to hide their margins and gain a lot on somebody’s else work. Often quality doesn’t go with the price. Few days ago Elon Musk gave his great [Tesla technology as open source to the public](http://www.theguardian.com/technology/2014/jun/13/tesla-open-source-technology). Was that wrong? Of course not. He creates new rules in the market. I might be afraid of someone reading this article and not willing to use my help facilitating enclosed data. Surely I can’t help everyone and I don’t even want to. On the other hand I know that data is beginning to long journey and you need to know how to apply it. Values I present some agencies keep in secret. I will try to explain where it comes from and for what you should pay, if you let someone find best work force for you.
 

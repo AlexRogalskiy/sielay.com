@@ -7,6 +7,7 @@ tags: [linkedin, imported]
 draft: false
 source: https://www.linkedin.com/pulse/20141002193005-16801416-power-of-not-knowing/
 sourceType: linkedin
+image: 0.jpeg
 ---
 
 To continue my question from last [article](/blog/2014-10-01-opinion-should-non-technical-people-participate-in-technology-development-process/), I would like to show you simple scene:

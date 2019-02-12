@@ -109,36 +109,49 @@ const BlogPost = ({
           .map(({ node }) => node)
       : [];
 
-  const cover = get(frontmatter, 'image.children.0.responsiveResolution', {});
+  const { src, srcSet } = get(frontmatter, 'image.children.0.fixed', {});
 
   const updated = Date.parse(frontmatter.updatedDate);
   const born = Date.parse('1984-04-10');
   const age = Math.floor((updated - born) / 1000 / 60 / 60 / 24 / 365.25);
+
+  const { title, source, sourceType, updatedDate} = frontmatter;
 
   return (
     <React.Fragment>
       <main>
         <article
           css={css(`
-          & > div > p {
+          & > div > p,
+          & > div > ol,
+          & > div > ul {
             line-height: 2.5rem;
+            font-family: 'Merriweather', serif;
+            font-size: 1.5rem;
+          }
+          & > div > ol,
+          & > div > ul {
+            font-size: 1.25rem;
           }
         `)}
         >
-          <h1>{frontmatter.title}</h1>
+          <h1>{title}</h1>
           <p className="small">
-            {frontmatter.updatedDate} - {timeToRead} min read
+            {updatedDate} - {timeToRead} min read
           </p>
 
-          <img {...cover} fluid />
+          {src && <img src={src} srcSet={srcSet} title={title} css={css(`
+            display: block;
+            width: 100%;
+          `)} />}
 
           {frontmatter.tags.indexOf('recovered') !== -1 && (
             <Recovered age={age} />
           )}
 
           <Source
-            source={frontmatter.source}
-            sourceType={frontmatter.sourceType}
+            source={source}
+            sourceType={sourceType}
           />
 
           {renderAst(htmlAst)}
@@ -148,7 +161,9 @@ const BlogPost = ({
           </div>
         </article>
       </main>
-      <aside>
+      <aside css={css(`
+        padding: 1rem 2rem;
+      `)}>
         <div>
           <h3>Previous &amp; Next</h3>
           <Posts posts={previousAndNext} />
@@ -160,7 +175,7 @@ const BlogPost = ({
               config={{
                 url: `https://sielay.com${fields.slug}`,
                 identifier: fields.slug,
-                title: frontmatter.title
+                title: title
               }}
             />
           </div>
@@ -236,7 +251,7 @@ export const pageQuery = graphql`
         image {
           children {
             ... on ImageSharp {
-              fixed(width: 900, height: 300, quality: 100) {
+              fixed(width: 900, height: 300, quality: 100, cropFocus: CENTER) {
                 ...GatsbyImageSharpFixed_withWebp
               }
             }

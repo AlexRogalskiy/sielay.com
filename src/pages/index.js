@@ -5,21 +5,92 @@ import { withTheme } from 'emotion-theming';
 import { graphql, Link } from 'gatsby';
 import { Posts } from '../components';
 import Layout from '../layouts';
-import { theme } from '../layouts/colors';
+import { get } from 'lodash';
 
-const IndexPage = withTheme(props => (
-  <main>
-    <Posts posts={props.data.posts.edges.map(post => post.node)} />
+const Tiles = withTheme(({ posts, theme }) => (
+  <ul
+    css={css(`
+    list-style: none;
+    margin: 0px;
+    padding: 0px 1.5rem 1rem;
+    border-bottom: 1px solid ${theme.shade};
+    margin-auto;
+    display: block;
+    & > li {
+      margin: 0px;
+      padding: 0px;
+      float: left;
+    }
+    &:after {
+      content: ' ';
+      display: block;
+      clear: both;
+    }
+    & > li > a {
+      opacity: .5;
+      padding: 0 .25rem 0 .25rem;
+    }
+    & > li > a:hover {
+      opacity: 1
+    }
+  `)}
+  >
+    {posts.map(
+      ({ frontmatter, fields: { slug }, frontmatter: { title } }, key) => {
+        const { src, srcSet } = get(frontmatter, 'image.children.0.fixed', {});
+        return (
+          <li key={key}>
+            <Link to={slug} title={title}>
+              <img src={src} srcSet={srcSet} />
+            </Link>
+          </li>
+        );
+      }
+    )}
+  </ul>
+));
+
+const IndexPage = withTheme(({ data: { pictures, posts }, theme }) => (
+  <main
+    css={css(`
+  & h2 {
+    margin-bottom: 1rem;
+  }
+    `)}
+  >
+    <h2>Welcome</h2>
+    <p
+      css={css(`
+      padding: 1rem 0 0;
+    line-height: 2rem;
+    font-family: 'Merriweather', serif;
+    font-size: 1.25rem;
+    `)}
+    >
+      SIELAYs' blog about <Link to="/blog/tags/javascript/">#javascript</Link>,{' '}
+      <Link to="/blog/tags/mental-health/">#mental-health</Link>,
+      <Link to="/blog/tags/family/">#family</Link>,{' '}
+      <Link to="/blog/tags/cycling/">#cycling</Link> and{' '}
+      <Link to="/blog/tags/self-development/">#self-development</Link>
+    </p>
+    <h2>Posts Pictures</h2>
+    <Tiles
+      posts={pictures.edges
+        .map(post => post.node)
+        .filter(node => !!node.frontmatter.image)}
+    />
+    <h2>Recent Posts</h2>
+    <Posts posts={posts.edges.map(post => post.node)} />
     <Link
       as={`button`}
       css={css(`
-          background-color: ${props.theme.shade};
+          background-color: ${theme.shade};
           padding: 1rem;
           width: 100%;
           display: block;
           border: none;
           text-align: center;
-          color: ${props.theme.dark};
+          color: ${theme.dark};
           font-family: Montserrat, sans-serif;
           margin-top: 1rem;
           &:hover {
@@ -67,6 +138,32 @@ export const pageQuery = graphql`
       limit: 5
     ) {
       ...blogFeedFragment
+    }
+
+    pictures: allMarkdownRemark(
+      sort: { order: DESC, fields: [frontmatter___updatedDate] }
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
+    ) {
+      edges {
+        node {
+          fields {
+            slug
+          }
+          frontmatter {
+            title
+            updatedDate(formatString: "DD MMMM, YYYY")
+            image {
+              children {
+                ... on ImageSharp {
+                  fixed(width: 50, height: 50) {
+                    ...GatsbyImageSharpFixed_withWebp
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;
