@@ -7,17 +7,50 @@ import { get } from 'lodash';
 import { DiscussionEmbed } from 'disqus-react';
 import rehypeReact from 'rehype-react';
 import InstagramEmbed from 'react-instagram-embed';
+import YouTube from 'react-youtube-embed'
 import { Posts } from '../components';
 import { graphql } from 'gatsby';
 import Layout from '../layouts';
 import { Sidebar } from '../components/Sidebar';
 
-const renderAst = new rehypeReact({
-  createElement: React.createElement,
-  components: {
-    'instagram-embed': InstagramEmbed
+class Iframe extends React.Component {
+  shouldComponentUpdate() {
+    return false;
   }
+  render() {
+    return <iframe src={this.props.src || this.props.url} css={css(`
+      border: none;
+      width: 100%;
+      min-height: 100px;
+    `)}/>
+  }
+}
+
+const components =  {
+  'iframe': Iframe,
+  'instagram-embed': InstagramEmbed,
+  'youtube-embed': YouTube
+};
+
+const componentNames = Object.keys(components);
+
+const renderAstFunction = new rehypeReact({
+  createElement: React.createElement,
+  components
 }).Compiler;
+
+const renderAst = (node ) => {
+  node.children = node.children
+  .map(n => {
+    if (n.tagName === 'p' && n.children.map(m => m.tagName).filter(m => componentNames.indexOf(m) !== -1).length > 0) {
+      return n.children[0];
+    } else {
+      return n;
+    }
+  });
+  console.log(node)
+  return renderAstFunction(node)
+}
 
 const Tags = withTheme(({ tags, theme }) =>
   tags.map(tag => (

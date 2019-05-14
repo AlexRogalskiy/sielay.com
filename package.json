@@ -40,6 +40,7 @@
     "react-instagram-embed": "latest",
     "react-redux": "^5.0.7",
     "react-typography": "^0.16.18",
+    "react-youtube-embed": "^1.0.2",
     "redux-devtools-extension": "^2.13.5",
     "rehype-react": "latest",
     "typeface-arvo": "^0.0.54",
