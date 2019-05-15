@@ -7,7 +7,7 @@ import { get } from 'lodash';
 import { DiscussionEmbed } from 'disqus-react';
 import rehypeReact from 'rehype-react';
 import InstagramEmbed from 'react-instagram-embed';
-import YouTube from 'react-youtube-embed'
+import YouTube from 'react-youtube-embed';
 import { Posts } from '../components';
 import { graphql } from 'gatsby';
 import Layout from '../layouts';
@@ -18,18 +18,54 @@ class Iframe extends React.Component {
     return false;
   }
   render() {
-    return <iframe src={this.props.src || this.props.url} css={css(`
+    return (
+      <iframe
+        src={this.props.src || this.props.url}
+        css={css(`
       border: none;
       width: 100%;
       min-height: 100px;
-    `)}/>
+    `)}
+      />
+    );
   }
 }
 
-const components =  {
-  'iframe': Iframe,
+class JustGiving extends React.Component {
+  shouldComponentUpdate() {
+    return false;
+  }
+  render() {
+    return (
+      <div
+        id="jg-widget-cornwalltokent-949"
+        style={{ margin: 'auto', textAlign: 'center' }}
+      />
+    );
+  }
+  componentDidMount() {
+    setTimeout(function() {
+      const id = 'jg-widget-cornwalltokent-949';
+      const doc = document;
+      const pfx =
+        window.location.toString().indexOf('https') == 0 ? 'https' : 'http';
+      const el = doc.getElementById(id);
+      if (el) {
+        const js = doc.createElement('script');
+        js.src =
+          pfx +
+          '://widgets.justgiving.com/fundraisingpage/cornwalltokent?enc=ZT1qZy13aWRnZXQtY29ybndhbGx0b2tlbnQtOTQ5Jnc9NDAwJmI9aW1hZ2UsZG9uYXRlJmliPXRpdGxlLHN1bW1hcnkscHJvZ3Jlc3MscmFpc2VkLHRhcmdldA%3D%3D';
+        el.parentNode.insertBefore(js, el);
+      }
+    }, 1000);
+  }
+}
+
+const components = {
+  iframe: Iframe,
   'instagram-embed': InstagramEmbed,
-  'youtube-embed': YouTube
+  'youtube-embed': YouTube,
+  'just-giving': JustGiving
 };
 
 const componentNames = Object.keys(components);
@@ -39,18 +75,22 @@ const renderAstFunction = new rehypeReact({
   components
 }).Compiler;
 
-const renderAst = (node ) => {
-  node.children = node.children
-  .map(n => {
-    if (n.tagName === 'p' && n.children.map(m => m.tagName).filter(m => componentNames.indexOf(m) !== -1).length > 0) {
+const renderAst = node => {
+  node.children = node.children.map(n => {
+    if (
+      n.tagName === 'p' &&
+      n.children
+        .map(m => m.tagName)
+        .filter(m => componentNames.indexOf(m) !== -1).length > 0
+    ) {
       return n.children[0];
     } else {
       return n;
     }
   });
-  console.log(node)
-  return renderAstFunction(node)
-}
+  console.log(node);
+  return renderAstFunction(node);
+};
 
 const Tags = withTheme(({ tags, theme }) =>
   tags.map(tag => (
@@ -148,7 +188,7 @@ const BlogPost = ({
   const born = Date.parse('1984-04-10');
   const age = Math.floor((updated - born) / 1000 / 60 / 60 / 24 / 365.25);
 
-  const { title, source, sourceType, updatedDate} = frontmatter;
+  const { title, source, sourceType, updatedDate } = frontmatter;
 
   return (
     <React.Fragment>
@@ -173,19 +213,23 @@ const BlogPost = ({
             {updatedDate} - {timeToRead} min read
           </p>
 
-          {src && <img src={src} srcSet={srcSet} title={title} css={css(`
+          {src && (
+            <img
+              src={src}
+              srcSet={srcSet}
+              title={title}
+              css={css(`
             display: block;
             width: 100%;
-          `)} />}
+          `)}
+            />
+          )}
 
           {frontmatter.tags.indexOf('recovered') !== -1 && (
             <Recovered age={age} />
           )}
 
-          <Source
-            source={source}
-            sourceType={sourceType}
-          />
+          <Source source={source} sourceType={sourceType} />
 
           {renderAst(htmlAst)}
 
@@ -194,9 +238,11 @@ const BlogPost = ({
           </div>
         </article>
       </main>
-      <aside css={css(`
+      <aside
+        css={css(`
         padding: 1rem 2rem;
-      `)}>
+      `)}
+      >
         <div>
           <h3>Previous &amp; Next</h3>
           <Posts posts={previousAndNext} />
