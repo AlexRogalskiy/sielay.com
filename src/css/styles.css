@@ -24,5 +24,33 @@
     margin: 0px;
 }
 .jg-widget {
-    margin: auto;
+    margin: 10px auto 20px;
+}
+.insta iframe{
+    margin: 10px auto 20px !important;
+}
+strong {
+    font-weight: 600;
+}
+
+.summary ul {
+    margin: 10px 0px 25px;
+    background: rgba(227,228,219,1);
+    padding: 10px;
+}
+
+.summary li {
+    list-style: none;
+    display: inline-block;
+    margin: 0px;
+}
+
+.summary li:before {
+    display: inline-block;
+    content: "|";
+    margin: 0px 5px;
+}
+
+.summary li:first-child:before {
+    display: none;
 }
