@@ -26,9 +26,25 @@
 .jg-widget {
     margin: 10px auto 20px;
 }
-.insta iframe{
-    margin: 10px auto 20px !important;
+
+.insta {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: stretch;
+    align-items: flex-start;
 }
+.insta > div {
+    order: 0;
+    flex: 1;
+    align-self: auto;
+    margin-left: 5px;
+}
+.insta > div:first-child {
+    margin-left: 0px;
+}
+
 strong {
     font-weight: 600;
 }
@@ -53,4 +69,8 @@ strong {
 
 .summary li:first-child:before {
     display: none;
+}
+
+.google > iframe {
+    min-height: 300px;
 }

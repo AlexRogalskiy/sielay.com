@@ -63,7 +63,11 @@ class JustGiving extends React.Component {
 
 const components = {
   iframe: Iframe,
-  'instagram-embed': (props) => <div class="insta"><InstagramEmbed url={props.url} maxWidth={320} hideCaption={true}></InstagramEmbed></div>,
+  'instagram-embed': (props) => (
+    <div class="insta">{
+      props.url && props.url.split(',').map((url,k) => <InstagramEmbed key={k} url={`https://www.instagram.com/p/${url}/`} maxWidth={320} hideCaption={true}></InstagramEmbed>)}
+    </div>
+  ),
   'youtube-embed': YouTube,
   'just-giving': JustGiving
 };
