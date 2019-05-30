@@ -24,6 +24,10 @@ const SidebarMenuInstance = connect(mapStateToProps)(SidebarMenu);
 
 const Layout = ({ children, data, location }) => {
   const { pathname } = location;
+
+  const description = data.post ? data.post.frontmatter.title : data.site.siteMetadata.title;
+  const keywords = data.post ? data.post.frontmatter.tags : '';
+
   return (
     <Provider store={store}>
       <ThemeProvider theme={theme}>
@@ -52,8 +56,8 @@ const Layout = ({ children, data, location }) => {
           <Helmet
             title={data.site.siteMetadata.title}
             meta={[
-              { name: 'description', content: 'Sample' },
-              { name: 'keywords', content: 'sample, something' }
+              { name: 'description', content: description },
+              { name: 'keywords', content: keywords }
             ]}
           />
           <SidebarMenuInstance

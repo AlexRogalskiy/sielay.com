@@ -25,4 +25,4 @@ export const store = createStore(
   initialState,
   devToolsEnhancer({})
 );
-store.subscribe(() => console.log("NEW STATE", store.getState()));
+// store.subscribe(() => console.log("NEW STATE", store.getState()));

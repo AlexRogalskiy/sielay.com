@@ -1,9 +1,9 @@
 ---
 title: 'Cornwall to Kent 2019 plan'
 createdDate: '2019-05-15'
-updatedDate: '2019-05-19'
+updatedDate: '2019-05-30'
 author: sielay
-tags: [cycle,fundraise,justgiving,donate,cycling,trip,planning,kent,sussex,west sussex,east sussex,hampshire,devon,dorset,cornwall,strava]
+tags: [cycle,fundraise,justgiving,donate,cycling,trip,planning,kent,sussex,west sussex,east sussex,hampshire,devon,dorset,cornwall,strava,komoot]
 draft: false
 image: trip2019.png
 ---
@@ -68,7 +68,7 @@ places where I will do 8-10 mph, but loads where I'll do 20 and over.
 Breaks are calculated seperately, to allow refuel, use the toilet and lay down,
 but not to allow to stiffen. Better often a bit than once in a while and too long.
 
-## Tranining and diet
+## Training and diet
 
 With such effort as cycling over 100 miles five days in the row, I need to put
 my form to a maximum of my capacities. That means all jokes aside. My daily commute
@@ -82,7 +82,13 @@ tried to join my colleagues during Ramadan and basically limited myself to OMAD
 eating all food groups and won't be fussy at least with that. I also spent the
 last two weeks without coffee and I'll return it in moderation.
 
-## Depature
+Following documents will be updating as I'll progress to the date of the event.
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlgkHxfHJ2Txuo5JXvA-QS3vPwEhRskSSsvQ6grHX_97guzphygvTAo_PuP1hsvvt550amv8iC_G09/pubhtml?gid=1093190589&amp;single=true&amp;widget=true&amp;headers=false" height="400"></iframe>
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlgkHxfHJ2Txuo5JXvA-QS3vPwEhRskSSsvQ6grHX_97guzphygvTAo_PuP1hsvvt550amv8iC_G09/pubhtml?gid=1896359391&amp;single=true&amp;widget=true&amp;headers=false" height="400"></iframe>
+
+## Departure
 
 I will leave the office earlier on 31st July to get to London Paddington station
 and from there take a train to Penzance. I investigated two ways how to commute to
@@ -95,22 +101,9 @@ bikes (2 per wagon). The only sensible option was the 6 pm train from Paddington
 I'd arrive there around 23:00 and stay at [Ponsandane](http://www.ponsandane.co.uk/)
 camping site.
 
-<div className="google">
-  <iframe src="https://www.google.com/maps/d/embed?mid=14QLAe8KsEvMSYioNTf5Sy5NUxA-OEjKh" width="640" height="480"></iframe>
-</div>
-
 ## Day 1
 
-![Cornwall to Kent - Day 1](day1.png)
-
-<div class="summary">
-
- * Distance 114m
- * 10,522 feet elevation gain
- * 10:30h moving time
- * 7313 calories
-
-</div>
+<iframe src="https://www.komoot.com/tour/68897167/embed?profile=1&gallery=1" width="100%" height="580" frameborder="0" scrolling="no"></iframe>
 
 I'll leave in the morning west, to the Lands End <sup>13m</sup> where I can have some nice
 Cornish Pastry together with taking some pics. From there trip to Kent really starts.
@@ -183,16 +176,7 @@ on the Channel and the harbours.
 
 ## Day 2
 
-![Cornwall to Kent - Day 2](day2.png)
-
-<div class="summary">
-
- * Distance 119.95m
- * 10,428 feet elevation gain
- * 11h moving time
- * 7712 calories
-
-</div>
+<iframe src="https://www.komoot.com/tour/68897663/embed?profile=1&gallery=1" width="100%" height="580" frameborder="0" scrolling="no"></iframe>
 
 In the early morning, I'll use a [Cremyll Ferry](https://www.plymouthboattrips.co.uk/ferries/cremyll-ferry) <sup>3m</sup> leave Cornwall and enter Plymouth, Devon. To reach it I'd be
 passing Mount Edgcumbe House with artificial (made in XVIII century) ruin on top of
@@ -255,16 +239,7 @@ Regis <sup>119m</sup> I'll stay at
 
 ## Day 3
 
-![Cornwall to Kent - Day 3](day3.png)
-
-<div class="summary">
-
- * Distance 116m
- * 4,864 feet elevation gain
- * 10h moving time
- * 7512 calories
-
- </div>
+<iframe src="https://www.komoot.com/tour/68898196/embed?profile=1&gallery=1" width="100%" height="580" frameborder="0" scrolling="no"></iframe>
 
 I'll wake up with the view on Fleet, long sandy beach slit from the land with
 a shallow canal on one side and Isle of Portland on the other. I'll ride around
@@ -297,8 +272,8 @@ on the previous challenge.
 <instagram-embed url="BxfI9BxF5sF"></instagram-embed>
 
 After killer hills of Portsmouth, I'l make a small stop in Farnham <sup>93m</sup>
-and later onlyin Chichester <sup>110m</sup> for final, diner supply and head t
-owards next camping.
+and later only in Chichester <sup>110m</sup> for final, diner supply and head towards
+ next camping.
 
 <instagram-embed url="Bxer5UdBGPt"></instagram-embed>
 
@@ -324,16 +299,7 @@ to be sure they'll let me in. [Red House Farm](https://www.rhfcamping.co.uk/)
 
 ## Day 4
 
-![Cornwal to Kent - Day 4](day4.png)
-
-<div class="summary">
-
- * Distance 125m
- * 3,504 feet elevation gain
- * 11h moving time
- * 7952 calories
-
- </div>
+<iframe src="https://www.komoot.com/tour/68898570/embed?profile=1&gallery=1" width="100%" height="580" frameborder="0" scrolling="no"></iframe>
 
 From Chichester, I'll move towards the popular resort of Bognor Regis
 <sup>10m</sup>. That should be last stop for some snack and water as next over
@@ -348,7 +314,7 @@ Rottingdean <sup>42m</sup> where I found a nice cafe last year, all way to Seafo
 place to stop there would be McDonald's just behind Newheaven <sup>47m</sup> as
  Seaford doens't have too many amenities and the road from there is flat and smootch.
 
-<instagram-embed url=",BxfOR3cHb3r,Bwl6gOrlkFw"></instagram-embed>
+<instagram-embed url="BxfOR3cHb3r,Bwl6gOrlkFw"></instagram-embed>
 
 Before reaching Eastbourne <sup>61m</sup> I'll pass Birling Gap which is popular
 photo and rest spot and Belle Tout Lighthouse hotel.
@@ -394,18 +360,7 @@ A lovely little place with views of next day approach to Dover Cliffs.
 
 ## Day 5
 
-![Cornwal to Kent - Day 5](day5.png)
-
-<div class="summary">
-
- * Distance 123m
- * 5,922 feet elevation gain
- * 11h moving time
- * 7952 calories
-
- </div>
-
-Read the [main story](/blog/2019-05-15-planning-2019-cornwall-to-kent-cycle/).
+<iframe src="https://www.komoot.com/tour/68898793/embed?profile=1&gallery=1" width="100%" height="580" frameborder="0" scrolling="no"></iframe>
 
 I'll roll over 400 feet down to Dover <sup>6m</sup> just to climb again 400 and
 roll same down again. From there it will be flat all they way.

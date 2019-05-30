@@ -24,8 +24,10 @@ class Iframe extends React.Component {
         css={css(`
       border: none;
       width: 100%;
-      min-height: 100px;
     `)}
+    style={{
+      minHeight: (this.props.height || '100') + 'px'
+    }}
       />
     );
   }
@@ -92,7 +94,6 @@ const renderAst = node => {
       return n;
     }
   });
-  console.log(node);
   return renderAstFunction(node);
 };
 
@@ -293,7 +294,8 @@ export const pageQuery = graphql`
 
     site: site {
       siteMetadata {
-        disqus
+        disqus,
+        title
       }
     }
 
