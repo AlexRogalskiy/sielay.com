@@ -152,6 +152,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             updatedDate(formatString: "DD MMMM, YYYY")
+            createdDate(formatString: "DD MMMM, YYYY")
             image {
               children {
                 ... on ImageSharp {

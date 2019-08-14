@@ -1,12 +1,25 @@
 ---
 title: 'Cornwall to Kent 2019 plan'
 createdDate: '2019-05-15'
-updatedDate: '2019-05-30'
+updatedDate: '2019-06-03'
 author: sielay
 tags: [cycle,fundraise,justgiving,donate,cycling,trip,planning,kent,sussex,west sussex,east sussex,hampshire,devon,dorset,cornwall,strava,komoot]
 draft: false
 image: trip2019.png
 ---
+
+## What and why?
+
+Another year, another challenge. After cycling 300 miles for University or Liverpool
+Pancreatic Cancer Research Fund in 2017 and walking over 50 miles for 11-year-old
+Szymon in 2018 I continue my journey by cycling 600 miles from Cornwall to Kent
+(and back to London).
+
+While doing it I'll be [fundraising](https://www.justgiving.com/fundraising/cornwalltokent)
+for my local hospital children care units. The whole trip will be documented on
+Instagram and here. This article may also be updated a few times before the trip starts.
+
+<just-giving></just-giving>
 
 <div class="toc">
 
@@ -24,19 +37,6 @@ image: trip2019.png
  * [Costs](#costs)
 
 </div>
-
-## What and why?
-
-Another year, another challenge. After cycling 300 miles for University or Liverpool
-Pancreatic Cancer Research Fund in 2017 and walking over 50 miles for 11-year-old
-Szymon in 2018 I continue my journey by cycling 600 miles from Cornwall to Kent
-(and back to London).
-
-While doing it I'll be [fundraising](https://www.justgiving.com/fundraising/cornwalltokent)
-for my local hospital children care units. The whole trip will be documented on
-Instagram and here. This article may also be updated a few times before the trip starts.
-
-<just-giving></just-giving>
 
 ## Preparations
 
@@ -86,6 +86,10 @@ Following documents will be updating as I'll progress to the date of the event.
 
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlgkHxfHJ2Txuo5JXvA-QS3vPwEhRskSSsvQ6grHX_97guzphygvTAo_PuP1hsvvt550amv8iC_G09/pubhtml?gid=1093190589&amp;single=true&amp;widget=true&amp;headers=false" height="400"></iframe>
 
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlgkHxfHJ2Txuo5JXvA-QS3vPwEhRskSSsvQ6grHX_97guzphygvTAo_PuP1hsvvt550amv8iC_G09/pubhtml?gid=1170266217&amp;single=true&amp;widget=true&amp;headers=false" height="400"></iframe>
+
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlgkHxfHJ2Txuo5JXvA-QS3vPwEhRskSSsvQ6grHX_97guzphygvTAo_PuP1hsvvt550amv8iC_G09/pubhtml?gid=1108881298&amp;single=true&amp;widget=true&amp;headers=false" height="400"></iframe>
+
 <iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlgkHxfHJ2Txuo5JXvA-QS3vPwEhRskSSsvQ6grHX_97guzphygvTAo_PuP1hsvvt550amv8iC_G09/pubhtml?gid=1896359391&amp;single=true&amp;widget=true&amp;headers=false" height="400"></iframe>
 
 ## Departure
@@ -105,49 +109,48 @@ camping site.
 
 <iframe src="https://www.komoot.com/tour/68897167/embed?profile=1&gallery=1" width="100%" height="580" frameborder="0" scrolling="no"></iframe>
 
-I'll leave in the morning west, to the Lands End <sup>13m</sup> where I can have some nice
-Cornish Pastry together with taking some pics. From there trip to Kent really starts.
-On my way, I'll be able to see some bronze age monuments like Marry Maidens stone
-cycle <sup>6m</sup>. While rolling back to Penzance I'd see Laylon Quoit and
-Men-an-Tol <sup>26m</sup> sites. On either way in the town, I'd be able to do some
-small shopping or snack as there is both Tesco Express and McDonald's.
+I'll leave in the morning north, I'll be able to see some bronze age monuments
+like Marry Maidens stone cycle, Laylon Quoit and Men-an-Tol sites. Then I'll cycle
+down to the Lands End  where I can have some nice Cornish Pastry together with taking
+some pics. From there trip to Kent really starts. On my way, On either way in the town,
+I'd be able to do some small shopping or snack as there is both Tesco Express and McDonald's.
+When leaving Penzance I'll be passing famous St. Michaels Mount.
 
 <instagram-embed url="BhJg87cHMU9,BsccqOinCqL,BvuVBhvnsm-,Bw4Y9d_HMNE,BUmhcfGFSpl"></instagram-embed>
 
-I can stop a while after climbing Carn Marth hill <sup>52m</sup> and take a look at the views
+I can stop a while after climbing Carn Marth hill and take a look at the views
 and [amphitheatre](http://www.carnmarth.org.uk/) and magical lake on the hill. It would
 be good to get supplies before to avoid the need to turn to any bigger town as most of
 the route here will go via charing, but silent countryside.
 
 <instagram-embed url="Bvuci9Sn4rf"></instagram-embed>
 
-Going downhill I'll arrive at river [Fal ferry](https://www.falriver.co.uk/getting-about/ferries/king-harry-ferry) <sup>62m</sup> landing  where I should be crossing its nice delta.
+Going downhill I'll arrive at river [Fal ferry](https://www.falriver.co.uk/getting-about/ferries/king-harry-ferry) landing  where I should be crossing its nice delta.
 Crossing is just in front of National Trust Trelissick Garden, which is a charming
 site on its own. There is only a small tourist shop there, so it's worth to have
 some spare snack and water so far.
 
 <instagram-embed url="Bsxh6wFn3uB"></instagram-embed>
 
-St. Austell <sup>79m</sup> would be a good place to restock and take a rest. There are plenty
+St. Austell would be a good place to restock and take a rest. There are plenty
 of amenities in this picturesque town.  It would be a good moment for some wrap with
 salad and a coffee. I won't be anyhow moving towards famous Eden Project site there,
 as instead of artificial setups I'd prefer to enjoy another natural setting.
 
 <instagram-embed url="BvqffxXF273"></instagram-embed>
 
-Another river on my way I'll cross with [Fower Bodnick Ferry](http://www.ctomsandson.co.uk/bodinnick-ferry/ferry-and-timetable/) <sup>86m</sup>. I'd be cycling over rolling hills and
-valleys of small, but rapid rivers to turn for a while towards fantastic Talland Bay
-Beach <sup>92m</sup> and back towards Looe.
+Another river on my way I'll cross with [Fower Bodnick Ferry](http://www.ctomsandson.co.uk/bodinnick-ferry/ferry-and-timetable/). I'd be cycling over rolling hills and valleys of small, but
+rapid rivers to turn for a while towards fantastic Talland Bay Beach and back towards Looe.
 
 <instagram-embed url="BkFY-ubn6yW"></instagram-embed>
 
-Ten miles later <sup>98m</sup> I'll be crossing on the bridge in Looe. Except for the fairytale
+Ten miles later I'll be crossing on the bridge in Looe. Except for the fairytale
 landscape, this beautiful town provides quite a lot of amenities so will be a good place
 to make small shopping and maybe a bigger meal.
 
 <instagram-embed url="BxdUa5FALzH"></instagram-embed>
 
-My day will end in the [Maker Camp](https://makercamp.org.uk) <sup>113m</sup>. It's situated
+My day will end in the [Maker Camp](https://makercamp.org.uk). It's situated
 on grounds of old military barracks and full of listed buildings, with amazing views
 on the Channel and the harbours.
 
@@ -155,24 +158,7 @@ on the Channel and the harbours.
 
 ### Schedule
 
-| **Mileage (miles)** | **Climb (feet)** | **Duration** | **mph** | **Arrive** | **Break** | **Leave** | **Place** |
-|-----------------|--------------|----------|-------|--------|-------|-------|-------------------------------------------------------------------------------------------------------|
-| 0 |  | 00:00 |  | 00:00 |  | 06:30 | Penzance |
-| 6 | 715 | 00:30 | 12.00 | 07:00 | 00:10 | 07:10 | Nûn Careg Ancient Stone Slab Wayside Cross, The Merry Maidens Stone Circle, Tregiffian Burial Chamber |
-| 13 | 544 | 00:40 | 10.50 | 07:50 | 00:15 | 08:05 | Lands end |
-| 24 | 1129 | 01:00 | 11.00 | 09:05 | 00:00 | 09:05 | Dirt road to Mên-an-Tol, Boskednan Stone Circle and Ding Dong Mine |
-| 28 | 285 | 00:30 | 8.00 | 09:35 | 00:00 | 09:35 | Lanlyon Quoit |
-| 33 | 143 | 00:30 | 10.00 | 10:05 | 00:30 | 10:35 | McDonalds Penzance |
-| 46 | 1115 | 01:00 | 13.00 | 11:35 | 00:00 | 11:35 | Black Rock |
-| 52 | 425 | 00:30 | 12.00 | 12:05 | 00:20 | 12:25 | Carn Marth |
-| 62 | 553 | 01:00 | 10.00 | 13:25 | 00:40 | 14:05 | King Harry Ferry |
-| 79 | 1684 | 01:30 | 11.33 | 15:35 | 00:30 | 16:05 | McDonalds St. Austell |
-| 86 | 573 | 00:50 | 8.40 | 16:55 | 00:40 | 17:35 | Bodnick Ferry |
-| 95 | 996 | 00:50 | 10.80 | 18:25 | 00:05 | 18:30 | Talland Bay |
-| 98 | 544 | 00:20 | 9.00 | 18:50 | 00:05 | 18:55 | Looe |
-| 112 | 1701 | 01:15 | 11.20 | 20:10 | 00:15 | 20:25 | Millbrook Co-Op |
-| 113 | 383 | 00:10 | 6.00 | 20:35 |  |  | Maker |
-| **Total** | **10,790** | **10:35** | **10.23** |  | **03:30** |  |  |
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlgkHxfHJ2Txuo5JXvA-QS3vPwEhRskSSsvQ6grHX_97guzphygvTAo_PuP1hsvvt550amv8iC_G09/pubhtml?gid=1478400342&amp;single=true&amp;widget=true&amp;headers=false" height="400"></iframe>
 
 ## Day 2
 
@@ -222,20 +208,7 @@ Regis <sup>119m</sup> I'll stay at
 
 ### Schedule
 
-| **Mileage (miles)** | **Climb (feet)** | **Duration** | **mph** | **Arrive** | **Break** | **Leave** | **Place** |
-|-----------------|--------------|----------|-------|--------|-------|-------|---------------------------------|
-| 0 |  | 00:00 |  | 00:00 |  | 07:00 | Maker |
-| 3 | 165 | 00:20 | 9.00 | 07:20 | 00:30 | 07:50 | Folly and Ferry 7:30 |
-| 20 | 2442 | 01:40 | 10.20 | 09:30 | 00:30 | 10:00 | Wistman Wood |
-| 23 | 244 | 00:25 | 7.20 | 10:25 | 00:10 | 10:35 | Postbridge |
-| 33 | 1144 | 01:00 | 10.00 | 11:35 | 00:00 | 11:35 | Haytor |
-| 43 | 875 | 01:00 | 10.00 | 12:35 | 00:15 | 12:50 | Moretonhampsteam Co-Op |
-| 56 | 1307 | 01:00 | 13.00 | 13:50 | 00:30 | 14:20 | Exceter McDonalds and Catherdal |
-| 74 | 1024 | 01:40 | 10.80 | 16:00 | 00:20 | 16:20 | Honinton Lidl |
-| 101 | 2051 | 02:20 | 11.57 | 18:40 | 00:20 | 19:00 | Bridport Morrisons |
-| 110 | 926 | 00:40 | 13.50 | 19:40 | 00:10 | 19:50 | Abbotsburry Castle |
-| 119 | 738 | 01:00 | 9.00 | 20:50 |  |  | Meartleaves Camping |
-| **Total** | **10,916** | **11:05** | **10.43** |  | **02:45** |  |  |
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlgkHxfHJ2Txuo5JXvA-QS3vPwEhRskSSsvQ6grHX_97guzphygvTAo_PuP1hsvvt550amv8iC_G09/pubhtml?gid=1827171304&amp;single=true&amp;widget=true&amp;headers=false" height="400"></iframe>
 
 ## Day 3
 
@@ -282,20 +255,9 @@ a few cheaper in the area, but all of them were closing very early and I wanted
 to be sure they'll let me in. [Red House Farm](https://www.rhfcamping.co.uk/)
 <sup>116m</sup>.
 
-### Summary
+### Schedule
 
-| **Mileage (miles)** | **Climb (feet)** | **Duration** | **mph** | **Arrive** | **Break** | **Leave** | **Place** |
-|-----------------|--------------|----------|-------|--------|-------|-------|------------------------|
-| 0 |  | 00:00 |  | 00:00 |  | 06:30 | Meartleaves Camping |
-| 8 | 563 | 00:40 | 12.00 | 07:10 | 00:30 | 07:40 | Isle of Portland |
-| 39 | 1450 | 02:30 | 12.40 | 10:10 | 01:00 | 11:10 | Corfe Calste |
-| 47 | 590 | 00:40 | 12.00 | 11:50 | 00:40 | 12:30 | Sandy Banks Ferry |
-| 71 | 847 | 02:00 | 12.00 | 14:30 | 00:15 | 14:45 | Lyndhurts |
-| 81 | 213 | 01:00 | 10.00 | 15:45 | 00:30 | 16:15 | Southmapton |
-| 93 | 535 | 01:00 | 12.00 | 17:15 | 00:30 | 17:45 | Farnham McDonalds |
-| 110 | 637 | 01:30 | 11.33 | 19:15 | 00:30 | 19:45 | Chichester Retail Park |
-| 116 | 29 | 00:30 | 12.00 | 20:15 |  | 20:15 | Red House Farm |
-| **Total** | **4,864** | **09:50** | **11.72** |  | **03:55** |  |  |
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlgkHxfHJ2Txuo5JXvA-QS3vPwEhRskSSsvQ6grHX_97guzphygvTAo_PuP1hsvvt550amv8iC_G09/pubhtml?gid=1150726899&amp;single=true&amp;widget=true&amp;headers=false" height="400"></iframe>
 
 ## Day 4
 
@@ -344,19 +306,7 @@ A lovely little place with views of next day approach to Dover Cliffs.
 
 ### Schedule
 
-| **Mileage (miles)** | **Climb (feet)** | **Duration** | **mph** | **Arrive** | **Break** | **Leave** | **Place** |
-|-----------------|--------------|----------|-------|--------|-------|-------|-----------------------------|
-| 0 |  | 00:00 |  | 00:00 |  | 06:30 | Red House Farm |
-| 10 | 58 | 01:00 | 10.00 | 07:30 | 00:30 | 08:00 | Bognor Regist Tesco Express |
-| 42 | 246 | 03:00 | 10.67 | 11:00 | 00:10 | 11:10 | Rottendean |
-| 48 | 361 | 00:30 | 12.00 | 11:40 | 00:30 | 12:10 | Newhaven McDonalds |
-| 69 | 1239 | 01:40 | 12.60 | 13:50 | 00:10 | 14:00 | Perseney Castle |
-| 77 | 193 | 00:40 | 12.00 | 14:40 | 00:30 | 15:10 | Bexhill McDonalds |
-| 80 | 57 | 00:20 | 9.00 | 15:30 | 00:10 | 15:40 | Hastings |
-| 92 | 637 | 01:00 | 12.00 | 16:40 | 00:30 | 17:10 | Rye |
-| 122 | 306 | 02:30 | 12.00 | 19:40 | 00:30 | 20:10 | Folkestone McDonalds |
-| 125 | 543 | 00:20 | 9.00 | 20:30 |  |  | Little Satmar |
-| **Total** | **3,640** | **11:00** | **11.03** |  | **03:00** |  |  |
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlgkHxfHJ2Txuo5JXvA-QS3vPwEhRskSSsvQ6grHX_97guzphygvTAo_PuP1hsvvt550amv8iC_G09/pubhtml?gid=299025407&amp;single=true&amp;widget=true&amp;headers=false" height="400"></iframe>
 
 ## Day 5
 
@@ -393,18 +343,7 @@ back on 123th mile.
 
 ### Schedule
 
-| **Mileage (miles)** | **Climb (feet)** | **Duration** | **mph** | **Arrive** | **Break** | **Leave** | **Place** |
-|-----------------|--------------|----------|-------|--------|-------|-------|----------------------------|
-| 0 |  | 00:00 |  | 00:00 |  | 07:00 | Little Satmar |
-| 6 | 55 | 00:30 | 12.00 | 07:30 | 00:30 | 08:00 | Dover |
-| 30 | 935 | 02:00 | 12.00 | 10:00 | 00:20 | 10:20 | Broadstair |
-| 54 | 935 | 02:00 | 12.00 | 12:20 | 00:30 | 12:50 | Cantenbury McDonalds |
-| 76 | 1037 | 02:00 | 11.00 | 14:50 | 00:30 | 15:20 | Leeds Castle |
-| 83 | 376 | 00:40 | 10.50 | 16:00 | 00:30 | 16:30 | Maidstone Starbucks |
-| 107 | 1924 | 02:00 | 12.00 | 18:30 | 00:20 | 18:50 | House of the Charls Darwin |
-| 114 | 178 | 00:40 | 10.50 | 19:30 | 00:10 | 19:40 | Elsmers End Tesco |
-| 123 | 482 | 00:50 | 10.80 | 20:30 |  |  |  |
-| **Tota**l | **5,922** | **10:40** | **11.35** |  | **02:50** |  |  |
+<iframe src="https://docs.google.com/spreadsheets/d/e/2PACX-1vRlgkHxfHJ2Txuo5JXvA-QS3vPwEhRskSSsvQ6grHX_97guzphygvTAo_PuP1hsvvt550amv8iC_G09/pubhtml?gid=2097204824&amp;single=true&amp;widget=true&amp;headers=false" height="400"></iframe>
 
 ## Recover
 

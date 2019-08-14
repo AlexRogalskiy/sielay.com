@@ -8,7 +8,7 @@ import { withTheme } from 'emotion-theming';
 const Post = ({
   cover: { src, srcSet },
   post: {
-    frontmatter: { title, updatedDate, tags },
+    frontmatter: { title, updatedDate, tags, createdDate },
     timeToRead,
     fields: { slug },
     excerpt
@@ -27,7 +27,7 @@ const Post = ({
               </Link>
             ))
           : null}
-        {timeToRead} min read - {updatedDate}
+        {timeToRead} min read - {updatedDate !== createdDate ? `${createdDate}, updated ${updatedDate}` : updatedDate}
       </div>
       <p>
         {excerpt} <Link to={slug}>read more…</Link>
@@ -70,6 +70,7 @@ export const query = graphql`
         frontmatter {
           title
           updatedDate(formatString: "DD MMMM, YYYY")
+          createdDate(formatString: "DD MMMM, YYYY")
           image {
             children {
               ... on ImageSharp {
