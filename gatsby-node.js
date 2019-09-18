@@ -35,10 +35,16 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     node.frontmatter.sourceType = node.frontmatter.sourceType || '';
     if (node.frontmatter.updatedDate) {
       const parts = node.frontmatter.updatedDate.split('-')
-      node.frontmatter.year = parts[0]
-      node.frontmatter.month = parts[1]
-      node.frontmatter.day = parts[2]
-      node.frontmatter.yearWithMonth = parts.slice(0, 2).join('-')
+      node.frontmatter.year = ` ${parts[0]}`
+      node.frontmatter.month = ` ${parts[1]}`
+      node.frontmatter.day = ` ${parts[2]}`
+      node.frontmatter.yearWithMonth = ` ${parts.slice(0, 2).join('-')}`
+      node.frontmatter.updatedDate = new Date(Date.parse(node.frontmatter.updatedDate))
+    }
+    if (node.frontmatter.createdDate) {
+      node.frontmatter.createdDate = new Date(Date.parse(node.frontmatter.createdDate))
+    } else {
+      node.frontmatter.createdDate = node.frontmatter.updatedDate
     }
   }
 }

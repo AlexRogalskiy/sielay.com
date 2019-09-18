@@ -65,6 +65,7 @@ const Layout = ({ children, data, location }) => {
             pathname={pathname}
             items={menuItems}
             visible={true}
+            dispath={(...args) => store.dispatch(...args)}
           />
           {/* Header */}
           <HeaderMenuInstance

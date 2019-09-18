@@ -4,6 +4,7 @@ import '../store'
 import { jsx, css } from '@emotion/core'
 import { Link } from './Link'
 import { scale, rhythm } from '../utils/typography'
+import { toggleSidebar } from '../store'
 
 const STYLE = `
   position: absolute;
@@ -45,7 +46,7 @@ const STYLE = `
   }
 `
 
-export const SidebarMenu = ({ items, visible }) => {
+export const SidebarMenu = ({ items, visible, dispatch }) => {
   return (
     <nav
       className="mobile-only"
@@ -59,7 +60,9 @@ export const SidebarMenu = ({ items, visible }) => {
         {items.map(({ path, active, name, Icon }, key) => {
           return (
             <li key={key}>
-              <Link path={path} key={path} className={active ? 'active' : ''}>
+              <Link path={path} key={path} className={active ? 'active' : ''} onClick={() => {
+                dispatch(toggleSidebar());
+              }}>
                 <Icon />
                 <span>{name}</span>
               </Link>
