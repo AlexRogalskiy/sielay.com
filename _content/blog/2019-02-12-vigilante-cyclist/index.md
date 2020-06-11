@@ -30,7 +30,7 @@ What happened since is quite interesting. Well. I was already picked by YouTube 
   * CS7 is very dangerous in Balham and Tooting mostly because people sticking out from the side roads, very often Priuses
   * red light jumping cyclists are all ages and sizes, but all are idiots; some will even show off obscenely without using any proper gear
 
-<youtube-embed id="kj5xafL4NJU"></youtube-embed>
+https://www.youtube.com/watch?v=kj5xafL4NJU
 
   * lights on the wheels are dope
   * if you're on cycle lane according to HC183 you have right of way against people turning left and HC72 has no use here - but better to give the right of way to the idiot than land under his wheel

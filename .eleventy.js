@@ -3,9 +3,12 @@
 const pluginSass = require("eleventy-plugin-sass");
 const blog = require("eleventy-plugin-blog");
 const readingTime = require("eleventy-plugin-reading-time");
+const embedYouTube = require("eleventy-plugin-youtube-embed");
+const pluginRss = require("@11ty/eleventy-plugin-rss");
 const excerpt = require("eleventy-plugin-excerpt");
 const postcss = require("gulp-postcss");
 const tailwindcss = require("tailwindcss");
+const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster');
 const autoprefixer = require("autoprefixer");
 const util = require("util");
 const embedInstagram = require("eleventy-plugin-embed-instagram");
@@ -20,15 +23,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(excerpt);
   eleventyConfig.addPlugin(embedInstagram);
+  eleventyConfig.addPlugin(embedYouTube);
   eleventyConfig.addPlugin(blog, {
     input: "./_content",
-    blogPageTemplate: '../blogpost.njk',
+    blogPostTemplate: 'blogpost.njk',
     itemsPerPage: 20,
     blogPaths: ['./_content/blog/**/*.md']
   });
   blog.generateBooleanCollection(eleventyConfig, "topNav", "topNav", {
     blog: ['./_content/*.md']
   });
+  eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(cacheBuster({}));
 
   // filters
   eleventyConfig.addFilter("safejson", (data) => {

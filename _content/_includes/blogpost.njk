@@ -10,7 +10,7 @@
         <div class="flex items-center">
             <div class="text-sm">
                 <p class="text-gray-900 leading-none"></p>
-                <p class="text-gray-600">{{ content | readingTime }} min read - {{ date | date('LL') }}</p>
+                <p class="text-gray-600">{{ content | readingTime }} min read - {{ date | blog_dateformat('LL') }}</p>
             </div>
         </div>
         <div class="mb-8">

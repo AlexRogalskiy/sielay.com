@@ -30,25 +30,25 @@ Here are some cases that I was able to make public:
 
 Nasty overtaking - prosecuted, retrained
 
-<youtube-embed id="exi3C4Pj5Ik"></youtube-embed>
+https://www.youtube.com/watch?v=exi3C4Pj5Ik
 
 Pedestrian walks in front of the bike
 
-<youtube-embed id="oLDIvYPURZY"></youtube-embed>
+https://www.youtube.com/watch?v=oLDIvYPURZY
 
 Cyclist almost mows the boy
 
-<youtube-embed id="8S7Lk5kT4qc"></youtube-embed>
+https://www.youtube.com/watch?v=8S7Lk5kT4qc
 
 Overtaking while on the phone - warning letter
 
-<youtube-embed id="psrhACzVWf4"></youtube-embed>
+https://www.youtube.com/watch?v=psrhACzVWf4
 
 On the phone on the bridge - warning letter
 
-<youtube-embed id="M7i7zcMlY8s"></youtube-embed>
+https://www.youtube.com/watch?v=M7i7zcMlY8s
 
 MET doesn't see phone in plain sight - warning letter
 
-<youtube-embed id="TxIQxhD6FhY"></youtube-embed>
+https://www.youtube.com/watch?v=TxIQxhD6FhY
 
