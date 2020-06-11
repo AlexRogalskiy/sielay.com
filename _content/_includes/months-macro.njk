@@ -1,0 +1,16 @@
+{%- macro r(year, calendar) -%}
+<div class="w-full lg:max-w-full lg:flex shadow-lg mb-5">
+<div class="bg-white w-full rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
+<div class="mb-8">
+<h3 class="font-xl mb-4">{{ year.title }}</h3>
+{%- for month in calendar -%}
+{%- if month.type == 'month' -%}
+{%- if month.year == year.year -%}
+<a class="inline-block hover:bg-gray-200 rounded-lg px-1 py-1 text-gray-600 mr-1 mb-1 text-xs" title="Archive month: {{ month.title }}" href="/blog/{{ month.slug }}">{{ month.shortTitle }} ({{ month.count }})</a>
+{%- endif -%}
+{%- endif -%}
+{%- endfor -%}
+</div>
+</div>
+</div>
+{%- endmacro -%}

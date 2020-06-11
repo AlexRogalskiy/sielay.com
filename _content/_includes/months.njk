@@ -1,0 +1,7 @@
+{% import 'months-macro.njk' as months %}
+
+{%- for date in collections.calendar -%}
+    {%- if date.type == 'year' -%}
+        {{ months.r(date, collections.calendar) }}
+    {%- endif -%}
+{%- endfor -%}

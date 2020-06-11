@@ -1,0 +1,10 @@
+---
+title: 'Już długo nie pisałem'
+createdDate: '2005-10-16'
+date: '2005-10-16'
+author: sielay
+tags: [recovered]
+draft: false
+---
+
+Już długo nie pisałem. Ale faktycznie nie miałem zbytnio kiedy, a może raczej o czym, gdyż zbyt wiele się nie działo. Chociaż prawdę mówiąc: co dzień dzieje się coś wartego opisania, ale nie koniecznie stosownego do opowiedzenia. Tak, więc wiele spraw przemilczałem i po tym długim czasie postanowiłem coś znowu napisać. Dziś wracając do domu o wciąż wczesnej porze, lecz jednak zasnutej szarością zimowej, księżycowej nocy, poczułem potrzebę nabycia czegoś. Nie byłem zbyt zdecydowany… Ale instynkt wiódł mnie cały czas, tak, że nie zastanawiałem się nad celem mej wędrówki. Gdy stanąłem, moja ręka uniosła się i po chwili ukazała mi się płyta. Disturbed ”Ten thousands fists”… błysk w martwym oku… ręka nie chciała jej puścić, a nogi ruszyły dalej. Spojrzałem w dół… ”Playing the angel” Depeche Mode. Nie byłem pewien… ale ręce wiedziały. Ominęły zgrabnie ”Songs of faith and devotion”, ”Exciter”a czy ”Ultra”. Chwyciły świeżutki, palący album, a nogi wytroczyły mnie w kierunku kasy. Gdy usłyszałem DM chciałem wyrzucić płytę za okno… Disturbed był bezmienny, ale przyjemniejszy od swoich wybryków na ”Believer”… to mnie ucieszyło… teraz znów zmusiłem się do DM i mnie ”’olśniło”’. Tak wyraźnego powrotu do violatora, czystego synthpopu,… tak mocnego wejścia w to w co tak niewiele kapel mogło bezkarnie wkraczać… Wiem czemu z początku mi się nie spodobała… Aby zrozumieć głębie kazania trzeba wyciszyć umysł, otworzyć serce i znaleźć się w świątyni. Teraz wchłaniam tą trudną muzykę i płonę… tonę… one… kto nie kochał DM nie zrozumie. Teraz słyszę jeszcze starsze czasy… Czuję uniesienie, którego brakowało mi wczoraj… wypełnienie, które starałem się zdobyć… Dobrze wiesz, że je zdobyłem. Dobrze wiesz, że nie złamałem ani jednej swojej zasady. Dobrze wiesz, że nie zniżyłem się. Dobrze wiesz, że to trudna sztuka. Dobrze wiesz, ile ryzykowaliśmy. Wczoraj chłonąłem słodycz… dziś chłonę dźwięki. A karty od początku były odkryte..

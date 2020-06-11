@@ -1,0 +1,10 @@
+---
+title: 'I woke up just after'
+createdDate: '2007-01-14'
+date: '2007-01-14'
+author: sielay
+tags: [recovered]
+draft: false
+---
+
+I woke up just after whole night of learning and doing some practices. My eyelids seems to be heavier than lead and my back feels like after a car crash. I take a cup of coffee and start to write it. Even if I can’t find pen to my tablet, that’s the best way to start a day. Even to forget about that I feel sick, ill and so terrible. For the moment I can focus on dozens of my friends on WAYN and other not on WAYN yet… I can think about all the good days I’ve spent in my life. All the feelings that made me feel I can fly. I still collect them deep in my heart and don’t even think to forget them. Some experiences are priceless. I still have some small talisman. Thing that makes me feel safe… I love to wear it. That’s a gift. Maybe I’d show it to you someday or you would see it hanged on my neck when I’d be around… I think I would. Never before I have been thinking about ”Round the World” Trip seriously. Maybe not in this year… not in next and another. I think that about 2010 or 11… I’d be old enough to think about thing I should do before thinking about life stabilization. That would be something great. Not just a organised trip by plane. No… I think about real trip, when I move on my feet or by the public transport with common people. When I live in such houses as they do. When I eat what they do. When I spend my time how they do. When I’d see all the things I want to see: Angkor Wat, Khmers ancient city deep into jungle, Great Wall, Xi’an, Machu Pichu, Tikal, Teotihuacan, Petra, Giza… I’d also love to reach both polar poles and climb on Mount Everest… Do I dream? Yes, I do. But what is better in life than dreaming? Maybe I’d be able to reach this target only in half, but at least I’d may say in future - “I’ve tried”… You know me… I’d hate myself if I wouldn’t. I’m born to fight, to try, to care about my dreams. Because every single day I really believe that they come true. Not only about RTW…
