@@ -25,7 +25,8 @@ But let's dive in and see how we could break the ice. To do that let's only reca
 world`
   ```
  * A `Number`, same as in real-life or mathematics are expressed as decimal characters. They are always double precision numbers, no integers, but at this point, we can ignore it.
-   ```javascript
+
+```javascript
 1
 12.3434
 ```

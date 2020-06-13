@@ -8,15 +8,17 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const excerpt = require("eleventy-plugin-excerpt");
 const postcss = require("gulp-postcss");
 const tailwindcss = require("tailwindcss");
-const cacheBuster = require('@mightyplow/eleventy-plugin-cache-buster');
-const autoprefixer = require("autoprefixer");
+const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const util = require("util");
 const embedInstagram = require("eleventy-plugin-embed-instagram");
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(pluginSass, {
+    watch: ["./*.scss", "!node_modules/**", "!_site"],
+    sourcemaps: true,
     additionalSteps: [
-      postcss([tailwindcss("./tailwind.config.js"), autoprefixer]),
+      () => postcss([tailwindcss("./tailwind.config.js")])
     ],
   });
 
@@ -26,15 +28,18 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(embedYouTube);
   eleventyConfig.addPlugin(blog, {
     input: "./_content",
-    blogPostTemplate: 'blogpost.njk',
+    blogPostTemplate: "blogpost.njk",
     itemsPerPage: 20,
-    blogPaths: ['./_content/blog/**/*.md']
+    blogPaths: ["./_content/blog/**/*.md"],
   });
   blog.generateBooleanCollection(eleventyConfig, "topNav", "topNav", {
-    blog: ['./_content/*.md']
+    blog: ["./_content/*.md"],
   });
   eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(cacheBuster({}));
+  eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPassthroughCopy("_content/**/*.jpg");
+  eleventyConfig.addPassthroughCopy("_content/**/*.png");
 
   // filters
   eleventyConfig.addFilter("safejson", (data) => {
