@@ -9,46 +9,138 @@ const excerpt = require("eleventy-plugin-excerpt");
 const postcss = require("gulp-postcss");
 const tailwindcss = require("tailwindcss");
 const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
-const util = require("util");
 const embedInstagram = require("eleventy-plugin-embed-instagram");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const pluginEmbedTweet = require("eleventy-plugin-embed-tweet");
+const shortcodes = require("./_content/_includes/shortcodes");
+const markdownIt = require("markdown-it");
+const { kebabCase } = require("lodash");
+const stripHtml = require("string-strip-html");
 
 module.exports = function (eleventyConfig) {
+  const markdownItOptions = {
+    html: true,
+  };
+  const markdownLib = markdownIt(markdownItOptions).use(
+    require("markdown-it-anchor"),
+    {
+      permalink: true,
+    }
+  );
+  eleventyConfig.setLibrary("md", markdownLib);
+  shortcodes(eleventyConfig);
+
   eleventyConfig.addPlugin(pluginSass, {
     watch: ["./*.scss", "!node_modules/**", "!_site"],
     sourcemaps: true,
-    additionalSteps: [
-      () => postcss([tailwindcss("./tailwind.config.js")])
-    ],
+    additionalSteps: [() => postcss([tailwindcss("./tailwind.config.js")])],
   });
 
   eleventyConfig.addPlugin(readingTime);
   eleventyConfig.addPlugin(excerpt);
   eleventyConfig.addPlugin(embedInstagram);
   eleventyConfig.addPlugin(embedYouTube);
+  eleventyConfig.addPlugin(pluginEmbedTweet);
   eleventyConfig.addPlugin(blog, {
     input: "./_content",
     blogPostTemplate: "blogpost.njk",
     itemsPerPage: 20,
     blogPaths: ["./_content/blog/**/*.md"],
+    defaultCategory: 'Private'
   });
   blog.generateBooleanCollection(eleventyConfig, "topNav", "topNav", {
-    blog: ["./_content/*.md"],
+    all: ["./_content/*.md"],
   });
   eleventyConfig.addPlugin(pluginRss);
-  eleventyConfig.addPlugin(cacheBuster({}));
+  //eleventyConfig.addPlugin(cacheBuster({}));
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPassthroughCopy("_content/**/*.jpg");
   eleventyConfig.addPassthroughCopy("_content/**/*.png");
+  eleventyConfig.addPassthroughCopy("_content/**/*.svg");
+  eleventyConfig.addFilter("data", (list, key) => {
+    return key;
+  });
 
   // filters
   eleventyConfig.addFilter("safejson", (data) => {
     try {
-      return util.inspect(data, false, 1);
+      return Object.keys(data);
     } catch (error) {
       return `${data}`;
     }
   });
+  eleventyConfig.addFilter("kebab", kebabCase);
+  eleventyConfig.addFilter("text_length", ({templateContent}) => {
+    return stripHtml(templateContent).length;
+  });
+  eleventyConfig.addFilter("safejson_each", (data, field) => {
+    try {
+      return Object.values(data).map((value) =>
+        field ? value[field] : Object.keys(value)
+      );
+    } catch (error) {
+      return `${data}`;
+    }
+  });
+  eleventyConfig.addFilter("collections_flat", (data) => {
+    try {
+      return Object.values(data).reduce(
+        (previous, current) => [...previous, ...current],
+        []
+      );
+    } catch (error) {
+      log(red(error));
+      return null;
+    }
+  });
+  eleventyConfig.addFilter("sort_by", (data, field) => {
+    return Array.isArray(data)
+      ? data.sort((a, b) => {
+          const A = a[field].replace(/[^a-zA-Z0-9]+/g, "");
+          const B = b[field].replace(/[^a-zA-Z0-9]+/g, "");
+          if (A === B) return 0;
+          return A > B ? 1 : -1;
+        })
+      : data;
+  });
+
+  eleventyConfig.addFilter("test", function test(nodes = [], key = "") {
+    let pages = [];
+    for (let entry of nodes) {
+      if (entry.data && entry.data.eleventyNavigation) {
+        let nav = entry.data.eleventyNavigation;
+        if ((!key && !nav.parent) || nav.parent === key) {
+          pages.push(entry.url);
+          // pages.push(
+          //   Object.assign(
+          //     {},
+          //     nav,
+          //     {
+          //       url: nav.url || entry.data.page.url,
+          //       pluginType: "eleventy-navigation",
+          //     },
+          //     key ? { parentKey: key } : {}
+          //   )
+          // );
+        }
+      }
+    }
+
+    return pages;
+    // .sort(function (a, b) {
+    //   return (a.order || 0) - (b.order || 0);
+    // })
+    // .map(function (entry) {
+    //   if (!entry.title) {
+    //     entry.title = entry.key;
+    //   }
+    //   if (entry.key) {
+    //     entry.children = findNavigationEntries(nodes, entry.key);
+    //   }
+    //   return entry;
+    // });
+  });
+
   return {
     markdownTemplateEngine: "njk",
     dir: {

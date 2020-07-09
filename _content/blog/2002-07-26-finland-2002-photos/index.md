@@ -3,6 +3,7 @@ title: 'Finland 2002 Photos'
 createdDate: '2002-07-26'
 date: '2002-07-26'
 author: sielay
+image: 080.jpg
 tags: [photos,recovered]
 draft: false
 ---

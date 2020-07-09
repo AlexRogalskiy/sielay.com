@@ -1,10 +1,11 @@
 ---
 pagination:
-  data: collections.calendar
+  data: collections.category
   size: 1
   alias: postslist
+eleventyComputed: 
+  title: "Blog category: {{ postslist.title }}"
 permalink: "{{ postslist.slug }}/index.html"
 ---
 
-<h2 class="text-4xl">Archive: {{ postslist.title }}</h2>
 {%- include 'postslist.njk' -%}

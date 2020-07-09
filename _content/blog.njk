@@ -4,7 +4,7 @@ pagination:
   data: collections.blog
   size: 1
   alias: postslist
-permalink: /blog/{%- if postslist.pagenumber > 0 -%}{{ postslist.pagenumber }}{%- endif -%}/index.html
 topNav: postslist.pagenumber == 0
+permalink: "{{ postslist.slug }}/index.html"
 ---
 {%- include 'postslist.njk' -%}

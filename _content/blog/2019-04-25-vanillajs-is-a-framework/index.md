@@ -5,6 +5,7 @@ date: '2019-04-25'
 author: sielay
 tags: [javascript,programming,react,angular,dojo,yui,development,typescript,es6,goodparts]
 draft: false
+categories: ["Software Development & Management"]
 ---
 
 In my experience as a developer, I made a few big mistakes. One of them was being late with taking building custom code instead of using ready, community driver frameworks. To be specific I missed the moment when with a seismic shit that autoloading and composer introduced to PHP frameworks like Symfony or Codeigniter allowed faster application scaffolding and testing.

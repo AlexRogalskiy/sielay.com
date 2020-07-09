@@ -8,6 +8,7 @@ draft: false
 source: https://www.linkedin.com/pulse/10-questions-i-ask-each-senior-angular-candiate-%C5%82ukasz-marek-sielski/
 sourceType: linkedin
 image: office.jpeg
+categories: ["Software Development & Management"]
 ---
 
 Times when many recruiters mistaken JavaScript for Java are long passed (except some rare awkward situations). Anyhow there is still very low understanding of specific technologies on JavaScript scene. It's nothing surprising as the market is very fast, tools change and new methods emerge almost every day.

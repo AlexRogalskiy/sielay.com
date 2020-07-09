@@ -7,6 +7,7 @@ tags: [linkedin, imported]
 draft: false
 source: https://www.linkedin.com/pulse/20141205155452-16801416-time-tracking-is-very-bad-and-sometimes-helpful/
 sourceType: linkedin
+categories: ["Software Development & Management"]
 ---
 
 > "laws were most numerous when the commonwealth was most corrupt" Tacitus

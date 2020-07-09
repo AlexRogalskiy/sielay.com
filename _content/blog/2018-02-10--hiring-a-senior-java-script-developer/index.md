@@ -9,6 +9,7 @@ tags:
   - senior
   - team
 draft: false
+categories: ["Software Development & Management"]
 ---
 
 I will risk a thesis to start with - you can’t judge seniority of the JavaScript developer by experience counted in years.

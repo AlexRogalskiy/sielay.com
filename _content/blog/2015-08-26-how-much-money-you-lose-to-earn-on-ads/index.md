@@ -7,6 +7,7 @@ tags: [linkedin, imported, ads]
 draft: false
 source: https://www.linkedin.com/pulse/how-much-money-you-lose-earn-ads-%C5%82ukasz-marek-sielski/
 sourceType: linkedin
+categories: ["Software Development & Management"]
 ---
 
 Advertisements for a long time isn't simple topic anymore. It's not just putting one square on your page and hoping for some money to come back. You have to consider multiple factors like:

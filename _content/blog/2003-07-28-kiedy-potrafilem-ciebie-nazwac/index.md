@@ -7,7 +7,6 @@ tags: [recovered]
 draft: false
 ---
 
-```
 kiedyś potrafiłem Ciebie nazwać
 kreśliłem Twoje rysy na kartonie
 pisałem Twoje imię na kopercie
@@ -24,4 +23,4 @@ czasem widzę tylko kopie
 żadna nie jest oryginałem
 nawet spotykając Ciebie
 też za kopię Cię uznałem
-```
+

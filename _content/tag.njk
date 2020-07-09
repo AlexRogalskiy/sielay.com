@@ -3,8 +3,15 @@ pagination:
   data: collections.tag
   size: 1
   alias: postslist
-permalink: /blog/tag/{{ postslist.slug }}/index.html
+eleventyComputed: 
+  title: "Blog tag: {{ postslist.title }}"
+permalink: "{{ postslist.slug }}/index.html"
 ---
 
-<h2 class="text-4xl">#{{ postslist.title }}</h2>
+{% if postslist.slug == "/blog/tag/unlearn/" %}
+  {% include 'unlearn.njk' %}
+{% else %}
+  <h2 class="text-4xl">#{{ postslist.title }}</h2>
+{% endif %}
+
 {%- include 'postslist.njk' -%}

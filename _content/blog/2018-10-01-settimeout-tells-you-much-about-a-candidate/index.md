@@ -5,6 +5,7 @@ date: '2018-10-01'
 author: sielay
 tags: [javascript, programming, computer science, interview, hiring, recruitment, theory, settimeout, setinterval, evenloop]
 draft: false
+categories: ["Software Development & Management"]
 ---
 
 For a very long time, I kept using the same set of [questions](/blog/2017-10-01-10-questions-i-ask-each-senior-angular-candiate/) while performing interviews. Even though I created it with Angular in mind, most of them have proven universal. Asking about Arrays became my favourite (as in opens way to discuss so many interesting patterns like Observables) or CORS, which allows discussing how network requests work. Anyhow, recently I started to value more and more one I kept asking about setTimeout and setInterval.

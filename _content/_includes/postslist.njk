@@ -1,3 +1,4 @@
+{% include 'pagination.njk' %}
 
 <ul>
 {%- for post in postslist.items -%}
@@ -6,3 +7,6 @@
   </li>
 {%- endfor -%}
 </ul>
+
+{% include 'pagination.njk' %}
+

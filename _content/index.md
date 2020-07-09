@@ -1,17 +1,28 @@
 ---
 title: SIELAY.com
+topNav: false
+fullwidth: true
 ---
-<ul>
-{%- set blog = collections.blog | blog_top(5)  -%}
-{%- for post in blog -%}
-  <li>
-    {%- include 'tile.njk' -%}
-  </li>
+<div class="flex flex-wrap">
+{%- for category in collections.category | blog_first -%}
+<div class="lg:w-1/2 xl:w-1/3 p-6">
+<h3 class="text-gray-900 font-bold text-2xl mb-2 category-{{ category.title | kebab }}">Lastest in {{ category.title }}</h3>
+  <ul>
+    {%- for post in category | blog_top(1)  -%}
+    <li>
+      {%- include 'tile.njk' -%}
+    </li>
+    {%- endfor -%}
+  </ul>
+  <a href="{{ category.slug }}" class="category-{{ category.title | kebab }} block">More ({{ category.count }})</a>
+</div>
 {%- endfor -%}
-</ul>
-<a href="/blog" class="w-full font-navigation lg:max-w-full text-center bg-green-200 lg:flex shadow-lg mb-5 bg-white w-full rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-More
-</a>
-{%- include 'years.njk' -%}
+</div>
+<div class="flex flex-wrap">
+<div class="lg:w-1/2 xl:w-1/2 p-6">
 {%- include 'months.njk' -%}
+</div>
+<div class="lg:w-1/2 xl:w-1/2 p-6">
 {%- include 'tagcloud.njk' -%}
+</div>
+</div>

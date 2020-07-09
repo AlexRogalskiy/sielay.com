@@ -5,6 +5,7 @@ date: '2018-08-26'
 author: sielay
 tags: [gatsbyjs, reactjs, calendar, javascript, tutorial, hack, chronology, indexing, graphql]
 draft: false
+categories: ["Software Development & Management"]
 ---
 
 I've just updated my blog by adding something that is essential for traditional blogging:

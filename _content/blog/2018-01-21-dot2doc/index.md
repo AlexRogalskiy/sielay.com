@@ -10,6 +10,7 @@ tags:
   - doc
   - case study
 draft: false
+categories: ["Software Development & Management"]
 ---
 
 **TLDR** Documenting massive redux models with asynchronous actions can be simplified by using old good Graphviz and few comments in the code.

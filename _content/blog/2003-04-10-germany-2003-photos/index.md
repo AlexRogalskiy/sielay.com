@@ -4,6 +4,7 @@ createdDate: '2003-04-10'
 date: '2003-04-10'
 author: sielay
 tags: [photos,recovered]
+image: 46.jpg
 draft: false
 ---
 

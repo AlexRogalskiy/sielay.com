@@ -8,6 +8,7 @@ tags:
   - react
   - reactjs
 draft: false
+categories: ["Software Development & Management"]
 ---
 
 Don't get me wrong. To be a JavaScript developer you need to focus on understanding the language and mastering it. Then on specifics of the runtime ("place" where you code runs) environment, which most commonly will be either browser or node (which in many cases will mean "backend").

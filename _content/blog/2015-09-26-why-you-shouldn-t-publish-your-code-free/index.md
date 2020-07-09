@@ -7,6 +7,7 @@ tags: [linkedin, imported, opensource, startup]
 draft: false
 source: https://www.linkedin.com/pulse/why-you-shouldnt-publish-your-code-free-%C5%82ukasz-marek-sielski/
 sourceType: linkedin
+categories: ["Software Development & Management"]
 ---
 
  1. First of all, you can get criticised. You may learn something from it, so you can improve. It's dangerous.

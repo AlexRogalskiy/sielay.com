@@ -7,6 +7,7 @@ tags: [linkedin, imported]
 draft: false
 source: https://www.linkedin.com/pulse/wait-its-bug-unknown-%C5%82ukasz-marek-sielski/
 sourceType: linkedin
+categories: ["Software Development & Management"]
 ---
 
 Have you ever asked your developers to do some project for you? You spent vast amount of time on describing your goals, making mockups, explaining needs. Then you get something that looks ok, but once you start to use it it falls apart. You click something and result is not as expected. You ask about it and you get an answer „it was not defined“ or „it conflicts with other thing“. You keep asking „why you haven’t said it back then?“. Answer is „well, we didn’t know you will go that way“ and again „you haven’t told us about it“. Constant blaming starts to make your furious, team furious and your project goes nowhere. Well. In fact I am not going to make you help any better. Your developers were likely right. Good for you, is that they are also one to blame.

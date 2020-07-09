@@ -7,6 +7,7 @@ tags: [linkedin, imported, javascript, umd, npm]
 draft: false
 source: https://www.linkedin.com/pulse/umd-how-break-third-parties-%C5%82ukasz-marek-sielski/
 sourceType: linkedin
+categories: ["Software Development & Management"]
 ---
 
 I do enjoy good practices in coding. I love the direction that many environments take to organise code and make it maintainable. But very often we think about our code and forget about whole world around it.

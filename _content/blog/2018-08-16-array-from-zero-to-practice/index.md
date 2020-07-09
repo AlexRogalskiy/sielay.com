@@ -7,6 +7,7 @@ tags:
   - javascript
   - array
 draft: false
+categories: ["Software Development & Management"]
 ---
 
 One of the first obstacles for people just learning about software development is difficult to get real-life examples. Where it comes to learning types `String`, `Number` and `Boolean` are quite clear (tricky still). But when it comes to `Object` and an `Array` it's a different story. The concepts are too abstract for someone who never worked with code.
