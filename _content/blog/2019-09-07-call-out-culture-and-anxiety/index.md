@@ -7,6 +7,10 @@ tags: [mental-health, call-out, cancel, de-platform, culture, twitter, social-me
 draft: false
 ---
 
+<div class="review">In this article I made a very serious semantic error. I mixed terms call out culture and cancel culture. The error resulted also in a wrong conclusion. Cancel culture make targetted
+entity unable to defend their stand. Call out doesn't make it. Therefore I doubt reporting and 
+naming and shaming (after a trial) offenders (in that case traffic offenders) would cause hypocrisy. It still can cause anxiety resulted from the conflict tho.</div>
+
 Before I dig into the problem, I need to admit that to some extent I'm a hypocrite. Where I'm totally against and disgusted by call-out (or cancel) culture I may be responsible for participating in it. When I publish a video on YouTube of a driver (cyclists and pedestrians don't have number plates, therefore they stay anonymous) I kind of name and shame them, call them out, even if I'm fully sure they did something wrong, dangerous and worth pointing out. Tho I may have to rethink that, even while writing this entry.
 
 I like the internet as a platform for debate. It's obvious there will be plenty of people who disagree with one's views, but that is the beauty of it. This process of mixing opinions allows ideas to rise and evolve. In many places it's true, but there are few where things aren't as nice as should.

@@ -11,7 +11,11 @@
     var consent = document.getElementById('cookie-consent');
     var enable = document.getElementById('enable-cookies');
     var disable = document.getElementById('disable-cookies');
+
     var cookie = document.cookie.match(/(^|;\s*)(CookieConsent=)(true|false)/);
+    var mode = document.cookie.match(/(^|;\s*)(Theme=)(dark|light)/);
+    mode = mode && mode[3] || 'dark';
+
     function setCookie(name, value, days) {
       var d = new Date;
       d.setTime(d.getTime() + 24*60*60*1000*days);
@@ -53,5 +57,26 @@
         })();
       }
     }
+
+    var theme = document.getElementById('theme');
+    drawTheme();
+
+    function drawTheme() {
+      console.log('MODE', mode);
+      theme.innerText = mode === 'light' ? 'Dark Mode' : 'Light Mode';
+      document.body.classList.toggle('dark', mode === 'dark');
+    }
+
+    function toggleTheme(event) {
+      event.preventDefault();
+      mode = mode === 'light' ? 'dark' : 'light';
+      if (cookie) {
+        setCookie('Theme', mode);
+      }
+      drawTheme();
+    }
+
+    theme.addEventListener('click', toggleTheme);
+    
   });
 </script>
