@@ -1,20 +1,16 @@
----json
-{
-  "permalink": "feed.xml",
-  "eleventyExcludeFromCollections": true,
-  "metadata": {
-    "title": "SIELAY.com",
-    "subtitle": "I am writing about my experiences as a naval navel-gazer.",
-    "url": "https://sielay.com/",
-    "feedUrl": "https://sielay.com/feed.xml",
-    "author": {
-      "name": "Łukasz Marek Sielski",
-      "email": "sielay@sielay.com"
-    }
-  }
-}
 ---
-<?xml version="1.0" encoding="utf-8"?>
+permalink: feed.xml
+layout: xml.njk
+eleventyExcludeFromCollections: true
+metadata:
+    title: SIELAY.com,
+    subtitle: Opinions about an outspoken Pole. Some about politics, programming or simply private matters and general stuff
+    url: https://sielay.com/
+    feedUrl: https://sielay.com/feed.xml
+    author:
+        name: Łukasz Marek Sielski
+        email: sielay@sielay.com
+---
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>

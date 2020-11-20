@@ -8,7 +8,6 @@ const pluginRss = require("@11ty/eleventy-plugin-rss");
 const excerpt = require("eleventy-plugin-excerpt");
 const postcss = require("gulp-postcss");
 const tailwindcss = require("tailwindcss");
-const cacheBuster = require("@mightyplow/eleventy-plugin-cache-buster");
 const embedInstagram = require("eleventy-plugin-embed-instagram");
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginEmbedTweet = require("eleventy-plugin-embed-tweet");
@@ -111,34 +110,11 @@ module.exports = function (eleventyConfig) {
         let nav = entry.data.eleventyNavigation;
         if ((!key && !nav.parent) || nav.parent === key) {
           pages.push(entry.url);
-          // pages.push(
-          //   Object.assign(
-          //     {},
-          //     nav,
-          //     {
-          //       url: nav.url || entry.data.page.url,
-          //       pluginType: "eleventy-navigation",
-          //     },
-          //     key ? { parentKey: key } : {}
-          //   )
-          // );
         }
       }
     }
 
     return pages;
-    // .sort(function (a, b) {
-    //   return (a.order || 0) - (b.order || 0);
-    // })
-    // .map(function (entry) {
-    //   if (!entry.title) {
-    //     entry.title = entry.key;
-    //   }
-    //   if (entry.key) {
-    //     entry.children = findNavigationEntries(nodes, entry.key);
-    //   }
-    //   return entry;
-    // });
   });
 
   return {
